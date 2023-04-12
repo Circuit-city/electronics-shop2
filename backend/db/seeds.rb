@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+puts "Seeding records..."
+
+# create the first user
+User.create(
+    name: "John Doe",
+    email: "johndoe@example.com",
+    password: "password123"
+  )
+  
+  # create the second user
+  User.create(
+    name: "Jane Smith",
+    email: "janesmith@example.com",
+    password: "password456"
+  )
+
+
+puts "Seeding completed successfully!"
