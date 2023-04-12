@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { loginUser } from "../features/userSlice"
 
-function SignUp() {
+function Login() {
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
@@ -28,4 +28,4 @@ function SignUp() {
     </form>
   )
 }
-export default SignUp
+export default Login
