@@ -28,22 +28,25 @@ function Signup(){
 
     return(
         <div className="hero">
-            <form onSubmit={handlesubmit} className="sign-form">
+            <form onSubmit={(e)=>{
+                e.preventDefault()
+                handlesubmit()
+            }} className="sign-form">
             <center>
                 <h1>Signup</h1>
             </center>
                 <label>
-                    Name: <input type="text" name="name" value={name} placeholder="Enter name" onChange={(e) => setname(e.target.value)} />
+                    Name: <input type="text" name="name" value={name} placeholder="Enter name" onChange={(e) => setname(e.target.value)} required />
                 </label>
 
                 <label>
-                    Email: <input type="text" name="email" value={email} placeholder="Enter email" onChange={(e) => setemail(e.target.value)}/>
+                    Email: <input type="text" name="email" value={email} placeholder="Enter email" onChange={(e) => setemail(e.target.value)} required/>
                 </label>
                 
                 <label>
-                    Password: <input type="password" name="password" placeholder="Enter Password" value={password} onChange={(e) => setpassword(e.target.value)} />
+                    Password: <input type="password" name="password" placeholder="Enter Password" value={password} onChange={(e) => setpassword(e.target.value)} required/>
                 </label>
-                <button type="submit" name="submit" onClick={handlesubmit} className="sign-btn">Sign up</button>
+                <button type="submit" value='Signup' className="sign-btn">Sign up</button>
             </form>
         </div>
     )
