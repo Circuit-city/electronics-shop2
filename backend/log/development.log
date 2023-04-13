@@ -199,3 +199,23 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 1ms (Allocations: 316)
 
 
+Started POST "/register" for ::1 at 2023-04-13 13:07:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"kelly", "email"=>"kelly@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"kelly", "email"=>"kelly@gmail.com"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kelly@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "kelly"], ["email", "kelly@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-13 10:08:00.426294"], ["updated_at", "2023-04-13 10:08:00.426294"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (164.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 416ms (Views: 0.3ms | ActiveRecord: 166.0ms | Allocations: 40186)
+
+
+Started DELETE "/logout" for ::1 at 2023-04-13 13:08:20 +0300
+Processing by SessionsController#destroy as */*
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 167)
+
+
