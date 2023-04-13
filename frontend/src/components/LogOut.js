@@ -1,26 +1,42 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { logout, selectUser } from '../features/userSlice'
+import { useNavigate } from "react-router-dom";
 
-const LogOut = () => {
-const user = useSelector(selectUser)
-const dispatch = useDispatch()
+const LogOut = ({user}) => {
+  const navigate = useNavigate();
+  
+  const storedUser = localStorage.getItem('user');
+  const loggedInUser = storedUser ? JSON.parse(storedUser) : null;;
+  const handleLogout = async () => {
+    if (!loggedInUser && !user) {
+      // If user is not logged in, redirect to login page
+      navigate("/login");
+      return;
+    }
 
-   const handleLogout = (e) =>{
-    e.preventDefault()
-    dispatch(logout())
-   } 
+    const response = await fetch(`http://localhost:3000/logout`, {
+      method: 'DELETE'
+    });
 
+    if (response.ok) {
+      // Clear user data from local storage 
+      localStorage.removeItem('user');
+      navigate("/login");
+    } else {
+      console.error(response);
+    }
+  }
+  console.log("user in LogOut:", loggedInUser);
   return (
     <div>
-      <h1>
-        welcome <span>{user.name}</span>
-        
-      </h1>
+      {loggedInUser && (
+        <h1>
+          welcome <span>{loggedInUser.name}</span>
+        </h1>
+      )}
       <button onClick={(e) => handleLogout(e)}>logout</button>
-     
     </div>
   )
 }
 
 export default LogOut
+
