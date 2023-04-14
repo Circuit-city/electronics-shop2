@@ -87,6 +87,10 @@
   color: white;
 }
 
-
+#additional-boxes{
+  display: flex;
+  justify-content: space-around; 
+  margin-top: 3rem;
+}
 
 

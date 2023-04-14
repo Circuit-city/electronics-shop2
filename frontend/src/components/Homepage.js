@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import Navbar from "./Navbar";
 
 
@@ -32,6 +32,20 @@ function Homepage() {
         <div className="box">
           <i className="fas fa-clock"></i>
           <h3>Year round sales on select items</h3>
+        </div>
+      </div>
+      <div id="additional-boxes" className="boxes-container">
+        <div className="box box4">
+          <i className="fas fa-gift"></i>
+          <h3>Special Offers</h3>
+        </div>
+        <div className="box box5">
+          <i className="fas fa-truck"></i>
+          <h3>Fast Shipping</h3>
+        </div>
+        <div className="box box6">
+          <i className="fas fa-check"></i>
+          <h3>100% Satisfaction Guarantee</h3>
         </div>
       </div>
     </div>
