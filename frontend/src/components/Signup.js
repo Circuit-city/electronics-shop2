@@ -7,8 +7,7 @@ function Signup(){
     const [password,setpassword] = useState('');
     const navigate = useNavigate()
 
-    function handlesubmit(e){
-        e.preventDefault()
+    function handlesubmit(){
         console.log(name,email,password)
 
         fetch(`http://localhost:3000/register`, {
