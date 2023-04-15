@@ -1,6 +1,7 @@
 import React, {  useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LogOut from "./LogOut";
+import './Login.css'
 
 const Login = () => {
   const [user, setUser] = useState(null)
@@ -44,20 +45,18 @@ const Login = () => {
     <>
       <div className="loginPage">
         <div className="containerone">
+         <div className="upper-div">
+         <div className="image">
+            <p className="img1"></p>
+            <img src={require('../assets/headphone.png')} alt="headphone" className="img2"/>
+          </div>
           <div className="form">
             <h1>LOGIN </h1>
-            <div className="lines">
-              <div className="lineone"></div>
-              <p>Sign in with email</p>
-              <div className="line"></div>
-            </div>
             <form onSubmit={(e) => {
               e.preventDefault();
               userLogin();
             }}>
-              <div className="div"><p>Email*</p></div>
-              <div className="emailplace"><input ref={emailRef} type="email" placeholder="johndoe@gmail.com" required /></div>
-              <div className="div"><p>Password*</p></div>
+              <div className="emailplace"><input ref={emailRef} type="email" placeholder="Enter email" required /></div>
               <div className="passplace"><input ref={passwordRef} type="password" placeholder="Input password" required /></div>
               <div className="forgot">
                 <p>Forgot password?</p>
@@ -71,6 +70,26 @@ const Login = () => {
               <Link to='/Signup'>Create an Account</Link>
             </div>
           </div>
+         </div>
+         <div className="lower-div">
+          <p>What will you discover?</p>
+            <div className="big">
+              <div className="preview">
+                  <div className="laptop">
+                    <img src={require('../assets/laptop-preview.png')} alt="laptop" />
+                    <p>Laptops</p>
+                  </div>
+                  <div className="tv">
+                      <img src={require('../assets/tv.png')} alt="television" />
+                      <p>Flatscreens</p>
+                  </div>
+                  <div className="hd">
+                      <img src={require('../assets/hd.png')} alt="hd" />
+                      <p>Headphones</p>
+                  </div>
+              </div>
+            </div>
+         </div>
         </div>
       </div>
       
