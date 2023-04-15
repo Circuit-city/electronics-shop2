@@ -91,6 +91,18 @@
   display: flex;
   justify-content: space-around; 
   margin-top: 3rem;
+  height: 350px;
+  padding-bottom: 20px;
 }
+
+#additional-boxes img{
+  height: 200px;
+}
+
+#additional-boxes h2{
+  color: yellow;
+  font-size: 20px;
+}
+
 
 
