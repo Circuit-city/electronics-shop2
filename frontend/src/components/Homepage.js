@@ -17,31 +17,32 @@ function Homepage() {
             <h3>Special Discount</h3>
           <h2>40% off Sale on Headphones!</h2>
           <p>Get high-quality headphones at discounted prices.</p>
+          <p>Unbeatable Sound Quality, elevate Your Audio Experience with Our Headphones.</p>
+          <p>Premium Sound Experience, Get the Best Headphones for Your Music.</p>
         </div>
         
       </div>
       <div id="boxes" className="boxes-container">
         <div className="box">
-          <i className="fas fa-wallet"></i>
+          <img src="https://53525363.000webhostapp.com/Images/Wallet_icon_grey-removebg-preview.png" alt=""/>
           <h3>Reasonable Pricing</h3>
         </div>
         <div className="box">
-          <i className="fas fa-phone"></i>
-          <h3>24/7 Client Support</h3>
+          <img src="https://53525363.000webhostapp.com/Images/___2_-removebg-preview.png" alt=""/>
+          <h3>24 hour Client Support</h3>
         </div>
         <div className="box">
-          <i className="fas fa-clock"></i>
+        <img src="https://53525363.000webhostapp.com/Images/Clock_app_icon_gray-removebg-preview.png" alt=""/>
           <h3>Year round sales on select items</h3>
         </div>
       </div>
       <div id="additional-boxes" className="boxes-container">
         <div className="box box4">
-          <i className="fas fa-gift"></i>
           <img
             src="https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"
             alt=""
           />
-          <h2>Reasonable Pricing</h2>
+          <h2>Latest sound system</h2>
           <h3>Special Offers</h3>
         </div>
         <div className="box box5">
@@ -58,7 +59,7 @@ function Homepage() {
             src="https://53525363.000webhostapp.com/Images/MSI_-_Prestige_14_EVO_14__FHD_Laptop_-_i5-1135G7_-_16GB_Memory_-_IrisXe_-_512GB_SSD_-_Win10Home_-_Rose_Pink-removebg-preview.png"
             alt=""
           />
-          <h2>Reasonable Pricing</h2>
+          <h2>Latest Software</h2>
           <h3>100% Satisfaction Guarantee</h3>
         </div>
       </div>

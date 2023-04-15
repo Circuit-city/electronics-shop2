@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -61,13 +64,33 @@
 .slider-promotion{
   color: white;
   margin-left: -10rem;
+  
 }
 
+.slider-promotion h3{
+  color: yellow;
+  font-size: 22px;
+  
+}
+
+.slider-promotion p{
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 18px;
+}
+
+.slider-promotion h2{
+  font-family: 'Righteous', cursive;
+  
+}
 
 #boxes {
   display: flex;
   justify-content: space-around; 
   margin-top: 2rem; 
+}
+
+#boxes img{
+  height: 50px;
 }
 
 .box {
@@ -85,12 +108,13 @@
 .box h3 {
   text-align: center;
   color: white;
+  
 }
 
 #additional-boxes{
   display: flex;
   justify-content: space-around; 
-  margin-top: 3rem;
+  margin-top: 2rem;
   height: 350px;
   padding-bottom: 20px;
 }
