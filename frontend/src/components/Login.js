@@ -10,7 +10,7 @@ const Login = () => {
   const passwordRef = useRef();
   
   const userLogin = async () => {
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('https://circuit-city-sxh8.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const Login = () => {
        
       } else {
         // If login is unsuccessful, display an error message
-        alert(data.message);
+        alert('Invalid email or password');
       }
     
   }
