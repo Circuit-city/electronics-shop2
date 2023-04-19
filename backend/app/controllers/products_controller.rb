@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
+    product = Product.find(params[:id])
     render json: @product
   end
 
@@ -18,9 +19,9 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      render json: @product, status: :created, location: @product
+      render json: @product, status: :created
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       render json: @product
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +47,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :category_id, :price)
+      params.require(:product).permit(:name, :description, :category_id, :price, :image)
     end
 end

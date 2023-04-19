@@ -379,3 +379,1019 @@ Migrating to AddRoleToUsers (20230415200828)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 14], ["price", 12000.0], ["created_at", "2023-04-15 20:11:27.348735"], ["updated_at", "2023-04-15 20:11:27.348735"]]
   [1m[36mTRANSACTION (119.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-04-19 21:45:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.6ms | Allocations: 845)
+Completed 200 OK in 26ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4093)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 21:45:06 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 25.6ms | ActiveRecord: 1.2ms | Allocations: 23125)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-04-19 21:45:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 18:48:05.301375"], ["updated_at", "2023-04-19 18:48:05.301375"]]
+  [1m[36mTRANSACTION (102.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 18:48:05.411069"], ["updated_at", "2023-04-19 18:48:05.411069"]]
+  [1m[36mTRANSACTION (85.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 18:48:05.510540"], ["updated_at", "2023-04-19 18:48:05.510540"]]
+  [1m[36mTRANSACTION (86.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 18:48:05.610552"], ["updated_at", "2023-04-19 18:48:05.610552"]]
+  [1m[36mTRANSACTION (87.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 20], ["price", 140000.0], ["created_at", "2023-04-19 18:48:05.770948"], ["updated_at", "2023-04-19 18:48:05.770948"]]
+  [1m[36mTRANSACTION (131.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 18], ["price", 15000.0], ["created_at", "2023-04-19 18:48:05.908693"], ["updated_at", "2023-04-19 18:48:05.908693"]]
+  [1m[36mTRANSACTION (94.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 17], ["price", 65000.0], ["created_at", "2023-04-19 18:48:06.011820"], ["updated_at", "2023-04-19 18:48:06.011820"]]
+  [1m[36mTRANSACTION (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 17], ["price", 70000.0], ["created_at", "2023-04-19 18:48:06.110440"], ["updated_at", "2023-04-19 18:48:06.110440"]]
+  [1m[36mTRANSACTION (109.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 20], ["price", 80000.0], ["created_at", "2023-04-19 18:48:06.232299"], ["updated_at", "2023-04-19 18:48:06.232299"]]
+  [1m[36mTRANSACTION (110.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 18], ["price", 10000.0], ["created_at", "2023-04-19 18:48:06.354483"], ["updated_at", "2023-04-19 18:48:06.354483"]]
+  [1m[36mTRANSACTION (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 17], ["price", 50000.0], ["created_at", "2023-04-19 18:48:06.445336"], ["updated_at", "2023-04-19 18:48:06.445336"]]
+  [1m[36mTRANSACTION (105.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 19], ["price", 70000.0], ["created_at", "2023-04-19 18:48:06.567115"], ["updated_at", "2023-04-19 18:48:06.567115"]]
+  [1m[36mTRANSACTION (129.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 18], ["price", 12000.0], ["created_at", "2023-04-19 18:48:06.713001"], ["updated_at", "2023-04-19 18:48:06.713001"]]
+  [1m[36mTRANSACTION (106.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 18:49:33.617706"], ["updated_at", "2023-04-19 18:49:33.617706"]]
+  [1m[36mTRANSACTION (78.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 18:49:33.703151"], ["updated_at", "2023-04-19 18:49:33.703151"]]
+  [1m[36mTRANSACTION (80.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 18:49:33.791314"], ["updated_at", "2023-04-19 18:49:33.791314"]]
+  [1m[36mTRANSACTION (78.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 18:49:33.879120"], ["updated_at", "2023-04-19 18:49:33.879120"]]
+  [1m[36mTRANSACTION (78.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 24], ["price", 140000.0], ["created_at", "2023-04-19 18:49:34.018713"], ["updated_at", "2023-04-19 18:49:34.018713"]]
+  [1m[36mTRANSACTION (116.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 22], ["price", 15000.0], ["created_at", "2023-04-19 18:49:34.146440"], ["updated_at", "2023-04-19 18:49:34.146440"]]
+  [1m[36mTRANSACTION (102.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 21], ["price", 65000.0], ["created_at", "2023-04-19 18:49:34.263605"], ["updated_at", "2023-04-19 18:49:34.263605"]]
+  [1m[36mTRANSACTION (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 21], ["price", 70000.0], ["created_at", "2023-04-19 18:49:34.362665"], ["updated_at", "2023-04-19 18:49:34.362665"]]
+  [1m[36mTRANSACTION (94.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 24], ["price", 80000.0], ["created_at", "2023-04-19 18:49:34.535435"], ["updated_at", "2023-04-19 18:49:34.535435"]]
+  [1m[36mTRANSACTION (93.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 22], ["price", 10000.0], ["created_at", "2023-04-19 18:49:34.686052"], ["updated_at", "2023-04-19 18:49:34.686052"]]
+  [1m[36mTRANSACTION (120.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 21], ["price", 50000.0], ["created_at", "2023-04-19 18:49:34.822873"], ["updated_at", "2023-04-19 18:49:34.822873"]]
+  [1m[36mTRANSACTION (94.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 23], ["price", 70000.0], ["created_at", "2023-04-19 18:49:34.929882"], ["updated_at", "2023-04-19 18:49:34.929882"]]
+  [1m[36mTRANSACTION (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 22], ["price", 12000.0], ["created_at", "2023-04-19 18:49:35.040618"], ["updated_at", "2023-04-19 18:49:35.040618"]]
+  [1m[36mTRANSACTION (98.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 18:57:27.113362"], ["updated_at", "2023-04-19 18:57:27.113362"]]
+  [1m[36mTRANSACTION (70.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 18:57:27.189549"], ["updated_at", "2023-04-19 18:57:27.189549"]]
+  [1m[36mTRANSACTION (78.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 18:57:27.275751"], ["updated_at", "2023-04-19 18:57:27.275751"]]
+  [1m[36mTRANSACTION (73.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 18:57:27.355884"], ["updated_at", "2023-04-19 18:57:27.355884"]]
+  [1m[36mTRANSACTION (65.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 28], ["price", 140000.0], ["created_at", "2023-04-19 18:57:27.466310"], ["updated_at", "2023-04-19 18:57:27.466310"]]
+  [1m[36mTRANSACTION (94.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 26], ["price", 15000.0], ["created_at", "2023-04-19 18:57:27.567448"], ["updated_at", "2023-04-19 18:57:27.567448"]]
+  [1m[36mTRANSACTION (349.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 25], ["price", 65000.0], ["created_at", "2023-04-19 18:57:27.928501"], ["updated_at", "2023-04-19 18:57:27.928501"]]
+  [1m[36mTRANSACTION (86.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 25], ["price", 70000.0], ["created_at", "2023-04-19 18:57:28.050439"], ["updated_at", "2023-04-19 18:57:28.050439"]]
+  [1m[36mTRANSACTION (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 28], ["price", 80000.0], ["created_at", "2023-04-19 18:57:28.190003"], ["updated_at", "2023-04-19 18:57:28.190003"]]
+  [1m[36mTRANSACTION (86.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 26], ["price", 10000.0], ["created_at", "2023-04-19 18:57:28.333077"], ["updated_at", "2023-04-19 18:57:28.333077"]]
+  [1m[36mTRANSACTION (109.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 25], ["price", 50000.0], ["created_at", "2023-04-19 18:57:28.453028"], ["updated_at", "2023-04-19 18:57:28.453028"]]
+  [1m[36mTRANSACTION (89.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 27], ["price", 70000.0], ["created_at", "2023-04-19 18:57:28.553891"], ["updated_at", "2023-04-19 18:57:28.553891"]]
+  [1m[36mTRANSACTION (83.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 26], ["price", 12000.0], ["created_at", "2023-04-19 18:57:28.657244"], ["updated_at", "2023-04-19 18:57:28.657244"]]
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (127.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (105.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (108.8ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (128.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at" FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at" FROM "aproducts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (136.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (116.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (80.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230415200828)[0m
+  [1m[35m (87.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134);
+
+[0m
+  [1m[35m (141.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-19 18:59:21.940098"], ["updated_at", "2023-04-19 18:59:21.940098"]]
+  [1m[36mTRANSACTION (87.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "c074b8e2881effb3f7dd394c18e703928ffbad54"], ["created_at", "2023-04-19 18:59:22.058086"], ["updated_at", "2023-04-19 18:59:22.058086"]]
+  [1m[36mTRANSACTION (91.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (103.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (109.0ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (122.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at" FROM "products"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at" FROM "aproducts"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (84.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (112.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (88.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230415200828)[0m
+  [1m[35m (86.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134);
+
+[0m
+  [1m[35m (101.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-19 18:59:23.229513"], ["updated_at", "2023-04-19 18:59:23.229513"]]
+  [1m[36mTRANSACTION (68.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-04-19 18:59:23.323720"], ["key", "environment"]]
+  [1m[36mTRANSACTION (61.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "c074b8e2881effb3f7dd394c18e703928ffbad54"], ["created_at", "2023-04-19 18:59:23.408551"], ["updated_at", "2023-04-19 18:59:23.408551"]]
+  [1m[36mTRANSACTION (69.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "John Doe"], ["email", "johndoe@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-19 18:59:23.837149"], ["updated_at", "2023-04-19 18:59:23.837149"], ["role", "admin"]]
+  [1m[36mTRANSACTION (91.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jane Smith"], ["email", "janesmith@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-19 18:59:24.179345"], ["updated_at", "2023-04-19 18:59:24.179345"], ["role", "user"]]
+  [1m[36mTRANSACTION (104.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 18:59:24.317884"], ["updated_at", "2023-04-19 18:59:24.317884"]]
+  [1m[36mTRANSACTION (98.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 18:59:24.425844"], ["updated_at", "2023-04-19 18:59:24.425844"]]
+  [1m[36mTRANSACTION (73.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 18:59:24.514977"], ["updated_at", "2023-04-19 18:59:24.514977"]]
+  [1m[36mTRANSACTION (70.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 18:59:24.600523"], ["updated_at", "2023-04-19 18:59:24.600523"]]
+  [1m[36mTRANSACTION (73.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-04-19 18:59:24.714600"], ["updated_at", "2023-04-19 18:59:24.714600"]]
+  [1m[36mTRANSACTION (101.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 2], ["price", 15000.0], ["created_at", "2023-04-19 18:59:24.824929"], ["updated_at", "2023-04-19 18:59:24.824929"]]
+  [1m[36mTRANSACTION (98.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 1], ["price", 65000.0], ["created_at", "2023-04-19 18:59:24.936653"], ["updated_at", "2023-04-19 18:59:24.936653"]]
+  [1m[36mTRANSACTION (86.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 1], ["price", 70000.0], ["created_at", "2023-04-19 18:59:25.036055"], ["updated_at", "2023-04-19 18:59:25.036055"]]
+  [1m[36mTRANSACTION (86.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 4], ["price", 80000.0], ["created_at", "2023-04-19 18:59:25.135804"], ["updated_at", "2023-04-19 18:59:25.135804"]]
+  [1m[36mTRANSACTION (83.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 2], ["price", 10000.0], ["created_at", "2023-04-19 18:59:25.235238"], ["updated_at", "2023-04-19 18:59:25.235238"]]
+  [1m[36mTRANSACTION (94.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 1], ["price", 50000.0], ["created_at", "2023-04-19 18:59:25.351067"], ["updated_at", "2023-04-19 18:59:25.351067"]]
+  [1m[36mTRANSACTION (83.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 3], ["price", 70000.0], ["created_at", "2023-04-19 18:59:25.458104"], ["updated_at", "2023-04-19 18:59:25.458104"]]
+  [1m[36mTRANSACTION (92.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 2], ["price", 12000.0], ["created_at", "2023-04-19 18:59:25.569328"], ["updated_at", "2023-04-19 18:59:25.569328"]]
+  [1m[36mTRANSACTION (113.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageUrlToProducts (20230419192125)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "image_url" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230419192125"]]
+  [1m[36mTRANSACTION (73.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 19:48:08.447045"], ["updated_at", "2023-04-19 19:48:08.447045"]]
+  [1m[36mTRANSACTION (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 19:48:08.539663"], ["updated_at", "2023-04-19 19:48:08.539663"]]
+  [1m[36mTRANSACTION (76.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 19:48:08.627826"], ["updated_at", "2023-04-19 19:48:08.627826"]]
+  [1m[36mTRANSACTION (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 19:48:08.748643"], ["updated_at", "2023-04-19 19:48:08.748643"]]
+  [1m[36mTRANSACTION (71.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 8], ["price", 140000.0], ["created_at", "2023-04-19 19:48:08.849626"], ["updated_at", "2023-04-19 19:48:08.849626"], ["image_url", nil]]
+  [1m[36mTRANSACTION (93.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 6], ["price", 15000.0], ["created_at", "2023-04-19 19:48:08.949560"], ["updated_at", "2023-04-19 19:48:08.949560"], ["image_url", nil]]
+  [1m[36mTRANSACTION (102.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 5], ["price", 65000.0], ["created_at", "2023-04-19 19:48:09.063860"], ["updated_at", "2023-04-19 19:48:09.063860"], ["image_url", nil]]
+  [1m[36mTRANSACTION (97.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 5], ["price", 70000.0], ["created_at", "2023-04-19 19:48:09.284814"], ["updated_at", "2023-04-19 19:48:09.284814"], ["image_url", nil]]
+  [1m[36mTRANSACTION (149.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 8], ["price", 80000.0], ["created_at", "2023-04-19 19:48:09.515261"], ["updated_at", "2023-04-19 19:48:09.515261"], ["image_url", nil]]
+  [1m[36mTRANSACTION (103.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 6], ["price", 10000.0], ["created_at", "2023-04-19 19:48:09.688031"], ["updated_at", "2023-04-19 19:48:09.688031"], ["image_url", nil]]
+  [1m[36mTRANSACTION (122.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 5], ["price", 50000.0], ["created_at", "2023-04-19 19:48:09.826584"], ["updated_at", "2023-04-19 19:48:09.826584"], ["image_url", nil]]
+  [1m[36mTRANSACTION (89.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 7], ["price", 70000.0], ["created_at", "2023-04-19 19:48:09.930206"], ["updated_at", "2023-04-19 19:48:09.930206"], ["image_url", nil]]
+  [1m[36mTRANSACTION (86.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 6], ["price", 12000.0], ["created_at", "2023-04-19 19:48:10.027807"], ["updated_at", "2023-04-19 19:48:10.027807"], ["image_url", nil]]
+  [1m[36mTRANSACTION (96.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 19:49:56.869283"], ["updated_at", "2023-04-19 19:49:56.869283"]]
+  [1m[36mTRANSACTION (64.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 19:49:56.938936"], ["updated_at", "2023-04-19 19:49:56.938936"]]
+  [1m[36mTRANSACTION (68.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 19:49:57.016538"], ["updated_at", "2023-04-19 19:49:57.016538"]]
+  [1m[36mTRANSACTION (68.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 19:49:57.094337"], ["updated_at", "2023-04-19 19:49:57.094337"]]
+  [1m[36mTRANSACTION (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImageToProducts (20230419195325)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "image" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230419195325"]]
+  [1m[36mTRANSACTION (82.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 19:54:11.423362"], ["updated_at", "2023-04-19 19:54:11.423362"]]
+  [1m[36mTRANSACTION (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 19:54:11.516352"], ["updated_at", "2023-04-19 19:54:11.516352"]]
+  [1m[36mTRANSACTION (76.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 19:54:11.605573"], ["updated_at", "2023-04-19 19:54:11.605573"]]
+  [1m[36mTRANSACTION (88.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 19:54:11.706389"], ["updated_at", "2023-04-19 19:54:11.706389"]]
+  [1m[36mTRANSACTION (63.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 16], ["price", 140000.0], ["created_at", "2023-04-19 19:54:11.819565"], ["updated_at", "2023-04-19 19:54:11.819565"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  [1m[36mTRANSACTION (103.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 14], ["price", 15000.0], ["created_at", "2023-04-19 19:54:11.931792"], ["updated_at", "2023-04-19 19:54:11.931792"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"]]
+  [1m[36mTRANSACTION (471.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 13], ["price", 65000.0], ["created_at", "2023-04-19 19:54:12.416178"], ["updated_at", "2023-04-19 19:54:12.416178"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Best_MacBook_alternatives_for_2022___Digital_Trends-removebg-preview.png"]]
+  [1m[36mTRANSACTION (96.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 13], ["price", 70000.0], ["created_at", "2023-04-19 19:54:12.593474"], ["updated_at", "2023-04-19 19:54:12.593474"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/I_like_tv_too_-removebg-preview.png"]]
+  [1m[36mTRANSACTION (107.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 16], ["price", 80000.0], ["created_at", "2023-04-19 19:54:12.771878"], ["updated_at", "2023-04-19 19:54:12.771878"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Canon_EOS-1D_X_Mark_II_Full-Frame_DSLR_Camera_for_Professional_Image_Creators__Features_20_2MP__Improved_AF_and_4K_Video-removebg-preview.png"]]
+  [1m[36mTRANSACTION (112.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 14], ["price", 10000.0], ["created_at", "2023-04-19 19:54:12.896243"], ["updated_at", "2023-04-19 19:54:12.896243"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Functional_Headphones_That_Are_Also_Pretty_Chic-removebg-preview.png"]]
+  [1m[36mTRANSACTION (139.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 13], ["price", 50000.0], ["created_at", "2023-04-19 19:54:13.054782"], ["updated_at", "2023-04-19 19:54:13.054782"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"]]
+  [1m[36mTRANSACTION (76.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 15], ["price", 70000.0], ["created_at", "2023-04-19 19:54:13.149130"], ["updated_at", "2023-04-19 19:54:13.149130"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"]]
+  [1m[36mTRANSACTION (75.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 14], ["price", 12000.0], ["created_at", "2023-04-19 19:54:13.239049"], ["updated_at", "2023-04-19 19:54:13.239049"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png"]]
+  [1m[36mTRANSACTION (91.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 20:05:51.232343"], ["updated_at", "2023-04-19 20:05:51.232343"]]
+  [1m[36mTRANSACTION (78.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 20:05:51.316733"], ["updated_at", "2023-04-19 20:05:51.316733"]]
+  [1m[36mTRANSACTION (75.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 20:05:51.406109"], ["updated_at", "2023-04-19 20:05:51.406109"]]
+  [1m[36mTRANSACTION (76.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 20:05:51.492336"], ["updated_at", "2023-04-19 20:05:51.492336"]]
+  [1m[36mTRANSACTION (73.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (101.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (339.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar, "image" varchar)[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (128.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "aproducts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (78.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (150.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (126.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230419195325)[0m
+  [1m[35m (86.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134),
+(20230415200828),
+(20230419192125);
+
+[0m
+  [1m[35m (96.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-19 20:06:22.080130"], ["updated_at", "2023-04-19 20:06:22.080130"]]
+  [1m[36mTRANSACTION (70.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "8920bcfc864655f82fdfd7add2619947b9ad9a4d"], ["created_at", "2023-04-19 20:06:22.185443"], ["updated_at", "2023-04-19 20:06:22.185443"]]
+  [1m[36mTRANSACTION (76.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (121.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (160.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar, "image" varchar)[0m
+  [1m[35m (130.4ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (126.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "products"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "aproducts"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (102.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (120.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (100.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230419195325)[0m
+  [1m[35m (108.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134),
+(20230415200828),
+(20230419192125);
+
+[0m
+  [1m[35m (112.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-19 20:06:23.501675"], ["updated_at", "2023-04-19 20:06:23.501675"]]
+  [1m[36mTRANSACTION (89.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-04-19 20:06:23.608544"], ["key", "environment"]]
+  [1m[36mTRANSACTION (69.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "8920bcfc864655f82fdfd7add2619947b9ad9a4d"], ["created_at", "2023-04-19 20:06:23.703380"], ["updated_at", "2023-04-19 20:06:23.703380"]]
+  [1m[36mTRANSACTION (76.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "John Doe"], ["email", "johndoe@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-19 20:06:24.220723"], ["updated_at", "2023-04-19 20:06:24.220723"], ["role", "admin"]]
+  [1m[36mTRANSACTION (91.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jane Smith"], ["email", "janesmith@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-19 20:06:24.561821"], ["updated_at", "2023-04-19 20:06:24.561821"], ["role", "user"]]
+  [1m[36mTRANSACTION (94.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 20:06:24.694204"], ["updated_at", "2023-04-19 20:06:24.694204"]]
+  [1m[36mTRANSACTION (66.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 20:06:24.772676"], ["updated_at", "2023-04-19 20:06:24.772676"]]
+  [1m[36mTRANSACTION (65.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 20:06:24.850453"], ["updated_at", "2023-04-19 20:06:24.850453"]]
+  [1m[36mTRANSACTION (74.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 20:06:24.939320"], ["updated_at", "2023-04-19 20:06:24.939320"]]
+  [1m[36mTRANSACTION (66.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-04-19 20:06:25.053580"], ["updated_at", "2023-04-19 20:06:25.053580"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  [1m[36mTRANSACTION (68.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 2], ["price", 15000.0], ["created_at", "2023-04-19 20:06:25.128780"], ["updated_at", "2023-04-19 20:06:25.128780"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"]]
+  [1m[36mTRANSACTION (65.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 1], ["price", 65000.0], ["created_at", "2023-04-19 20:06:25.206762"], ["updated_at", "2023-04-19 20:06:25.206762"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Best_MacBook_alternatives_for_2022___Digital_Trends-removebg-preview.png"]]
+  [1m[36mTRANSACTION (63.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 1], ["price", 70000.0], ["created_at", "2023-04-19 20:06:25.284344"], ["updated_at", "2023-04-19 20:06:25.284344"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/I_like_tv_too_-removebg-preview.png"]]
+  [1m[36mTRANSACTION (74.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 4], ["price", 80000.0], ["created_at", "2023-04-19 20:06:25.373293"], ["updated_at", "2023-04-19 20:06:25.373293"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Canon_EOS-1D_X_Mark_II_Full-Frame_DSLR_Camera_for_Professional_Image_Creators__Features_20_2MP__Improved_AF_and_4K_Video-removebg-preview.png"]]
+  [1m[36mTRANSACTION (86.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 2], ["price", 10000.0], ["created_at", "2023-04-19 20:06:25.473184"], ["updated_at", "2023-04-19 20:06:25.473184"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Functional_Headphones_That_Are_Also_Pretty_Chic-removebg-preview.png"]]
+  [1m[36mTRANSACTION (97.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 1], ["price", 50000.0], ["created_at", "2023-04-19 20:06:25.582651"], ["updated_at", "2023-04-19 20:06:25.582651"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"]]
+  [1m[36mTRANSACTION (66.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 3], ["price", 70000.0], ["created_at", "2023-04-19 20:06:25.662378"], ["updated_at", "2023-04-19 20:06:25.662378"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"]]
+  [1m[36mTRANSACTION (58.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 2], ["price", 12000.0], ["created_at", "2023-04-19 20:06:25.739229"], ["updated_at", "2023-04-19 20:06:25.739229"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png"]]
+  [1m[36mTRANSACTION (61.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 20:13:41.764121"], ["updated_at", "2023-04-19 20:13:41.764121"]]
+  [1m[36mTRANSACTION (81.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 20:13:41.852129"], ["updated_at", "2023-04-19 20:13:41.852129"]]
+  [1m[36mTRANSACTION (109.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 20:13:41.973696"], ["updated_at", "2023-04-19 20:13:41.973696"]]
+  [1m[36mTRANSACTION (78.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 20:13:42.062312"], ["updated_at", "2023-04-19 20:13:42.062312"]]
+  [1m[36mTRANSACTION (67.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 8], ["price", 140000.0], ["created_at", "2023-04-19 20:13:42.173204"], ["updated_at", "2023-04-19 20:13:42.173204"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  [1m[36mTRANSACTION (104.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 6], ["price", 15000.0], ["created_at", "2023-04-19 20:13:42.287195"], ["updated_at", "2023-04-19 20:13:42.287195"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"]]
+  [1m[36mTRANSACTION (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (23.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 5], ["price", 65000.0], ["created_at", "2023-04-19 20:13:42.388182"], ["updated_at", "2023-04-19 20:13:42.388182"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Best_MacBook_alternatives_for_2022___Digital_Trends-removebg-preview.png"]]
+  [1m[36mTRANSACTION (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 5], ["price", 70000.0], ["created_at", "2023-04-19 20:13:42.549779"], ["updated_at", "2023-04-19 20:13:42.549779"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/I_like_tv_too_-removebg-preview.png"]]
+  [1m[36mTRANSACTION (82.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 8], ["price", 80000.0], ["created_at", "2023-04-19 20:13:42.674283"], ["updated_at", "2023-04-19 20:13:42.674283"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Canon_EOS-1D_X_Mark_II_Full-Frame_DSLR_Camera_for_Professional_Image_Creators__Features_20_2MP__Improved_AF_and_4K_Video-removebg-preview.png"]]
+  [1m[36mTRANSACTION (78.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 6], ["price", 10000.0], ["created_at", "2023-04-19 20:13:42.764397"], ["updated_at", "2023-04-19 20:13:42.764397"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Functional_Headphones_That_Are_Also_Pretty_Chic-removebg-preview.png"]]
+  [1m[36mTRANSACTION (77.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 5], ["price", 50000.0], ["created_at", "2023-04-19 20:13:42.853928"], ["updated_at", "2023-04-19 20:13:42.853928"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"]]
+  [1m[36mTRANSACTION (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 7], ["price", 70000.0], ["created_at", "2023-04-19 20:13:42.941880"], ["updated_at", "2023-04-19 20:13:42.941880"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"]]
+  [1m[36mTRANSACTION (111.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 6], ["price", 12000.0], ["created_at", "2023-04-19 20:13:43.066096"], ["updated_at", "2023-04-19 20:13:43.066096"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png"]]
+  [1m[36mTRANSACTION (105.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (95.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (594.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar, "image" varchar)[0m
+  [1m[35m (99.5ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (139.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "products"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "aproducts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (99.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (128.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (134.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230419195325)[0m
+  [1m[35m (97.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134),
+(20230415200828),
+(20230419192125);
+
+[0m
+  [1m[35m (128.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-19 20:14:42.325897"], ["updated_at", "2023-04-19 20:14:42.325897"]]
+  [1m[36mTRANSACTION (94.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "8920bcfc864655f82fdfd7add2619947b9ad9a4d"], ["created_at", "2023-04-19 20:14:42.460738"], ["updated_at", "2023-04-19 20:14:42.460738"]]
+  [1m[36mTRANSACTION (124.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (141.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (116.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar, "image" varchar)[0m
+  [1m[35m (121.5ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (117.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "products"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "aproducts"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (89.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (130.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (92.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230419195325)[0m
+  [1m[35m (97.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134),
+(20230415200828),
+(20230419192125);
+
+[0m
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-19 20:14:43.741055"], ["updated_at", "2023-04-19 20:14:43.741055"]]
+  [1m[36mTRANSACTION (99.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-04-19 20:14:43.848741"], ["key", "environment"]]
+  [1m[36mTRANSACTION (119.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "8920bcfc864655f82fdfd7add2619947b9ad9a4d"], ["created_at", "2023-04-19 20:14:43.976905"], ["updated_at", "2023-04-19 20:14:43.976905"]]
+  [1m[36mTRANSACTION (94.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "John Doe"], ["email", "johndoe@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-19 20:14:44.552854"], ["updated_at", "2023-04-19 20:14:44.552854"], ["role", "admin"]]
+  [1m[36mTRANSACTION (82.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jane Smith"], ["email", "janesmith@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-19 20:14:44.907043"], ["updated_at", "2023-04-19 20:14:44.907043"], ["role", "user"]]
+  [1m[36mTRANSACTION (83.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 20:14:45.024771"], ["updated_at", "2023-04-19 20:14:45.024771"]]
+  [1m[36mTRANSACTION (85.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 20:14:45.120096"], ["updated_at", "2023-04-19 20:14:45.120096"]]
+  [1m[36mTRANSACTION (84.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 20:14:45.219443"], ["updated_at", "2023-04-19 20:14:45.219443"]]
+  [1m[36mTRANSACTION (61.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 20:14:45.295822"], ["updated_at", "2023-04-19 20:14:45.295822"]]
+  [1m[36mTRANSACTION (60.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-04-19 20:14:45.470207"], ["updated_at", "2023-04-19 20:14:45.470207"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  [1m[36mTRANSACTION (70.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 2], ["price", 15000.0], ["created_at", "2023-04-19 20:14:45.554873"], ["updated_at", "2023-04-19 20:14:45.554873"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"]]
+  [1m[36mTRANSACTION (80.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 1], ["price", 65000.0], ["created_at", "2023-04-19 20:14:45.654405"], ["updated_at", "2023-04-19 20:14:45.654405"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Best_MacBook_alternatives_for_2022___Digital_Trends-removebg-preview.png"]]
+  [1m[36mTRANSACTION (80.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 1], ["price", 70000.0], ["created_at", "2023-04-19 20:14:45.755414"], ["updated_at", "2023-04-19 20:14:45.755414"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/I_like_tv_too_-removebg-preview.png"]]
+  [1m[36mTRANSACTION (164.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 4], ["price", 80000.0], ["created_at", "2023-04-19 20:14:45.938778"], ["updated_at", "2023-04-19 20:14:45.938778"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Canon_EOS-1D_X_Mark_II_Full-Frame_DSLR_Camera_for_Professional_Image_Creators__Features_20_2MP__Improved_AF_and_4K_Video-removebg-preview.png"]]
+  [1m[36mTRANSACTION (93.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 2], ["price", 10000.0], ["created_at", "2023-04-19 20:14:46.043000"], ["updated_at", "2023-04-19 20:14:46.043000"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Functional_Headphones_That_Are_Also_Pretty_Chic-removebg-preview.png"]]
+  [1m[36mTRANSACTION (80.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 1], ["price", 50000.0], ["created_at", "2023-04-19 20:14:46.141384"], ["updated_at", "2023-04-19 20:14:46.141384"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"]]
+  [1m[36mTRANSACTION (196.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 3], ["price", 70000.0], ["created_at", "2023-04-19 20:14:46.352755"], ["updated_at", "2023-04-19 20:14:46.352755"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"]]
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 2], ["price", 12000.0], ["created_at", "2023-04-19 20:14:46.463653"], ["updated_at", "2023-04-19 20:14:46.463653"], ["image_url", nil], ["image", "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png"]]
+  [1m[36mTRANSACTION (93.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:15:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 6333)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveImageUrlFromProducts (20230419201710)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image_url" varchar DEFAULT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image_url","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image_url","image" FROM "products"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image" FROM "aproducts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230419201710"]]
+  [1m[36mTRANSACTION (105.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", nil], ["created_at", "2023-04-19 20:17:30.099503"], ["updated_at", "2023-04-19 20:17:30.099503"]]
+  [1m[36mTRANSACTION (70.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", nil], ["created_at", "2023-04-19 20:17:30.176186"], ["updated_at", "2023-04-19 20:17:30.176186"]]
+  [1m[36mTRANSACTION (69.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", nil], ["created_at", "2023-04-19 20:17:30.258689"], ["updated_at", "2023-04-19 20:17:30.258689"]]
+  [1m[36mTRANSACTION (683.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", nil], ["created_at", "2023-04-19 20:17:30.955941"], ["updated_at", "2023-04-19 20:17:30.955941"]]
+  [1m[36mTRANSACTION (86.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 8], ["price", 140000.0], ["created_at", "2023-04-19 20:17:31.089154"], ["updated_at", "2023-04-19 20:17:31.089154"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  [1m[36mTRANSACTION (105.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 6], ["price", 15000.0], ["created_at", "2023-04-19 20:17:31.202494"], ["updated_at", "2023-04-19 20:17:31.202494"], ["image", "https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"]]
+  [1m[36mTRANSACTION (92.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 5], ["price", 65000.0], ["created_at", "2023-04-19 20:17:31.309241"], ["updated_at", "2023-04-19 20:17:31.309241"], ["image", "https://53525363.000webhostapp.com/Images/Best_MacBook_alternatives_for_2022___Digital_Trends-removebg-preview.png"]]
+  [1m[36mTRANSACTION (83.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 5], ["price", 70000.0], ["created_at", "2023-04-19 20:17:31.480932"], ["updated_at", "2023-04-19 20:17:31.480932"], ["image", "https://53525363.000webhostapp.com/Images/I_like_tv_too_-removebg-preview.png"]]
+  [1m[36mTRANSACTION (69.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 8], ["price", 80000.0], ["created_at", "2023-04-19 20:17:31.614992"], ["updated_at", "2023-04-19 20:17:31.614992"], ["image", "https://53525363.000webhostapp.com/Images/Canon_EOS-1D_X_Mark_II_Full-Frame_DSLR_Camera_for_Professional_Image_Creators__Features_20_2MP__Improved_AF_and_4K_Video-removebg-preview.png"]]
+  [1m[36mTRANSACTION (85.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 6], ["price", 10000.0], ["created_at", "2023-04-19 20:17:31.709182"], ["updated_at", "2023-04-19 20:17:31.709182"], ["image", "https://53525363.000webhostapp.com/Images/Functional_Headphones_That_Are_Also_Pretty_Chic-removebg-preview.png"]]
+  [1m[36mTRANSACTION (86.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 5], ["price", 50000.0], ["created_at", "2023-04-19 20:17:31.811017"], ["updated_at", "2023-04-19 20:17:31.811017"], ["image", "https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"]]
+  [1m[36mTRANSACTION (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 7], ["price", 70000.0], ["created_at", "2023-04-19 20:17:31.897168"], ["updated_at", "2023-04-19 20:17:31.897168"], ["image", "https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"]]
+  [1m[36mTRANSACTION (92.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 6], ["price", 12000.0], ["created_at", "2023-04-19 20:17:32.009084"], ["updated_at", "2023-04-19 20:17:32.009084"], ["image", "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png"]]
+  [1m[36mTRANSACTION (76.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:17:55 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 1.0ms | Allocations: 20003)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:41:05 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 1.1ms | Allocations: 7566)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-19 23:41:39 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+[31mUnpermitted parameter: :image. Context: { controller: ProductsController, action: create, request: #<ActionDispatch::Request:0x00007fd09004bd08>, params: {"name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "controller"=>"products", "action"=>"create", "product"=>{"name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R5"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-04-19 20:41:39.210041"], ["updated_at", "2023-04-19 20:41:39.210041"], ["image", nil]]
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (115.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:21:in `create'
+Completed 201 Created in 173ms (Views: 1.7ms | ActiveRecord: 116.2ms | Allocations: 10264)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:41:46 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 3197)
+
+
+Started PATCH "/products/19" for 127.0.0.1 at 2023-04-19 23:43:09 +0300
+Processing by ProductsController#update as */*
+  Parameters: {"id"=>"19", "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png", "product"=>{"id"=>"19", "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :image. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x00007fd090320600>, params: {"id"=>"19", "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png", "controller"=>"products", "action"=>"update", "product"=>{"id"=>"19", "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:30:in `update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:30:in `update'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 3080)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:44:46 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>19, "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png", "product"=>{"id"=>19, "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 3195)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:47:44 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>19, "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png", "product"=>{"id"=>19, "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.4ms | Allocations: 5488)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-04-19 23:48:00 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOS R44", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOS R44", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R44"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-04-19 20:48:00.173250"], ["updated_at", "2023-04-19 20:48:00.173250"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (72.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:21:in `create'
+Completed 201 Created in 91ms (Views: 0.8ms | ActiveRecord: 73.8ms | Allocations: 5652)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:48:06 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 3331)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-04-19 23:48:33 +0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"1", "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png", "product"=>{"id"=>"1", "name"=>"Canon EOS R5", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:41:39.210Z", "updated_at"=>"2023-04-19T20:41:39.210Z", "image"=>"https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13:in `show'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1197)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2023-04-19 23:48:51 +0300
+Processing by ProductsController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Canon EOS R67", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:14:45.470Z", "updated_at"=>"2023-04-19T20:14:45.470Z", "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"id"=>"1", "name"=>"Canon EOS R67", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:14:45.470Z", "updated_at"=>"2023-04-19T20:14:45.470Z", "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+[31mUnpermitted parameters: :id, :created_at, :updated_at. Context: { controller: ProductsController, action: update, request: #<ActionDispatch::Request:0x00007fd094d9e920>, params: {"id"=>"1", "name"=>"Canon EOS R67", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:14:45.470Z", "updated_at"=>"2023-04-19T20:14:45.470Z", "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "controller"=>"products", "action"=>"update", "product"=>{"id"=>"1", "name"=>"Canon EOS R67", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "created_at"=>"2023-04-19T20:14:45.470Z", "updated_at"=>"2023-04-19T20:14:45.470Z", "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:30:in `update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:30:in `update'
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Canon EOS R67"], ["updated_at", "2023-04-19 20:48:51.520706"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (137.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:30:in `update'
+Completed 200 OK in 154ms (Views: 1.5ms | ActiveRecord: 138.3ms | Allocations: 3544)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-19 23:48:58 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 3309)
+
+
