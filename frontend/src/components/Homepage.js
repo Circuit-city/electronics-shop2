@@ -11,6 +11,8 @@ function Homepage() {
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
   }, []);
+
+ 
     return (
 
       <div>
@@ -81,6 +83,7 @@ function Homepage() {
           <img src={product.image} alt={product.name} />
           <h3>{product.name}</h3>
           <p>Price: {product.price}</p>
+          
         </div>
       ))}
     </div>
