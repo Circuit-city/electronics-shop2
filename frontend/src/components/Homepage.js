@@ -4,16 +4,44 @@ import './homepageAndNavbar.css';
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
+  
   useEffect(() => {
    
     fetch('https://circuit-cityy-po9y.onrender.com/products')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
+
+    const cartData = localStorage.getItem('cartItems');
+if (cartData) {
+  setCart(JSON.parse(cartData));
+}
+
   }, []);
 
- 
-    return (
+  const handleAddToCart = (product) => {
+    const cartData = localStorage.getItem('cart');
+    let cart = {};
+    if (cartData) {
+      cart = JSON.parse(cartData);
+    }
+    if (cart[product.id]) {
+      cart[product.id].quantity += 1;
+    } else {
+      cart[product.id] = {
+        ...product,
+        quantity: 1
+      };
+    }
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+  };
+  
+  const isAddedToCart = (productId) => {
+    return cart[productId] ? true : false;
+  };
+
+  return (
 
       <div>
         <div>
@@ -78,15 +106,20 @@ function Homepage() {
         </div>
       
         <div className="product-cards-container">
-      {products.map(product => (
-        <div key={product.id} className="product-card">
-          <img src={product.image} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>Price: {product.price}</p>
-          
-        </div>
-      ))}
-    </div>
+        {products.map(product => (
+          <div key={product.id} className="product-card">
+            <img src={product.image} alt={product.name} />
+            <h3>{product.name}</h3>
+            <p>Price: {product.price}</p>
+            {isAddedToCart(product.id) ? (
+              <button disabled>Added to Cart</button>
+            ) : (
+              <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
+            )}
+          </div>
+        ))}
+
+      </div>
     </div>
 )}
 
