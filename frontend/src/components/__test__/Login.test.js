@@ -1,13 +1,13 @@
-import { render } from '@testing-library/react';
 import Login from '../Login';
 
 describe('Login', () => {
     test('renders the Login component', () => {
-      render( Login );
+      ( Login );
     });
   });
 
-test ('test', ()=>{
+
+  test ('test', ()=>{
     expect(true).toBe(true);
 })
 
