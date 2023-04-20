@@ -16,6 +16,7 @@ function Navbar({handleLogout, loggedInUser}) {
         <Link to='/checkout'className="nav-link">Checkout</Link>
         <Link to="/login" className="nav-link">Login</Link>
         <Link to='/admin' className='nav-link'>Admin</Link>
+        <Link to='/addproduct' className='nav-link'>Add Products</Link>
         <button onClick={handleLogout} style={{display: loggedInUser ? 'block': 'none'}}>signout</button>
       </div>
     </nav>

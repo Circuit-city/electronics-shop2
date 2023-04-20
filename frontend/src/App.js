@@ -9,12 +9,15 @@ import AdminId from "./components/AdminId"
 import AddProducts from './components/addProducts';
 
 
+
+
 function App() {
   return (
     
     <div>
       
         <Routes>
+         
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/logout" element={<LogOut />}/>
@@ -23,6 +26,8 @@ function App() {
           <Route path="/admin/:id" element={<AdminId />}/>
           <Route path='addproduct' element={<AddProducts />} />
           <Route path="/admin/products/:id" element={<AdminId />}/>
+         
+         
         </Routes>
     </div>
     
