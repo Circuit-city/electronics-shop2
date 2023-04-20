@@ -60,6 +60,7 @@ Processing by UsersController#create as */*
 Completed 200 OK in 399ms (Views: 1.6ms | ActiveRecord: 147.7ms | Allocations: 7050)
 
 
+<<<<<<< HEAD
 Started GET "/users" for 127.0.0.1 at 2023-04-12 14:34:44 +0300
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by UsersController#index as HTML
@@ -199,3 +200,199 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 1ms (Allocations: 316)
 
 
+=======
+Started GET "/" for 127.0.0.1 at 2023-04-12 15:22:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.7.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.6ms | Allocations: 712)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3357)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-12 15:22:05 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 53ms (Views: 47.3ms | ActiveRecord: 1.4ms | Allocations: 17932)
+
+
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:23:15 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:23:16 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:23:16 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:23:16 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:30:28 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:33:26 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started GET "/register" for 127.0.0.1 at 2023-04-12 15:34:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/register"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-04-12 15:34:47 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 1.0ms | Allocations: 1125)
+
+
+Started OPTIONS "/register" for ::1 at 2023-04-12 15:37:46 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/register"):
+  
+Started POST "/register" for ::1 at 2023-04-12 15:43:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Issa", "email"=>"issanyale446@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"issanyale446@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "issanyale446@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 1484ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 737835)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:44:15 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Issa", "email"=>"issanyale446@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"issanyale446@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "issanyale446@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 305ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2856)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:47:30 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Is", "email"=>"", "password"=>"[FILTERED]", "user"=>{"name"=>"Is", "email"=>""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 12ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 4623)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:47:50 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Issa Changawa", "email"=>"issanyale446@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Issa Changawa", "email"=>"issanyale446@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "issanyale446@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Issa Changawa"], ["email", "issanyale446@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-12 12:47:50.478432"], ["updated_at", "2023-04-12 12:47:50.478432"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 303ms (Views: 0.3ms | ActiveRecord: 14.3ms | Allocations: 2840)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:47:50 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Issa Changawa", "email"=>"issanyale446@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Issa Changawa", "email"=>"issanyale446@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "issanyale446@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 288ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2922)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:48:08 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Issa Changawa", "email"=>"issanyale446@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Issa Changawa", "email"=>"issanyale446@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "issanyale446@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 280ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2845)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:48:24 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Issa Changawa", "email"=>"issanyale6@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Issa Changawa", "email"=>"issanyale6@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "issanyale6@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Issa Changawa"], ["email", "issanyale6@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-12 12:48:24.374658"], ["updated_at", "2023-04-12 12:48:24.374658"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 327ms (Views: 0.6ms | ActiveRecord: 15.2ms | Allocations: 2675)
+
+
+Started POST "/register" for ::1 at 2023-04-12 15:59:34 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Steve Mbugua", "email"=>"steve3@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Steve Mbugua", "email"=>"steve3@gmail.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Steve Mbugua"], ["email", "steve3@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-12 12:59:34.639193"], ["updated_at", "2023-04-12 12:59:34.639193"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 348ms (Views: 0.4ms | ActiveRecord: 15.1ms | Allocations: 2790)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-13 09:05:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 84ms (Views: 50.8ms | ActiveRecord: 3.5ms | Allocations: 38846)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-04-13 09:05:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/register" for ::1 at 2023-04-13 09:26:18 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Jane Doe", "email"=>"jane32@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Jane Doe", "email"=>"jane32@gmail.com"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jane32@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jane Doe"], ["email", "jane32@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-13 06:26:19.201178"], ["updated_at", "2023-04-13 06:26:19.201178"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 374ms (Views: 0.7ms | ActiveRecord: 7.9ms | Allocations: 3929)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-13 09:26:32 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 1490)
+
+
+Started POST "/" for ::1 at 2023-04-13 09:27:21 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+>>>>>>> f1c1e5c485a4425db5b1997f07127a7c775b2188

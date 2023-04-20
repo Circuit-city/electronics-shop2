@@ -95,6 +95,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.1)
     minitest (5.18.0)
     net-imap (0.3.4)
       date
@@ -170,6 +171,7 @@ DEPENDENCIES
   faker (~> 3.1)
   mail (~> 2.8)
   puma (~> 5.0)
+  rack-cors
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
   sqlite3 (~> 1.4)

@@ -30,7 +30,7 @@ const LogOut = ({user}) => {
     <div>
       {loggedInUser && (
         <h1>
-          welcome <span>{loggedInUser.name}</span>
+          Welcome <span>{loggedInUser.name}</span>
         </h1>
       )}
       <button onClick={(e) => handleLogout(e)}>logout</button>
@@ -38,5 +38,5 @@ const LogOut = ({user}) => {
   )
 }
 
-export default LogOut
+export default LogOut;
 

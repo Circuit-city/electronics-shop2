@@ -6,20 +6,31 @@
 .loginPage{
     height: 100vh;
     width: 100vw;
-    background-color: rgb(15, 15, 15);
-    color: white;
+    background-color: rgb(58, 56, 56);
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow-y: hidden;
+    
 }
+
 .containerone{
-    background-color: black;
-    height: 100%;
-    width: 40%;
-    padding: 1.5rem 1rem;
-}
+      background-color: rgb(10, 10, 10);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      max-width: 640px;
+      padding: 75px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+      font-size: large;
+      height: 100%;
+      width: 40%;
+      padding: 1.5rem 1rem;
+    }
+
 .upper-div{
     display: flex;
     
@@ -51,17 +62,24 @@
     height: 70%;
      
 }
+
 .form{
-    background-color: #131b1f;
+    background-color: rgb(89, 123, 123);
     width: 50%;
     padding: .5rem;
     border-radius: .3rem;
-}
+  }
+
 .form h1{
     text-align: center;
     margin-bottom: 1rem;
 }
-
+.emailplace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .emailplace input{
     outline: none;
     border: none;
@@ -70,10 +88,14 @@
     color: black;
     padding: .5rem;
     border-radius: .2rem;
-    margin-left: 2rem;
     margin-bottom: 2rem;
 
-
+}
+.passplace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .passplace input{
     outline: none;
@@ -83,7 +105,7 @@
     color: black;
     padding: .5rem;
     border-radius: .2rem;
-    margin-left: 2rem;
+    
     margin-bottom: 1rem;
 }
 
@@ -98,6 +120,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+    font-size: large;
 }
 .loginBtn input{
     cursor: pointer;
@@ -127,7 +151,7 @@
     margin-top: 1.5rem;
 }
 .notregisterd a{
-    color: #5137ee;
+    color: #ccc8e2;
 }
 
 .lower-div{
