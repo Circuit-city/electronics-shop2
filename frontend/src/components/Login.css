@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loginPage{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+.containerone{
+    background-color: black;
+    height: 100%;
+    width: 40%;
+    padding: 1.5rem 1rem;
+}
+.upper-div{
+    display: flex;
+    
+}
+.image{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 23rem;
+    
+}
+.img1{
+    background-image: url('../assets/circuitcity2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: -4rem;
+    
+}
+.img2{
+    height: 70%;
+     
+}
+.form{
+    background-color: #131b1f;
+    width: 50%;
+    padding: .5rem;
+    border-radius: .3rem;
+}
+.form h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.emailplace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.emailplace input{
+    outline: none;
+    border: none;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    color: black;
+    padding: .5rem;
+    border-radius: .2rem;
+    margin-bottom: 2rem;
+
+
+}
+.passplace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.passplace input{
+    outline: none;
+    border: none;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    color: black;
+    padding: .5rem;
+    border-radius: .2rem;
+    
+    margin-bottom: 1rem;
+}
+
+.forgot p{
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.loginBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.loginBtn input{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    color: black;
+    padding: .5rem;
+    border-radius: .2rem;
+    width: 10rem;
+    margin-bottom: 1rem;
+    transition: .5s;
+}
+
+.loginBtn input:hover{
+    color: #000;
+    background: #d1d1d1;
+    letter-spacing: .2rem;
+    border-radius: .5rem;
+    transition: .5s;
+}
+
+.notregisterd{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+.notregisterd a{
+    color: #5137ee;
+}
+
+.lower-div{
+    margin-top: 4.5rem;
+    padding: .5rem;
+}
+.big{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preview{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.preview img{
+    height: 12rem;
+   
+}
+.laptop{
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -1rem;
+}
+.tv{
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hd{
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
