@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
@@ -7,11 +7,7 @@ import Cart from './components/Cart';
 import Homepage from "./components/Homepage"
 
 function App() {
-  const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  }
   return (
   
     <Router>
