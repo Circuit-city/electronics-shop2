@@ -1,11 +1,17 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import LogOut from "./components/LogOut"
-import Chekout from "./components/Checkout"
-
+import Cart from './components/Cart';
+import Homepage from "./components/Homepage"
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  }
   return (
     <div>
       
@@ -20,4 +26,4 @@ function App() {
   )
 }
 
- export default App
+export default App; 
