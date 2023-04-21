@@ -1,12 +1,12 @@
-
-
 .modalbg{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     position: absolute;
-    border-radius: 12px;
+    height: 100vh;
+    width: 100vw;
+    bottom: -6.5rem;
   
 }
 .modalContainer{
@@ -16,6 +16,7 @@
     background-color: lightgray;
     width: 500px;
     border-radius: 12px;
+    position: absolute;
     box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
    
 }

@@ -42,7 +42,7 @@ const Modal = ({editing,setEditing,content,setContent,currentProduct,setCurrentP
                 <label htmlFor="name" className='labels'>Name</label>
                 <input type="text" value={currentProduct.name} onChange={(event)=>setCurrentProduct({...currentProduct, name: event.target.value})} required/>
                 <label htmlFor="description" className='labels'>Description</label>
-                <input   className='text-area' type="text" value={currentProduct.description} onChange={(event)=>setCurrentProduct({...currentProduct, description: event.target.value})} required/>
+                <textarea cols='30' rows='10'   className='text-area' type="text" value={currentProduct.description} onChange={(event)=>setCurrentProduct({...currentProduct, description: event.target.value})} required/>
                 <label htmlFor="price" className='labels'>Price</label>
                 <input type="number" value={currentProduct.price} onChange={(event)=>setCurrentProduct({...currentProduct, price: event.target.value})} required/>
                 <label htmlFor="category" className='labels'>Category</label>
