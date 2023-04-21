@@ -21,16 +21,20 @@
     justify-content: flex-end;
     background-color: white;
     width: 70vw;
-    padding: 1rem;
     border-radius: .2rem;
     position: relative;
    
 }
 .div{
     display: flex;
+    height: 70vh;
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 .img3 img{
-    height: 70%;
+    height: 20rem;
 
     
 }
