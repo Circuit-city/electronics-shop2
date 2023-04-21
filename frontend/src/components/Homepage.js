@@ -5,6 +5,7 @@ import './homepageAndNavbar.css';
 function Homepage() {  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  const [selectedBox, setSelectedBox] = useState(null);
   
   useEffect(() => {
    
@@ -39,6 +40,18 @@ if (cartData) {
   
   const isAddedToCart = (productId) => {
     return cart[productId] ? true : false;
+  };
+
+  const filteredProducts = () => {
+    if (!selectedBox) {
+      return products;
+    } else if (selectedBox === 'box4') {
+      return products.filter(product => [2, 6, 9].includes(product.id));
+    } else if (selectedBox === 'box5') {
+      return products.filter(product => [3, 7].includes(product.id));
+    } else if (selectedBox === 'box6') {
+      return products.filter(product => [4, 8].includes(product.id));
+    }
   };
 
   return (
@@ -77,7 +90,10 @@ if (cartData) {
           </div>
         </div>
         <div id="additional-boxes" className="boxes-container">
-          <div className="box box4">
+        <div
+            className="box box4"
+            onClick={() => setSelectedBox('box4')}
+          >
             <img
               src="https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"
               alt=""
@@ -85,7 +101,10 @@ if (cartData) {
             <h2>Latest sound system</h2>
             <h3>Special Offers</h3>
           </div>
-          <div className="box box5">
+          <div
+            className="box box5"
+            onClick={() => setSelectedBox('box5')}
+          >
           <img
               src="https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"
               alt=""
@@ -93,8 +112,10 @@ if (cartData) {
             <h2>Affordable prices</h2>
               <h3>Fast Shipping</h3>
           </div>
-          <div className="box box6">
-            <i className="fas fa-check"></i>
+          <div
+            className="box box6"
+            onClick={() => setSelectedBox('box6')}
+          >
             <img
               src="https://53525363.000webhostapp.com/Images/MSI_-_Prestige_14_EVO_14__FHD_Laptop_-_i5-1135G7_-_16GB_Memory_-_IrisXe_-_512GB_SSD_-_Win10Home_-_Rose_Pink-removebg-preview.png"
               alt=""
@@ -106,7 +127,7 @@ if (cartData) {
         </div>
       
         <div className="product-cards-container">
-        {products.map(product => (
+        {filteredProducts().map(product => (
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
