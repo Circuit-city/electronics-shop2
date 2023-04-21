@@ -8,11 +8,7 @@ import Homepage from "./components/Homepage"
 import Checkout from "./components/Checkout"
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  }
+  
   return (
     <div>
       

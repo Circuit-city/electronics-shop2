@@ -21,7 +21,7 @@ if (cartData) {
   }, []);
 
   const handleAddToCart = (product) => {
-    const cartData = localStorage.getItem('cart');
+    const cartData = localStorage.getItem('cartItems');
     let cart = {};
     if (cartData) {
       cart = JSON.parse(cartData);
