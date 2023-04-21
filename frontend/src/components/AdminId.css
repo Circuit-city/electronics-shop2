@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     margin-top: 2rem;
-    justify-content: space-around;
+    
 }
 .editbtn{
     height: 2.5rem;
@@ -75,6 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 4rem;
 }
 .back a:hover{
     background-color: rgb(194, 127, 3);
