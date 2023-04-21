@@ -5,4 +5,5 @@ class User < ApplicationRecord
     validates :role, inclusion: { in: %w[admin user] }, presence: true
     
     has_secure_password
+    has_many :orders
 end

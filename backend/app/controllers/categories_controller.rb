@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show update destroy ]
+  before_action :set_category, only: [:show]
 
   # GET /categories
   def index
@@ -9,9 +10,16 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1
+  # GET /categories/:name
   def show
-    render json: @category
+    category = Category.find_by(name: params[:name])
+    if category.nil?
+      render json: { error: "Category not found" }, status: :not_found
+    else
+      render json: category
+    end
   end
+
 
   # POST /categories
   def create
@@ -41,8 +49,10 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.find_by(name: params[:name])
+      render json: { error: 'Category not found' }, status: :not_found unless @category
     end
+    
 
     # Only allow a list of trusted parameters through.
     def category_params
