@@ -1,10 +1,12 @@
 import React from "react";
 import './Checkout.css'
+import Navbar from "./Navbar";
 
 
 function Chekout () {
     return(
         <>
+        <Navbar/>
             <div className="containerwarpper">
                 <form action="" className="address-details">
                     <div className="frm">
