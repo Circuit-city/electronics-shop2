@@ -1,6 +1,7 @@
 import './homepageAndNavbar.css';
 import { Link } from 'react-router-dom';
-function Navbar({handleLogout, loggedInUser}) {
+function Navbar(props) {
+  const isLoggedIn = props.isLoggedIn;
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -13,11 +14,14 @@ function Navbar({handleLogout, loggedInUser}) {
       <div className="navbar-right">
         <Link to="/" className="nav-link">Home</Link>
         <Link to='/cart'className="nav-link">Cart</Link>
-        <Link to='/checkout'className="nav-link">Checkout</Link>
-        <Link to="/login" className="nav-link">Login</Link>
+        <Link to='/checkout'className="nav-link">Checkout</Link>  
         <Link to='/admin' className='nav-link'>Admin</Link>
         <Link to='/addproduct' className='nav-link'>Add Products</Link>
-        <button onClick={handleLogout} style={{display: loggedInUser ? 'block': 'none'}}>signout</button>
+        {isLoggedIn ? (
+          <Link to="/logout" className="nav-link">Logout</Link>
+        ) : (
+          <Link to="/login" className="nav-link" activeClassName="active-link">Login</Link>
+        )}
       </div>
     </nav>
   );

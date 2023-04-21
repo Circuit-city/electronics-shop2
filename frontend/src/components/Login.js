@@ -29,7 +29,7 @@ const Login = () => {
         // If login is successful, set the user data in state
         setUser(data);
         localStorage.setItem('user', JSON.stringify(data));
-        navigate('/logout')
+        navigate('/')
         console.log(data)
        
       } else {
