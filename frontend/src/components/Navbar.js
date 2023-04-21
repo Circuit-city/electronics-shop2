@@ -17,11 +17,11 @@ function Navbar(props) {
         <Link to='/checkout'className="nav-link">Checkout</Link>  
         <Link to='/admin' className='nav-link'>Admin</Link>
         <Link to='/addproduct' className='nav-link'>Add Products</Link>
-        {isLoggedIn ? (
+        {/* {isLoggedIn ? (
           <Link to="/logout" className="nav-link">Logout</Link>
         ) : (
           <Link to="/login" className="nav-link" activeClassName="active-link">Login</Link>
-        )}
+        )} */}
       </div>
     </nav>
   );

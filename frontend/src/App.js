@@ -7,9 +7,8 @@ import LogOut from "./components/LogOut"
 import Homepage from "./components/Homepage"
 import Admin from "./components/Admin"
 import AdminId from "./components/AdminId"
-import AddProducts from './components/addProducts';
 import Cart from './components/Cart';
-
+import ProductsAdd from './components/ProductsAdd';
 
 
 
@@ -32,7 +31,7 @@ function App() {
           <Route path="/cart" element={<Cart/>} />
           <Route path="/admin" element={<Admin />}/>
           <Route path="/admin/:id" element={<AdminId />}/>
-          <Route path='addproduct' element={<AddProducts />} />
+          <Route path='/addproducts' element={<ProductsAdd />} />
           <Route path="/admin/products/:id" element={<AdminId />}/>
          
          
