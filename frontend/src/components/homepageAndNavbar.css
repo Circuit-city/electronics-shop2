@@ -183,6 +183,7 @@
   border: none;
   padding: 10px 20px;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 .product-cards-container button:disabled {
