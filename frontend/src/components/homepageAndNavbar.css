@@ -42,7 +42,7 @@
 #slider {
   display: flex;
   align-items: center;
-  background-color: #252525; 
+  background-color: #595350; 
   height: 450px; 
   margin-top: -2rem; 
 }
@@ -98,7 +98,7 @@
   flex-basis: 30%; 
   text-align: center;
   padding: 1rem;
-  background-color: #252525; 
+  background-color: #595350; 
  
 }
 
@@ -175,6 +175,18 @@
   text-align: center;
 }
 
+.product-cards-container button {
+  background-color: #595350;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.product-cards-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
 
 
 
