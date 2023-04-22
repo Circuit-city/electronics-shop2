@@ -22,7 +22,7 @@ function Signup(){
         .then(data => {
             console.log(data);
             localStorage.setItem('user', JSON.stringify(data.user));
-            navigate('/logout')
+            navigate('/login')
         })
     }
 
