@@ -75,20 +75,7 @@ if (cartData) {
           </div>
           
         </div>
-        <div id="boxes" className="boxes-container">
-          <div className="box">
-            <img src="https://53525363.000webhostapp.com/Images/Wallet_icon_grey-removebg-preview.png" alt=""/>
-            <h3>Reasonable Pricing</h3>
-          </div>
-          <div className="box">
-            <img src="https://53525363.000webhostapp.com/Images/___2_-removebg-preview.png" alt=""/>
-            <h3>24 hour Client Support</h3>
-          </div>
-          <div className="box">
-          <img src="https://53525363.000webhostapp.com/Images/Clock_app_icon_gray-removebg-preview.png" alt=""/>
-            <h3>Year round sales on select items</h3>
-          </div>
-        </div>
+        
         <div id="additional-boxes" className="boxes-container">
         <div
             className="box box4"

@@ -42,7 +42,7 @@
 #slider {
   display: flex;
   align-items: center;
-  background-color: #252525; 
+  background-color: #595350; 
   height: 350px; 
   margin-top: -2rem; 
 }
@@ -97,7 +97,7 @@
   flex-basis: 30%; 
   text-align: center;
   padding: 1rem;
-  background-color: #252525; 
+  background-color: #595350; 
  
 }
 
@@ -109,7 +109,7 @@
 
 .box h3 {
   text-align: center;
-  color: white;
+  color: black;
   
 }
 
