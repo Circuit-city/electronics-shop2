@@ -7,6 +7,7 @@ function Homepage() {
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
   useEffect(() => {
    
@@ -23,14 +24,16 @@ if (cartData) {
 const userData = localStorage.getItem('user');
     if (userData) {
       setUser(JSON.parse(userData));
+      setIsLoggedIn(true);
     }
+    
 
 
   }, []);
 
   const handleAddToCart = (product) => {
     if (!user) {
-      // Redirect the user to the login page if they are not logged in
+     
       window.location.href = '/login';
       return;
     }
@@ -70,7 +73,7 @@ const userData = localStorage.getItem('user');
 
       <div>
         <div>
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} />
         <div id="slider" className="slider-container">
           <div className="slider-image">
             <img
