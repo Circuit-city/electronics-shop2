@@ -44,8 +44,8 @@
 #slider {
   display: flex;
   align-items: center;
-  background-color: #595350; 
-  height: 450px; 
+  background-color: #252525; 
+  height: 350px; 
   margin-top: -2rem; 
 }
 
@@ -190,7 +190,6 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
-
 
 
 

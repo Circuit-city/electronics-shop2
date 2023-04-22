@@ -6,6 +6,7 @@ function Homepage() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
   
   useEffect(() => {
    
@@ -19,9 +20,20 @@ if (cartData) {
   setCart(JSON.parse(cartData));
 }
 
+const userData = localStorage.getItem('user');
+    if (userData) {
+      setUser(JSON.parse(userData));
+    }
+
+
   }, []);
 
   const handleAddToCart = (product) => {
+    if (!user) {
+      // Redirect the user to the login page if they are not logged in
+      window.location.href = '/login';
+      return;
+    }
     const cartData = localStorage.getItem('cartItems');
     let cart = {};
     if (cartData) {
@@ -75,6 +87,7 @@ if (cartData) {
           </div>
           
         </div>
+        
         <div id="additional-boxes" className="boxes-container">
         <div
             className="box box4"
