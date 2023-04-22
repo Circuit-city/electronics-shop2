@@ -109,7 +109,7 @@
 
 .box h3 {
   text-align: center;
-  color: black;
+  color: white;
   
 }
 
@@ -173,7 +173,18 @@
   text-align: center;
 }
 
+.product-cards-container button {
+  background-color: #595350;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+}
 
+.product-cards-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
 
 
 
