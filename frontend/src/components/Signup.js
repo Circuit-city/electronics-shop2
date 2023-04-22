@@ -21,7 +21,7 @@ function Signup(){
         .then(data => {
             console.log(data);
             localStorage.setItem('user', JSON.stringify(data.user));
-            navigate('/logout')
+            navigate('/login')
         })
     }
 
@@ -58,25 +58,6 @@ function Signup(){
                 </form>
                 </div>
             </div>
-                <div className="lower-div">
-                    <p>What will you discover?</p>
-                <div className="big">
-                    <div className="preview">
-                        <div className="laptop">
-                        <img src={require('../assets/laptop-preview.png')} alt="laptop" />
-                        <p>Laptops</p>
-                    </div>
-                <div className="tv">
-                        <img src={require('../assets/tv.png')} alt="television" />
-                        <p>Flatscreens</p>
-                </div>
-                    <div className="hd">
-                        <img src={require('../assets/hd.png')} alt="hd" />
-                        <p>Headphones</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>        
 </>

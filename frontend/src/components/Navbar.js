@@ -22,7 +22,7 @@ function Navbar(props) {
         {isLoggedIn ? (
           <Link to="/logout" className="nav-link">Logout</Link>
         ) : (
-          <Link to="/signup" className="nav-link" activeClassName="active-link">Login</Link>
+          <Link to="/login" className="nav-link" activeClassName="active-link">Login</Link>
         )}
       </div>
     </nav>
