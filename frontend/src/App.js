@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
@@ -8,7 +8,7 @@ import Homepage from "./components/Homepage"
 import Checkout from "./components/Checkout"
 
 function App() {
-  
+
   return (
     <div>
       

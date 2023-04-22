@@ -19,7 +19,7 @@ function Cart() {
         <div key={item.id}>
           <img src={item.image} alt={item.name} />
           <h2>{item.name}</h2>
-
+          <p>{item.description}</p>
           <p>Price: {item.price}</p>
         </div>
       ))}
