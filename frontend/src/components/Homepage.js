@@ -9,6 +9,7 @@ function Homepage() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
   const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
+  
   useEffect(() => {
    
     fetch('https://circuit-cityy-po9y.onrender.com/products')
