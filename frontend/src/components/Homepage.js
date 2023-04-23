@@ -9,7 +9,6 @@ function Homepage() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
   const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
-  
   useEffect(() => {
    
     fetch('https://circuit-cityy-po9y.onrender.com/products')
@@ -52,6 +51,7 @@ const userData = localStorage.getItem('user');
       };
     }
     localStorage.setItem('cartItems', JSON.stringify(cart));
+    setCart(cart);
   };
   
   const isAddedToCart = (productId) => {
@@ -136,10 +136,10 @@ const userData = localStorage.getItem('user');
             <h3>{product.name}</h3>
             <p>Price: {product.price}</p>
             {isAddedToCart(product.id) ? (
-              <button disabled>Added to Cart</button>
-            ) : (
-              <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
-            )}
+  <button disabled>Added to Cart</button>
+) : (
+  <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
+)}
           </div>
         ))}
 
