@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from "./Navbar";
+
+
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
   useEffect(() => {
    
@@ -22,7 +25,7 @@ if (cartData) {
 const userData = localStorage.getItem('user');
     if (userData) {
       setUser(JSON.parse(userData));
-     
+      setIsLoggedIn(true);
     }
     
 
@@ -68,12 +71,11 @@ const userData = localStorage.getItem('user');
     }
   };
 
-  
-
   return (
 
       <div>
         <div>
+        <Navbar isLoggedIn={isLoggedIn} />
         <div id="slider" className="slider-container">
           <div className="slider-image">
             <img

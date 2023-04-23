@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Navbar from './Navbar';
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -13,7 +13,7 @@ function Cart() {
 
   return (
     <div>
-     
+      <Navbar/>
 
       {cartItems.map(item => (
         <div key={item.id}>
