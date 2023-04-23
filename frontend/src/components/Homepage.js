@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from "./Navbar";
 import './homepageAndNavbar.css';
 
 function Homepage() {  
@@ -73,6 +74,7 @@ const userData = localStorage.getItem('user');
 
       <div>
         <div>
+        <Navbar isLoggedIn={isLoggedIn} />
         <div id="slider" className="slider-container">
           <div className="slider-image">
             <img
