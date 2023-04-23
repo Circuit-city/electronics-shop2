@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 function Navbar(props) {
   const isLoggedIn = props.isLoggedIn;
 
+  const handleLogout = () => {
+    props.onLogout();
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -18,7 +22,7 @@ function Navbar(props) {
         <Link to='/cart' className="nav-link">Cart</Link>
         <Link to='/checkout' className="nav-link">Checkout</Link>
         {isLoggedIn ? (
-          <Link to="/logout" className="nav-link">Logout</Link>
+          <Link to="/logout" onClick={handleLogout} className="nav-link">Logout</Link>
         ) : (
           <Link to="/login" className="nav-link">Login</Link>
         )}
