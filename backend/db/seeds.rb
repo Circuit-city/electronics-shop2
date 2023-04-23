@@ -100,4 +100,16 @@ product8 = Product.create(name: "LG CX 65-inch 4K", price: 70000, description: "
 product9 = Product.create(name: "Audio-Technica ATH Headphones", price: 12000,  description: "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. ",  image: "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png" , category: category2)
 
 
+# Order items
+order_item1 = OrderItem.create(order: order1, product: product1)
+order_item2 = OrderItem.create(order: order2, product: product2)
+order_item3 = OrderItem.create(order: order3, product: product3)
+order_item3 = OrderItem.create(order: order1, product: product4)
+order_item3 = OrderItem.create(order: order2, product: product5)
+order_item3 = OrderItem.create(order: order3, product: product6)
+
+
+
+
+
 puts "Seeding completed successfully!"
