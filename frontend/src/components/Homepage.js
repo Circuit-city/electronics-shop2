@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from "./Navbar";
 import './homepageAndNavbar.css';
 
+
 function Homepage() {  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
