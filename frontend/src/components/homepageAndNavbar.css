@@ -70,7 +70,7 @@
 }
 
 .slider-promotion h3{
-  color: yellow;
+  color: orange;
   font-size: 22px;
   
 }
@@ -135,7 +135,7 @@
 }
 
 #additional-boxes h2{
-  color: yellow;
+  color: orange;
   font-size: 20px;
 }
 
@@ -176,7 +176,7 @@
 }
 
 .product-cards-container button {
-  background-color: #595350;
+  background-color: orange;
   color: #fff;
   border: none;
   padding: 10px 20px;
