@@ -66,7 +66,7 @@ const userData = localStorage.getItem('user');
     } else if (selectedBox === 'box5') {
       return products.filter(product => [3, 7].includes(product.id));
     } else if (selectedBox === 'box6') {
-      return products.filter(product => [4, 8].includes(product.id));
+      return products.filter(product => [1, 5].includes(product.id));
     }
   };
 
@@ -120,7 +120,7 @@ const userData = localStorage.getItem('user');
             onClick={() => setSelectedBox('box6')}
           >
             <img
-              src="https://53525363.000webhostapp.com/Images/MSI_-_Prestige_14_EVO_14__FHD_Laptop_-_i5-1135G7_-_16GB_Memory_-_IrisXe_-_512GB_SSD_-_Win10Home_-_Rose_Pink-removebg-preview.png"
+              src="https://53525363.000webhostapp.com/Images/The_Best_Travel_Cameras_for_Capturing_All_Your_Journeys-removebg-preview.png"
               alt=""
             />
             <h2>Latest Software</h2>
