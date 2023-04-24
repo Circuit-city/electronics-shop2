@@ -46,10 +46,6 @@ const Login = () => {
       <div className="loginPage">
         <div className="containerone">
          <div className="upper-div">
-         <div className="image">
-            <p className="img1"></p>
-            <img src={require('../assets/headphone.png')} alt="headphone" className="img2"/>
-          </div>
           <div className="form">
             <h1>LOGIN </h1>
             <form onSubmit={(e) => {
@@ -70,25 +66,6 @@ const Login = () => {
               <Link to='/Signup'>Create an Account</Link>
             </div>
           </div>
-         </div>
-         <div className="lower-div">
-          <p>What will you discover?</p>
-            <div className="big">
-              <div className="preview">
-                  <div className="laptop">
-                    <img src={require('../assets/laptop-preview.png')} alt="laptop" />
-                    <p>Laptops</p>
-                  </div>
-                  <div className="tv">
-                      <img src={require('../assets/tv.png')} alt="television" />
-                      <p>Flatscreens</p>
-                  </div>
-                  <div className="hd">
-                      <img src={require('../assets/hd.png')} alt="hd" />
-                      <p>Headphones</p>
-                  </div>
-              </div>
-            </div>
          </div>
         </div>
       </div>
