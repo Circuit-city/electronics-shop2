@@ -7,7 +7,8 @@ import Cart from './components/Cart';
 import Homepage from "./components/Homepage"
 import Admin from "./components/Admin"
 import AdminId from "./components/AdminId"
-import ProductsAdd from './components/ProductsAdd';
+import ProductsAdd from './components/ProductsAdd'
+import Checkout from './components/Checkout'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
          <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/checkout" element={<Checkout/>} />
           <Route path="/login" element={<Login />}/>
           <Route path="/logout" element={<LogOut />}/>
           <Route path="/signup" element={<Signup />}/>

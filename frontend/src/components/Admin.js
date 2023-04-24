@@ -54,7 +54,7 @@ return (
             <div className="content">
                 <Link to={`/admin/${item.id}`}>{item.name}</Link>
                 <p>{truncate(item.description, 50)}</p>
-                <p>ksh {item.price}</p>
+                <p>ksh {item.price}</p> 
                 <p>category : {item.category_id}</p>
 
             </div>
