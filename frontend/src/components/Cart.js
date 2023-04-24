@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
+  const [itemQuantity,setItemQuantity]= useState(1)
 
   useEffect(() => {
     // const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
@@ -36,25 +37,22 @@ function Cart() {
     }
   };
 
-  const increaseQuantity = (itemId) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
+  const increaseQuantity = () => {
+    setItemQuantity(itemQuantity+1)
   };
 
-  const decreaseQuantity = (itemId) => {
-    const existingItem = cartItems.find((item) => item.id === itemId);
-    if (existingItem.quantity > 1) {
-      setCartItems(
-        cartItems.map((item) =>
-          item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
-        )
-      );
-    } else {
-      setCartItems(cartItems.filter((item) => item.id !== itemId));
-    }
+  const decreaseQuantity = () => {
+    // const existingItem = cartItems.find((item) => item.id === itemId);
+    // if (existingItem.quantity > 1) {
+    //   setCartItems(
+    //     cartItems.map((item) =>
+    //       item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
+    //     )
+    //   );
+    // } else {
+    //   setCartItems(cartItems.filter((item) => item.id !== itemId));
+    // }
+setItemQuantity(itemQuantity-1)
   };
 
   const getTotalPrice = () => {
@@ -80,13 +78,12 @@ function Cart() {
           <h2>{item.name}</h2>
           <p>{item.description}</p>
           <p>Price: {item.price}</p>
-          <p>Quantity: {item.quantity}</p>
+          <p>Quantity: {itemQuantity}</p>
           <button className="btn btn-primary"  onClick={() => increaseQuantity(item.id)}>+</button>
           <button className="btn btn-danger"  onClick={() => decreaseQuantity(item.id)}>-</button>
-          <button className="btn btn-success"  onClick={() => alert('add check out here ESIR!!!!!!!!')}>Checkout</button>
-
         </div>
       ))}
+      <button className="btn btn-success"  onClick={() => checkout()}>Checkout</button>
     </div>
   );
 }
