@@ -149,7 +149,7 @@
 
 .product-card {
   width: calc(33.33% - 20px);
-  margin: 10px;
+  margin: 5px;
   text-align: center;
   border: 1px solid #ccc;
   padding-bottom: 20px;
