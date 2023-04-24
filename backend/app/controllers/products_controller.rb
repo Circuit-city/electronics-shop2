@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :current_user
+  before_action :require_admin, only: [ :create, :update, :destroy]
   before_action :set_product, only: %i[ show update destroy ]
 
   # GET /products
