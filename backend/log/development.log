@@ -3450,3 +3450,583 @@ Started GET "/favicon.ico" for 127.0.0.1 at 2023-04-22 12:10:56 +0300
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (129.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "order_items"[0m
+  [1m[35m (129.5ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (130.7ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id")[0m
+  [1m[35m (122.1ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (196.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "billing_information" varchar, "address" varchar)[0m
+  [1m[35m (120.1ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (118.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar)[0m
+  [1m[35m (109.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (95.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorder_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_product_id" ON "aorder_items" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_order_id" ON "aorder_items" ("order_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aorder_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "order_items"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "order_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "aorder_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aorder_items"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (98.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorder_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_product_id" ON "aorder_items" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_order_id" ON "aorder_items" ("order_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aorder_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "order_items"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "order_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+, CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "aorder_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aorder_items"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (98.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorders" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "billing_information" varchar DEFAULT NULL, "address" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_user_id" ON "aorders" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aorders" ("id","user_id","created_at","updated_at","billing_information","address")
+                     SELECT "id","user_id","created_at","updated_at","billing_information","address" FROM "orders"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "billing_information" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("id","user_id","created_at","updated_at","billing_information","address")
+                     SELECT "id","user_id","created_at","updated_at","billing_information","address" FROM "aorders"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aorders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (109.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image" FROM "products"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image" FROM "aproducts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (83.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (127.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (168.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421195504)[0m
+  [1m[35m (119.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134),
+(20230415200828),
+(20230419192125),
+(20230419195325),
+(20230419201710),
+(20230420172902),
+(20230420175329);
+
+[0m
+  [1m[35m (134.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-23 20:31:48.892015"], ["updated_at", "2023-04-23 20:31:48.892015"]]
+  [1m[36mTRANSACTION (103.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ddadfa8d30e26c53925de7b4ba3aba386c14f6a3"], ["created_at", "2023-04-23 20:31:49.011256"], ["updated_at", "2023-04-23 20:31:49.011256"]]
+  [1m[36mTRANSACTION (114.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (133.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "order_items"[0m
+  [1m[35m (124.6ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (135.0ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id")[0m
+  [1m[35m (109.3ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (106.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "billing_information" varchar, "address" varchar)[0m
+  [1m[35m (131.9ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (138.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "category_id" integer NOT NULL, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar)[0m
+  [1m[35m (133.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (129.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorder_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_product_id" ON "aorder_items" ("product_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_order_id" ON "aorder_items" ("order_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aorder_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "order_items"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "order_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "aorder_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aorder_items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (121.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorder_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_product_id" ON "aorder_items" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_aorder_items_on_order_id" ON "aorder_items" ("order_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aorder_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "order_items"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "order_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" integer NOT NULL PRIMARY KEY, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+, CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("id","order_id","product_id","created_at","updated_at")
+                     SELECT "id","order_id","product_id","created_at","updated_at" FROM "aorder_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aorder_items"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (114.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorders" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "billing_information" varchar DEFAULT NULL, "address" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_user_id" ON "aorders" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aorders" ("id","user_id","created_at","updated_at","billing_information","address")
+                     SELECT "id","user_id","created_at","updated_at","billing_information","address" FROM "orders"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "billing_information" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("id","user_id","created_at","updated_at","billing_information","address")
+                     SELECT "id","user_id","created_at","updated_at","billing_information","address" FROM "aorders"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aorders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (104.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_aproducts_on_category_id" ON "aproducts" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","category_id","price","created_at","updated_at","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image" FROM "products"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "category_id" integer NOT NULL, "price" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "image" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","category_id","price","created_at","updated_at","image")
+                     SELECT "id","name","description","category_id","price","created_at","updated_at","image" FROM "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (109.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (150.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (94.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230421195504)[0m
+  [1m[35m (126.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230412094533),
+(20230415181041),
+(20230415193134),
+(20230415200828),
+(20230419192125),
+(20230419195325),
+(20230419201710),
+(20230420172902),
+(20230420175329);
+
+[0m
+  [1m[35m (323.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-23 20:31:51.648976"], ["updated_at", "2023-04-23 20:31:51.648976"]]
+  [1m[36mTRANSACTION (85.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-04-23 20:31:51.749934"], ["key", "environment"]]
+  [1m[36mTRANSACTION (83.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "ddadfa8d30e26c53925de7b4ba3aba386c14f6a3"], ["created_at", "2023-04-23 20:31:51.847964"], ["updated_at", "2023-04-23 20:31:51.847964"]]
+  [1m[36mTRANSACTION (85.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "John Doe"], ["email", "johndoe@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:52.313466"], ["updated_at", "2023-04-23 20:31:52.313466"], ["role", "admin"]]
+  [1m[36mTRANSACTION (80.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jane Smith"], ["email", "janesmith@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:52.654253"], ["updated_at", "2023-04-23 20:31:52.654253"], ["role", "user"]]
+  [1m[36mTRANSACTION (94.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bjohnson@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bob Johnson"], ["email", "bjohnson@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:52.990172"], ["updated_at", "2023-04-23 20:31:52.990172"], ["role", "user"]]
+  [1m[36mTRANSACTION (136.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alee@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alice Lee"], ["email", "alee@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:53.376112"], ["updated_at", "2023-04-23 20:31:53.376112"], ["role", "user"]]
+  [1m[36mTRANSACTION (83.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cbrown@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Charlie Brown"], ["email", "cbrown@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:53.721498"], ["updated_at", "2023-04-23 20:31:53.721498"], ["role", "user"]]
+  [1m[36mTRANSACTION (81.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ssmith@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Samantha Smith"], ["email", "ssmith@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:54.062100"], ["updated_at", "2023-04-23 20:31:54.062100"], ["role", "user"]]
+  [1m[36mTRANSACTION (117.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "pparker@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Peter Parker"], ["email", "pparker@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-23 20:31:54.439056"], ["updated_at", "2023-04-23 20:31:54.439056"], ["role", "user"]]
+  [1m[36mTRANSACTION (84.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["created_at", "2023-04-23 20:31:54.578686"], ["updated_at", "2023-04-23 20:31:54.578686"], ["billing_information", "Visa ending in 1234"], ["address", "1234 ngong road"]]
+  [1m[36mTRANSACTION (87.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["created_at", "2023-04-23 20:31:54.672654"], ["updated_at", "2023-04-23 20:31:54.672654"], ["billing_information", "Mastercard ending in 5678"], ["address", "5678 tobor"]]
+  [1m[36mTRANSACTION (121.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["created_at", "2023-04-23 20:31:54.805439"], ["updated_at", "2023-04-23 20:31:54.805439"], ["billing_information", "Mastercard ending in 6776"], ["address", "kimathi street"]]
+  [1m[36mTRANSACTION (144.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["created_at", "2023-04-23 20:31:54.961443"], ["updated_at", "2023-04-23 20:31:54.961443"], ["billing_information", "Visa ending in 4321"], ["address", "4321 ngong road"]]
+  [1m[36mTRANSACTION (89.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["created_at", "2023-04-23 20:31:55.061359"], ["updated_at", "2023-04-23 20:31:55.061359"], ["billing_information", "Mastercard ending in 8765"], ["address", "8765 tobor"]]
+  [1m[36mTRANSACTION (89.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["created_at", "2023-04-23 20:31:55.161530"], ["updated_at", "2023-04-23 20:31:55.161530"], ["billing_information", "Visa ending in 4567"], ["address", "moi avenue"]]
+  [1m[36mTRANSACTION (109.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["created_at", "2023-04-23 20:31:55.282908"], ["updated_at", "2023-04-23 20:31:55.282908"], ["billing_information", "Mastercard ending in 8899"], ["address", "juja town"]]
+  [1m[36mTRANSACTION (91.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["created_at", "2023-04-23 20:31:55.383052"], ["updated_at", "2023-04-23 20:31:55.383052"], ["billing_information", "Visa ending in 3322"], ["address", "nairobi west"]]
+  [1m[36mTRANSACTION (99.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["created_at", "2023-04-23 20:31:55.493990"], ["updated_at", "2023-04-23 20:31:55.493990"], ["billing_information", "Mastercard ending in 6543"], ["address", "karen"]]
+  [1m[36mTRANSACTION (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "created_at", "updated_at", "billing_information", "address") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["created_at", "2023-04-23 20:31:55.604822"], ["updated_at", "2023-04-23 20:31:55.604822"], ["billing_information", "Visa ending in 1111"], ["address", "lavington"]]
+  [1m[36mTRANSACTION (111.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "laptops"], ["description", "Affordable Laptops"], ["created_at", "2023-04-23 20:31:55.764552"], ["updated_at", "2023-04-23 20:31:55.764552"]]
+  [1m[36mTRANSACTION (72.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "headphones"], ["description", "Great Sound Headphones"], ["created_at", "2023-04-23 20:31:55.848117"], ["updated_at", "2023-04-23 20:31:55.848117"]]
+  [1m[36mTRANSACTION (78.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TVs"], ["description", "OLED, 4K and LED TVs"], ["created_at", "2023-04-23 20:31:55.937052"], ["updated_at", "2023-04-23 20:31:55.937052"]]
+  [1m[36mTRANSACTION (90.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cameras"], ["description", "Quality Cameras"], ["created_at", "2023-04-23 20:31:56.037089"], ["updated_at", "2023-04-23 20:31:56.037089"]]
+  [1m[36mTRANSACTION (78.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-04-23 20:31:56.167850"], ["updated_at", "2023-04-23 20:31:56.167850"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  [1m[36mTRANSACTION (80.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH-M50x"], ["description", "The Audio-Technica ATH-M50x is a professional studio monitor headphone that delivers exceptional audio performance and comfort. With its large aperture drivers, robust construction, and collapsible design, the ATH-M50x is ideal for professional audio engineers, musicians, and audiophiles."], ["category_id", 2], ["price", 15000.0], ["created_at", "2023-04-23 20:31:56.259776"], ["updated_at", "2023-04-23 20:31:56.259776"], ["image", "https://53525363.000webhostapp.com/Images/Skullcandy_Crusher_Wireless_Over-Ear_Headphones_-_Black-removebg-preview.png"]]
+  [1m[36mTRANSACTION (110.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dell Inspiron E1405"], ["description", "The Dell Inspiron E1405 is a compact and affordable laptop that offers reliable performance for everyday computing tasks. With its Intel Core processor, ample storage, and vibrant display, the Inspiron E1405 is perfect for students, professionals, and casual users who need a reliable and portable computing solution. It features a sleek design, easy-to-use interface, and a wide range of connectivity options for enhanced productivity and convenience."], ["category_id", 1], ["price", 65000.0], ["created_at", "2023-04-23 20:31:56.381954"], ["updated_at", "2023-04-23 20:31:56.381954"], ["image", "https://53525363.000webhostapp.com/Images/Best_MacBook_alternatives_for_2022___Digital_Trends-removebg-preview.png"]]
+  [1m[36mTRANSACTION (110.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hisense U8H"], ["description", "The Hisense U8H is a high-quality 4K Ultra HD Android TV that delivers stunning picture quality, immersive audio, and a wealth of smart features."], ["category_id", 1], ["price", 70000.0], ["created_at", "2023-04-23 20:31:56.503867"], ["updated_at", "2023-04-23 20:31:56.503867"], ["image", "https://53525363.000webhostapp.com/Images/I_like_tv_too_-removebg-preview.png"]]
+  [1m[36mTRANSACTION (110.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 5D"], ["description", "The Canon EOS 5D is a legendary full-frame DSLR camera that offers professional-grade image quality, performance, and versatility."], ["category_id", 4], ["price", 80000.0], ["created_at", "2023-04-23 20:31:56.626491"], ["updated_at", "2023-04-23 20:31:56.626491"], ["image", "https://53525363.000webhostapp.com/Images/Canon_EOS-1D_X_Mark_II_Full-Frame_DSLR_Camera_for_Professional_Image_Creators__Features_20_2MP__Improved_AF_and_4K_Video-removebg-preview.png"]]
+  [1m[36mTRANSACTION (109.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sennheiser HD 800"], ["description", "The Sennheiser HD 800 is a premium open-back over-ear headphone that offers audiophile-grade sound quality, exceptional comfort, and top-notch craftsmanship."], ["category_id", 2], ["price", 10000.0], ["created_at", "2023-04-23 20:31:56.747738"], ["updated_at", "2023-04-23 20:31:56.747738"], ["image", "https://53525363.000webhostapp.com/Images/Functional_Headphones_That_Are_Also_Pretty_Chic-removebg-preview.png"]]
+  [1m[36mTRANSACTION (111.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "HP Envy x360"], ["description", "The HP Envy x360 is a premium 2-in-1 convertible laptop that offers versatility, performance, and style. With its powerful AMD Ryzen processor, up to 16GB of RAM, and fast SSD storage, the Envy x360 delivers smooth and responsive performance for multitasking, creative tasks, and entertainment."], ["category_id", 1], ["price", 50000.0], ["created_at", "2023-04-23 20:31:56.870822"], ["updated_at", "2023-04-23 20:31:56.870822"], ["image", "https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"]]
+  [1m[36mTRANSACTION (110.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "LG CX 65-inch 4K"], ["description", "The LG CX 65-inch 4K TV is a cutting-edge OLED TV that offers stunning picture quality, advanced features, and smart functionality. With its 65-inch OLED panel, the CX delivers deep blacks, vibrant colors, and infinite contrast for a truly immersive viewing experience. It supports 4K resolution, HDR formats, and has a high refresh rate for smooth motion handling."], ["category_id", 3], ["price", 70000.0], ["created_at", "2023-04-23 20:31:56.992596"], ["updated_at", "2023-04-23 20:31:56.992596"], ["image", "https://53525363.000webhostapp.com/Images/Vizio_M-Series_Quantum_4K_TV_review-removebg-preview.png"]]
+  [1m[36mTRANSACTION (110.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Audio-Technica ATH Headphones"], ["description", "The Audio-Technica ATH headphones are high-quality headphones designed for audiophiles and music enthusiasts. "], ["category_id", 2], ["price", 12000.0], ["created_at", "2023-04-23 20:31:57.113954"], ["updated_at", "2023-04-23 20:31:57.113954"], ["image", "https://53525363.000webhostapp.com/Images/Razer_Opus-removebg-preview.png"]]
+  [1m[36mTRANSACTION (77.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrderItem Create (0.9ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["created_at", "2023-04-23 20:31:57.244289"], ["updated_at", "2023-04-23 20:31:57.244289"]]
+  [1m[36mTRANSACTION (102.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrderItem Create (0.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 2], ["product_id", 2], ["created_at", "2023-04-23 20:31:57.357647"], ["updated_at", "2023-04-23 20:31:57.357647"]]
+  [1m[36mTRANSACTION (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrderItem Create (0.5ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 3], ["product_id", 3], ["created_at", "2023-04-23 20:31:57.468061"], ["updated_at", "2023-04-23 20:31:57.468061"]]
+  [1m[36mTRANSACTION (106.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrderItem Create (1.0ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 1], ["product_id", 4], ["created_at", "2023-04-23 20:31:57.583438"], ["updated_at", "2023-04-23 20:31:57.583438"]]
+  [1m[36mTRANSACTION (100.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrderItem Create (0.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 2], ["product_id", 5], ["created_at", "2023-04-23 20:31:57.694232"], ["updated_at", "2023-04-23 20:31:57.694232"]]
+  [1m[36mTRANSACTION (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrderItem Create (0.8ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 3], ["product_id", 6], ["created_at", "2023-04-23 20:31:57.805759"], ["updated_at", "2023-04-23 20:31:57.805759"]]
+  [1m[36mTRANSACTION (155.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for 127.0.0.1 at 2023-04-24 10:23:38 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"janesmith@example.com", "password"=>"[FILTERED]", "user"=>{"email"=>"janesmith@example.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11:in `index'
+Completed 200 OK in 34ms (Views: 16.0ms | ActiveRecord: 1.5ms | Allocations: 38959)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:36:01 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"email"=>"janesmith@example.com", "password"=>"[FILTERED]", "product"=>{}}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms | Allocations: 2261)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<ProductsController:0x00000000005668>
+Did you mean?  current_ability):
+  
+cancancan (3.5.0) lib/cancan/controller_additions.rb:354:in `current_ability'
+cancancan (3.5.0) lib/cancan/controller_resource.rb:138:in `current_ability'
+cancancan (3.5.0) lib/cancan/controller_resource.rb:78:in `load_collection?'
+cancancan (3.5.0) lib/cancan/controller_resource_loader.rb:19:in `load_resource'
+cancancan (3.5.0) lib/cancan/controller_resource.rb:33:in `load_and_authorize_resource'
+cancancan (3.5.0) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:467:in `instance_exec'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:467:in `block in make_lambda'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:36:37 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"email"=>"janesmith@example.com", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 1.8ms | Allocations: 17123)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-24 10:36:44 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"janesmith@example.com", "password"=>"[FILTERED]", "user"=>{"email"=>"janesmith@example.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.7ms | Allocations: 3619)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-24 10:39:02 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "password"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "role"=>"user"}}
+[31mUnpermitted parameters: :password_digest, :role. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f4414691bd0>, params: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "password"=>"[FILTERED]", "role"=>"user", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "role"=>"user"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ClintJoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 422 Unprocessable Entity in 1524ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1029550)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-24 10:51:06 +0300
+  
+SyntaxError (/home/user/Desktop/latecommit/electronics-shop2/backend/app/controllers/users_controller.rb:17: syntax error, unexpected local variable or method, expecting `end'
+...nvalid role specified']} status: :unprocessable_entity
+...                         ^~~~~~
+):
+  
+app/controllers/users_controller.rb:17: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:17: syntax error, unexpected local variable or method, expecting `end'
+Started POST "/register" for 127.0.0.1 at 2023-04-24 10:51:52 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "password"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "role"=>"user"}}
+[31mUnpermitted parameter: :password_digest. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f44041280a0>, params: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "password"=>"[FILTERED]", "role"=>"user", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "role"=>"user"}} }[0m
+[31mUnpermitted parameter: :password_digest. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f44041280a0>, params: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "password"=>"[FILTERED]", "role"=>"user", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password_digest"=>"[FILTERED]", "role"=>"user"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:103:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ClintJoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:103:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:103:in `create'
+Completed 422 Unprocessable Entity in 13ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 6393)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-24 10:52:18 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:103:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ClintJoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:103:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:103:in `create'
+Completed 422 Unprocessable Entity in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 3640)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-24 10:53:45 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:103:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ClintJoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:103:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:103:in `create'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 3642)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-24 10:59:45 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"Clint Joe", "email"=>"ClintJoe@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:105:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ClintJoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:105:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Clint Joe"], ["email", "ClintJoe@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-24 07:59:45.309096"], ["updated_at", "2023-04-24 07:59:45.309096"], ["role", "user"]]
+  ↳ app/controllers/users_controller.rb:105:in `create'
+  [1m[36mTRANSACTION (134.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:105:in `create'
+Completed 200 OK in 431ms (Views: 0.7ms | ActiveRecord: 134.9ms | Allocations: 5894)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-24 12:02:57 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:89:in `index'
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 6070)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-24 12:04:32 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"ClintJoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"ClintJoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ClintJoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 201 Created in 252ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 5954)
+
+
