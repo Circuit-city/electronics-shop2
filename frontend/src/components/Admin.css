@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: .5rem;
+    height: 100vh;
+    padding: 0.5rem;
+   
+}
+
+.product{
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    height: 100%;
+    
+   
+}
+
+
+
+.pic{
+    /* background-color: black; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.pic img{
+    height: 10rem;
+}
+.btns{
+    margin-top: 1rem;
+}
+.deletebtn{
+    height: 2rem;
+    width: 6rem;
+    border-radius: .2rem;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+}
+.deletebtn:hover{
+    background-color: rgb(195, 17, 52);
+}

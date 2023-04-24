@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hero2{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 252, 252);
+   
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .img2{
+    width: 7rem;
+    height: 4rem;
+    background-size: cover;
+} */
+.big2{
+    
+    background-color: lightgray;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 30vw;
+    padding: 0.5rem;
+    border-radius: .2rem;
+    
+}
+.label{
+    margin-bottom: .2rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.input{
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+.input-s{
+    height: 10rem;
+    outline: none;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+.addBtn{
+    margin-top: 2rem;
+    height: 3rem;
+    background-color: orange;
+    border-radius: 0.2rem;
+    border: none;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+}
+.addBtn:hover{
+    background-color: rgb(194, 127, 3);
+}
