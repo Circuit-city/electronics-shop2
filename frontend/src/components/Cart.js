@@ -59,12 +59,12 @@ function Cart() {
   };
 
   const checkout = () => {
-    // implement checkout logic here
+    // implement checkout logic 
     setCartItems([]);
     alert('Thank you for your order!');
   };
 
-  return 
+  return (
     <div>
       <Navbar />
       {cartItems.map((item) => (
@@ -78,4 +78,8 @@ function Cart() {
           <button onClick={() => decreaseQuantity(item.id)}>-</button>
         </div>
       ))}
-      <
+    </div>
+  );
+}
+
+export default Cart;
