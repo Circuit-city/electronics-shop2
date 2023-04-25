@@ -12,17 +12,18 @@ function Cart() {
     }
   }, []);
 
-  function checkout() {
+  function increaseQuantity (){
+    alert("adding item" )
+  }
+
+  function decreaseQuantity(){
+    console.log("removing item" )
+  }
+
+  function checkout(){
     const itemsToCheckout = cartItems;
-    const checkoutItemsFromLocalStorage = localStorage.getItem('checkoutItems');
-    let checkoutItems = [];
-    if (checkoutItemsFromLocalStorage) {
-      checkoutItems = Object.values(JSON.parse(checkoutItemsFromLocalStorage));
-    }
-    checkoutItems.push(...itemsToCheckout);
-    localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems));
+    localStorage.setItem('checkoutItems', JSON.stringify(itemsToCheckout));
     localStorage.removeItem('cartItems');
-    setCartItems([]);
     window.location.href = '/checkout'; 
   }
 
@@ -30,17 +31,20 @@ function Cart() {
     <div>
       <Navbar/>
       
-      <div className="cart-items">
-        {cartItems.map(item => (
-          <div key={item.id} className="cart-item">
-            <img src={item.image} alt={item.name} />
-            <h2>{item.name}</h2>
-            <p className="price">Price: {item.price}</p>
-          </div>
-        ))}
-        {cartItems.length > 0 && <button className="btn btn-success" onClick={() => checkout()}>Checkout</button>}
+  <div className="cart-items">
+    {cartItems.map(item => (
+      <div key={item.id} className="cart-item">
+        <img src={item.image} alt={item.name} />
+        <h2>{item.name}</h2>
+        {/* <p>{item.description}</p> */}
+        <p className="price">Price: {item.price}</p>
+        <button className="btn btn-primary"  onClick={() => increaseQuantity(item.id)}>+</button>
+        <button className="btn btn-danger"  onClick={() => decreaseQuantity(item.id)}>-</button>
       </div>
-    </div>
+    ))}
+    <button className="btn btn-success"  onClick={() => checkout()}>Checkout</button>
+  </div>
+</div>
   );
 }
 
