@@ -12,6 +12,19 @@ function Cart() {
     }
   }, []);
 
+  function increaseQuantity (){
+    alert("adding item" )
+  }
+
+  function decreaseQuantity(){
+    console.log("removing item" )
+  }
+
+  function checkout(){
+    console.log("checkout")
+          window.location.href = '/checkout'; 
+  }
+
   return (
     <div>
       <Navbar/>
@@ -23,8 +36,11 @@ function Cart() {
         <h2>{item.name}</h2>
         {/* <p>{item.description}</p> */}
         <p className="price">Price: {item.price}</p>
+        <button className="btn btn-primary"  onClick={() => increaseQuantity(item.id)}>+</button>
+<button className="btn btn-danger"  onClick={() => decreaseQuantity(item.id)}>-</button>
       </div>
     ))}
+    <button className="btn btn-success"  onClick={() => checkout()}>Checkout</button>
   </div>
 </div>
   );
