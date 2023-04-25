@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "./Navbar";
-import './homepageAndNavbar.css';
+
+
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const [user, setUser] = useState(localStorage.getItem('user'));
   const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
   useEffect(() => {
@@ -23,7 +24,7 @@ if (cartData) {
 
 const userData = localStorage.getItem('user');
     if (userData) {
-      setUser(JSON.parse(userData));
+      setUser(userData);
       setIsLoggedIn(true);
     }
     
@@ -133,13 +134,13 @@ const userData = localStorage.getItem('user');
         {filteredProducts().map(product => (
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
+            <h3>{product.name}</h3> 
             <p>Price: {product.price}</p>
             {isAddedToCart(product.id) ? (
-                <button disabled>Added to Cart</button>
-              ) : (
-                <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
-              )}
+  <button disabled>Added to Cart</button>
+) : (
+  <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
+)}
           </div>
         ))}
 
