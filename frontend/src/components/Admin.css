@@ -7,10 +7,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     gap: .5rem;
-    overflow-x: hidden;
     height: 100vh;
     padding: 0.5rem;
+    width: 1500px;
+    
+    
 }
+.bigger{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    
+   
+}
+
 .product{
     border: 1px solid lightgray;
     display: flex;
@@ -19,15 +31,17 @@
     justify-content: center;
     padding: 0.5rem;
     height: 100%;
-    font-weight: 600;
-   
+    
 }
+
+
+
 .pic{
     /* background-color: black; */
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;     
     
 
 }
@@ -51,26 +65,3 @@
 .deletebtn:hover{
     background-color: rgb(195, 17, 52);
 }
-
-
-   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import LogOut from "./components/LogOut"
@@ -9,15 +8,12 @@ import Admin from "./components/Admin"
 import AdminId from "./components/AdminId"
 import Cart from './components/Cart';
 import ProductsAdd from './components/ProductsAdd';
+import AdminUsers from './components/AdminUsers';
 
 
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  }
+  
   return (
     
     <div>
@@ -33,7 +29,7 @@ function App() {
           <Route path="/admin/:id" element={<AdminId />}/>
           <Route path='/addproduct' element={<ProductsAdd />} />
           <Route path="/admin/products/:id" element={<AdminId />}/>
-         
+          <Route path='/adminusers' element={<AdminUsers />} />
          
         </Routes>
     </div>

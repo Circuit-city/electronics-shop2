@@ -3,16 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 const LogOut = ({user}) => {
   const navigate = useNavigate();
-  
   const storedUser = localStorage.getItem('user');
-  const loggedInUser = storedUser ? JSON.parse(storedUser) : null;;
+  const loggedInUser = storedUser ? JSON.parse(storedUser): null;
   const handleLogout = async () => {
     if (!loggedInUser && !user) {
       // If user is not logged in, redirect to login page
       navigate("/login");
       return;
     }
-
     const response = await fetch(`https://circuit-cityy-po9y.onrender.com/logout`, {
       method: 'DELETE'
     });

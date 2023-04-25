@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './Admin.css';
 import Navbar from './Navbar';
 
-const Admin = () => {
+const Admin = ({isLoggedIn}) => {
 const [products, setProducts] = useState(false)
 
 useEffect(()=>{
@@ -42,7 +42,8 @@ const deleteProduct = async (productId) =>{
 return (
 <>
 
-<Navbar />
+<Navbar isLoggedIn={isLoggedIn}/>
+<div className="bigger">
 <div className="hero">
 
 {products && products.map((item)=>(
@@ -52,7 +53,7 @@ return (
                 <img src={item.image} alt="item" />
             </div>
             <div className="content">
-                <Link to={`/admin/${item.id}`}>{item.name}</Link>
+                <Link to={`/admin/${item.id}`} className='bold'>{item.name}</Link>
                 <p>{truncate(item.description, 50)}</p>
                 <p>ksh {item.price}</p>
                 <p>category : {item.category_id}</p>
@@ -68,6 +69,8 @@ return (
    
   ))}
 </div>
+</div>
+
   
 
 

@@ -9,6 +9,7 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   
+  
   const userLogin = async () => {
     const response = await fetch('https://circuit-cityy-po9y.onrender.com/login', {
       method: 'POST',
@@ -22,15 +23,14 @@ const Login = () => {
     });
 
     
-    const data = await response.json();
-    console.log("data:", data);
-
-      if (response.ok ) {
+      if (response.ok) {
         // If login is successful, set the user data in state
+        const data = await response.json();
         setUser(data);
         localStorage.setItem('user', JSON.stringify(data));
         navigate('/')
         console.log(data)
+       
        
       } else {
         // If login is unsuccessful, display an error message
@@ -39,19 +39,18 @@ const Login = () => {
     
   }
   console.log("user in Login:", user);
+  
  
    
   return (
     <>
-      <div className="loginPage">
-        <div className="containerone">
-         <div className="upper-div">
-         <div className="image">
-            <p className="img1"></p>
-            <img src={require('../assets/headphone.png')} alt="headphone" className="img2"/>
-          </div>
+      
+         <div className="login-div">
           <div className="form">
-            <h1>LOGIN </h1>
+            <div className="img">
+              {/* <img src="https://53525363.000webhostapp.com/CIRCUIT__3_-removebg-preview%20(1).png" alt="pic" className="image"/> */}
+              <h1>LOGIN </h1>  
+            </div>
             <form onSubmit={(e) => {
               e.preventDefault();
               userLogin();
@@ -71,27 +70,6 @@ const Login = () => {
             </div>
           </div>
          </div>
-         <div className="lower-div">
-          <p>What will you discover?</p>
-            <div className="big">
-              <div className="preview">
-                  <div className="laptop">
-                    <img src={require('../assets/laptop-preview.png')} alt="laptop" />
-                    <p>Laptops</p>
-                  </div>
-                  <div className="tv">
-                      <img src={require('../assets/tv.png')} alt="television" />
-                      <p>Flatscreens</p>
-                  </div>
-                  <div className="hd">
-                      <img src={require('../assets/hd.png')} alt="hd" />
-                      <p>Headphones</p>
-                  </div>
-              </div>
-            </div>
-         </div>
-        </div>
-      </div>
       
       {user && <LogOut user={user} />}
     

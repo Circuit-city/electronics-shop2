@@ -16,14 +16,24 @@ const AdminId = () => {
         .then((data)=>{
             setContent(data)
         })
+        incrementAnalytics(id, 'views')
     },[id])
 
     const handleEdit = (product) => {
         setCurrentProduct(product)
         setEditing(true)
+       
       }
       
-    
+      const incrementAnalytics = (productId, type) => {
+        const analytics = JSON.parse(localStorage.getItem('analytics')) || {}
+        const productAnalytics = analytics[productId] || { views: 0, clicks: 0, sales: 0 }
+        productAnalytics[type]++
+        analytics[productId] = productAnalytics
+        localStorage.setItem('analytics', JSON.stringify(analytics))
+      }
+    const analytics = JSON.parse(localStorage.getItem('analytics')) || {}
+    const productAnalytics = analytics[id] || { views: 0, clicks: 0, sales: 0 }
   return (
     <div className='hero-adminid'>
        <div className="big-adminid">
@@ -34,13 +44,19 @@ const AdminId = () => {
                             <img src={content.image} alt="pic" />
                         </div>
                        <div className="content-id">
-                            <p >{content.name}</p>
+                            <p className='bold'>{content.name}</p>
                             <p>{content.description}</p>
                             <p>KSH : {content.price}</p>
+                            <div className="analytics">
+                                <p>Views: {productAnalytics.views}</p>
+                                <p>Clicks: {productAnalytics.clicks}</p>
+                                <p>Sales: {productAnalytics.sales}</p>
+                            </div>
                             <div className="back">
                                <button onClick={()=>handleEdit(content)} className='editbtn'>Edit</button>
                                 <Link to='/admin'>Back</Link>
                             </div>
+                            
                             
                        </div>
                     </div>
