@@ -18,12 +18,12 @@ function Cart() {
   }, []);
   console.log(cartItems)
 
-  // useEffect(() => {
-  //   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  // }, [cartItems]);
+  const checkout = () => {
+    alert("checkout")
+  };
 
-  const addToCart = (product) => {
-    const existingItem = cartItems.find((item) => item.id === product.id);
+  const addToCart = (itemId) => {
+    const existingItem = cartItems.find((item) => item.id === itemId);
     if (existingItem) {
       setCartItems(
         cartItems.map((item) =>
@@ -33,59 +33,51 @@ function Cart() {
         )
       );
     } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      const productToAdd = cartItems.find((item) => item.id === itemId);
+      setCartItems([...cartItems, { ...productToAdd, quantity: 1 }]);
     }
   };
-
-  const increaseQuantity = () => {
-    setItemQuantity(itemQuantity+1)
-  };
-
-  const decreaseQuantity = () => {
-    // const existingItem = cartItems.find((item) => item.id === itemId);
-    // if (existingItem.quantity > 1) {
-    //   setCartItems(
-    //     cartItems.map((item) =>
-    //       item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
-    //     )
-    //   );
-    // } else {
-    //   setCartItems(cartItems.filter((item) => item.id !== itemId));
-    // }
-setItemQuantity(itemQuantity-1)
-  };
-
-  const getTotalPrice = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
+  
+  const increaseQuantity = (itemId) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+      )
     );
   };
-
-  const checkout = () => {
-    // implement checkout logic 
-    setCartItems([]);
-    alert('Thank you for your order!');
+  
+  const decreaseQuantity = (itemId) => {
+    const existingItem = cartItems.find((item) => item.id === itemId);
+    if (existingItem.quantity > 1) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
+        )
+      );
+    } else {
+      setCartItems(cartItems.filter((item) => item.id !== itemId));
+    }
   };
-
+  
   return (
     <div>
       <Navbar />
       {cartItems.map((item) => (
         <div key={item.id}>
          <img src={item.image} alt={item.name} style={{ width: '300px', height: '200px' }} />
-
+  
           <h2>{item.name}</h2>
           <p>{item.description}</p>
           <p>Price: {item.price}</p>
-          <p>Quantity: {itemQuantity}</p>
+          <p>Quantity: {item.quantity}</p>
           <button className="btn btn-primary"  onClick={() => increaseQuantity(item.id)}>+</button>
           <button className="btn btn-danger"  onClick={() => decreaseQuantity(item.id)}>-</button>
         </div>
       ))}
       <button className="btn btn-success"  onClick={() => checkout()}>Checkout</button>
+      <button className="btn btn-primary" onClick={() => addToCart(1)}>Add to Cart</button>
     </div>
-  );
-}
+  );  
+      }
 
 export default Cart;
