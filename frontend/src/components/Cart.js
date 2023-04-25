@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-// import './Cart.css'
+ import './Cart.css'
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -21,7 +21,7 @@ function Cart() {
   }
 
   function checkout(){
-    console.log("checkout")
+    // console.log(cartItems)
           window.location.href = '/checkout'; 
   }
 

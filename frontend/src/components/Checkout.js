@@ -1,12 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import './Checkout.css'
 import Navbar from "./Navbar";
+import { useEffect } from 'react';
 
 
 function Chekout () {
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
+        if (cartItemsFromLocalStorage) {
+          setCartItems(Object.values(JSON.parse(cartItemsFromLocalStorage)));
+        }
+      }, []);
     return(
         <>
         <Navbar/>
+
+        {cartItems.map(item => (
+      <div key={item.id} className="cart-item">
+        {/* <img src={item.image} alt={item.name} /> */}
+        <h2>{item.name}</h2>
+        {/* <p>{item.description}</p>
+        <p className="price">Price: {item.price}</p> */}
+      </div>
+    ))}
             <div className="containerwarpper">
                 <form action="" className="address-details">
                     <div className="frm">
