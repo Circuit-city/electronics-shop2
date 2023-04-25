@@ -14,7 +14,7 @@ user1 = User.create(
     name: "John Doe",
     email: "johndoe@example.com",
     password: "password123",
-    role: "admin"
+    role: true
 
   )
   
@@ -23,47 +23,47 @@ user1 = User.create(
     name: "Jane Smith",
     email: "janesmith@example.com",
     password: "password456",
-    role: "user"
+    role: true
   )
 
   user3 = User.create(
     name: "Bob Johnson",
     email: "bjohnson@example.com",
     password: "password789",
-    role: "user"
+    role: false
   )
 
   user4 = User.create(
     name: "Alice Lee",
     email: "alee@example.com",
     password: "password123",
-    role: "user"
+    role: false
   )
 
   user5 = User.create(
     name: "Charlie Brown",
     email: "cbrown@example.com",
     password: "password456",
-    role: "user"
+    role: false
   )
 
   user6 = User.create(
     name: "Samantha Smith",
     email: "ssmith@example.com",
     password: "password789",
-    role: "user"
+    role: false
   )
 
   user7 = User.create(
     name: "Peter Parker",
     email: "pparker@example.com",
     password: "password123",
-    role: "user"
+    role: false
   )
 
 
-  order1 = Order.create(user: user2, address: "1234 ngong road", billing_information: "Visa ending in 1234")
-  order2 = Order.create(user: user2, address: "5678 tobor", billing_information: "Mastercard ending in 5678")
+  order1 = Order.create(user: user3, address: "1234 ngong road", billing_information: "Visa ending in 1234")
+  order2 = Order.create(user: user4, address: "5678 tobor", billing_information: "Mastercard ending in 5678")
   order3 = Order.create(user: user3, address: "kimathi street", billing_information: "Mastercard ending in 6776")
   order4 = Order.create(user: user3, address: "4321 ngong road", billing_information: "Visa ending in 4321")
   order5 = Order.create(user: user4, address: "8765 tobor", billing_information: "Mastercard ending in 8765")
@@ -101,8 +101,8 @@ product9 = Product.create(name: "Audio-Technica ATH Headphones", price: 12000,  
 
 
 # Order items
-order_item1 = OrderItem.create(order: order1, product: product1)
 order_item2 = OrderItem.create(order: order2, product: product2)
+order_item1 = OrderItem.create(order: order1, product: product1)
 order_item3 = OrderItem.create(order: order3, product: product3)
 order_item3 = OrderItem.create(order: order1, product: product4)
 order_item3 = OrderItem.create(order: order2, product: product5)
