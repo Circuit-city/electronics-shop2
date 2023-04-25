@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import '../components/Signup.css'
-
 function Signup(){
     const [name, setname] = useState('');
     const [email,setemail] = useState('');
@@ -11,7 +10,7 @@ function Signup(){
     function handlesubmit(){
         console.log(name,email,password)
 
-        fetch(`https://circuit-city-sxh8.onrender.com/register`, {
+        fetch(`https://circuit-cityy-po9y.onrender.com/register`, {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -22,7 +21,7 @@ function Signup(){
         .then(data => {
             console.log(data);
             localStorage.setItem('user', JSON.stringify(data.user));
-            navigate('/login')
+            navigate('/logout')
         })
     }
 

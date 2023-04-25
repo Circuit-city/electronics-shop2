@@ -9,8 +9,8 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   
-  const userLogin = async () => { 
-    const response = await fetch('https://circuit-city-sxh8.onrender.com/login', {
+  const userLogin = async () => {
+    const response = await fetch('https://circuit-cityy-po9y.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -70,6 +70,25 @@ const Login = () => {
               <Link to='/Signup'>Create an Account</Link>
             </div>
           </div>
+         </div>
+         <div className="lower-div">
+          <p>What will you discover?</p>
+            <div className="big">
+              <div className="preview">
+                  <div className="laptop">
+                    <img src={require('../assets/laptop-preview.png')} alt="laptop" />
+                    <p>Laptops</p>
+                  </div>
+                  <div className="tv">
+                      <img src={require('../assets/tv.png')} alt="television" />
+                      <p>Flatscreens</p>
+                  </div>
+                  <div className="hd">
+                      <img src={require('../assets/hd.png')} alt="hd" />
+                      <p>Headphones</p>
+                  </div>
+              </div>
+            </div>
          </div>
         </div>
       </div>
