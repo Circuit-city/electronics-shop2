@@ -7,7 +7,7 @@ function Homepage() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const [user, setUser] = useState(localStorage.getItem('user'));
   const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
   useEffect(() => {
@@ -24,7 +24,7 @@ if (cartData) {
 
 const userData = localStorage.getItem('user');
     if (userData) {
-      setUser(JSON.parse(userData));
+      setUser(userData);
       setIsLoggedIn(true);
     }
     
