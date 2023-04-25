@@ -31,28 +31,34 @@ const userData = localStorage.getItem('user');
 
   }, []);
 
-  const handleAddToCart = (product) => {
-    if (!user) {
-     
-      window.location.href = '/login';
-      return;
-    }
+  const handleAddToCart = (event, product) => {
+    event.preventDefault(); // prevent default form submission
+  
+    // if (!user) {
+    //   window.location.href = '/login'; // redirect to login if user is not authenticated
+    //   return;
+    // }
+  
     const cartData = localStorage.getItem('cartItems');
     let cart = {};
+  
     if (cartData) {
       cart = JSON.parse(cartData);
     }
+  
     if (cart[product.id]) {
-      cart[product.id].quantity += 1;
+      cart[product.id].quantity += 1; // increment quantity if product already exists in cart
     } else {
-      cart[product.id] = {
+      cart[product.id] = { // add product to cart if it doesn't exist
         ...product,
         quantity: 1
       };
     }
-    localStorage.setItem('cartItems', JSON.stringify(cart));
-    setCart(cart);
+  
+    localStorage.setItem('cartItems', JSON.stringify(cart)); // update cart items in local storage
+    setCart(cart); // update cart state
   };
+  
   
   const isAddedToCart = (productId) => {
     return cart[productId] ? true : false;
@@ -138,7 +144,7 @@ const userData = localStorage.getItem('user');
             {isAddedToCart(product.id) ? (
                 <button disabled>Added to Cart</button>
               ) : (
-                <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
+                <button onClick={(e) => handleAddToCart(e,product)}>Add To Cart</button>
               )}
           </div>
         ))}
