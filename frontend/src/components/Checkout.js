@@ -18,9 +18,8 @@ function Checkout() {
       <div className="checkout-items">
         {checkoutItems.map(item => (
           <div key={item.id} className="checkout-item">
-            <img src={item.image} alt={item.name} />
+            {/* <img src={item.image} alt={item.name} /> */}
             <h2>{item.name}</h2>
-            {/* <p>{item.description}</p> */}
             <p className="price">Price: {item.price}</p>
           </div>
         ))}
