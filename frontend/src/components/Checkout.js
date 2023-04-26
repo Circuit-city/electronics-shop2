@@ -33,7 +33,8 @@ function Chekout () {
 
     function DisplayData(props) {
         return (
-          <div>
+          <div className="div-check">
+            <h1>Invoice</h1>
             <p>Billing Address: {props.Billing_Address}</p>
             <p>Payment Method: {props.Payment_Method}</p>
             <p>Expiry Date: {props.Expiry_Date}</p>
