@@ -6,7 +6,7 @@ function Navbar(props) {
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
+      <div className="navbar-left"> 
         <img
           src="https://53525363.000webhostapp.com/Images/CIRCUIT__1_-removebg-preview.png"
           alt=""
