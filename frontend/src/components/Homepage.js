@@ -9,7 +9,7 @@ function Homepage() {
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(localStorage.getItem('user'));
-  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
+  const [isLoggedIn, setIsLoggedIn] = useState(!user);
   const [search, setSearch] = useState('')
   
   useEffect(() => {
@@ -94,7 +94,7 @@ const userData = localStorage.getItem('user');
 <>
       <div>
         <div>
-        <Navbar isLoggedIn={isLoggedIn} />
+        
         <div id="slider" className="slider-container">
           <div className="slider-image">
             <img

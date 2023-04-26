@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
@@ -9,14 +9,18 @@ import AdminId from "./components/AdminId"
 import Cart from './components/Cart';
 import ProductsAdd from './components/ProductsAdd';
 import AdminUsers from './components/AdminUsers';
+import Navbar from './components/Navbar';
 
 
 
 function App() {
+  const [user, setUser] = useState(localStorage.getItem('user'));
+  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   
   return (
     
     <div>
+      <Navbar isLoggedIn={isLoggedIn} />
       
         <Routes>
          

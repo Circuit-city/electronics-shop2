@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: var(--main);
+}
+
+
+.frm h1{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: x large;
+    font-family: 'Times New Roman';
+    text-decoration-thickness: 50px;
+}
+
+.container-wrapper{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    width: 60%;
+    background-image: linear-gradient(to right top, var(--grey) 30%, grey 70%);
+    border-radius: .3rem;
+    overflow: hidden;
+}
+
+.card {
+    line-height: 10px;
+    width: 1000px;
+    
+}
+
+.address-details{
+    background-image: linear-gradient(to right top, var(--grey) 30%, grey 70%);
+    padding: 4rem;
+    position: relative;
+    display: inline-block;
+    margin-left: 200px;
+}
+
+.address-details .form-group{
+    margin: 1.5rem 0 1rem 0;
+}
+
+.address-details .close:hover{
+    background: var(--darkPurple);
+}
+
+.leftside img{
+    width: 40%;
+    height: 40%;
+    transform-origin: 50% 50%;
+    transition: all .5s;
+
+}
+
+.leftside:hover img{
+    transform: rotate(5deg) scale(1.1, 1.1);
+}
+
+.leftside:hover img{
+    opacity: 1;
+}
+
+.container-wrapper .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(47, 45, 45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s;
+}

@@ -42,7 +42,7 @@ const deleteProduct = async (productId) =>{
 return (
 <>
 
-<Navbar isLoggedIn={isLoggedIn}/>
+
 <div className="bigger">
 <div className="hero">
 

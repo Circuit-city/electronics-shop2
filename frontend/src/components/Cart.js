@@ -1,50 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
+
 import './Cart.css'
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
     if (cartItemsFromLocalStorage) {
-      setCartItems(Object.values(JSON.parse(cartItemsFromLocalStorage)));
+      const items = Object.values(JSON.parse(cartItemsFromLocalStorage));
+      setCartItems(items);
+      const price = items.reduce((total, item) => total + item.price, 0);
+      setTotalPrice(price);
     }
   }, []);
 
-  function increaseQuantity (){
-    alert("adding item" )
-  }
-
-  function decreaseQuantity(){
-    console.log("removing item" )
-  }
-
-  function checkout(){
+  function checkout() {
     const itemsToCheckout = cartItems;
-    localStorage.setItem('checkoutItems', JSON.stringify(itemsToCheckout));
+    const checkoutItemsFromLocalStorage = localStorage.getItem('checkoutItems');
+    let checkoutItems = [];
+    if (checkoutItemsFromLocalStorage) {
+      checkoutItems = Object.values(JSON.parse(checkoutItemsFromLocalStorage));
+    }
+    checkoutItems.push(...itemsToCheckout);
+    localStorage.setItem('checkoutItems', JSON.stringify(checkoutItems));
     localStorage.removeItem('cartItems');
+    setCartItems([]);
+    setTotalPrice(0);
     window.location.href = '/checkout'; 
   }
 
   return (
-    <div>
-      <Navbar/>
+    <div className="cart-container">
       
-  <div className="cart-items">
-    {cartItems.map(item => (
-      <div key={item.id} className="cart-item">
-        <img src={item.image} alt={item.name} />
-        <h2>{item.name}</h2>
-        {/* <p>{item.description}</p> */}
-        <p className="price">Price: {item.price}</p>
-        <button className="btn btn-primary"  onClick={() => increaseQuantity(item.id)}>+</button>
-        <button className="btn btn-danger"  onClick={() => decreaseQuantity(item.id)}>-</button>
+      
+      <div className="cart-items">
+        {cartItems.map(item => (
+          <div key={item.id} className="cart-item">
+            <img src={item.image} alt={item.name} />
+            <h2>{item.name}</h2>
+            <p className="price">Price: {item.price}</p>
+          </div>
+        ))}
       </div>
-    ))}
-    <button className="btn btn-success"  onClick={() => checkout()}>Checkout</button>
-  </div>
-</div>
+
+      {cartItems.length > 0 && (
+        <div className="checkout-container">
+          <p className="total-price">Total Price: {totalPrice}</p>
+          <button className="btn btn-success checkout-button" onClick={() => checkout()}>Checkout</button>
+
+        </div>
+      )}
+    </div>
   );
 }
 

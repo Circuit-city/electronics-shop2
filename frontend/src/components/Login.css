@@ -1,85 +1,195 @@
-.login-div{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loginPage{
     height: 100vh;
     width: 100vw;
+    /* background-color: rgb(58, 56, 56); */
+    /* color: rgb(255, 255, 255); */
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    overflow-y: hidden;   
+}
+
+.containerone{
+      /* background-color: rgb(10, 10, 10); */
+      /* border: 1px solid rgba(255, 255, 255, 0.3); */
+      border-radius: 4px;
+      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+      margin-left: 50px;
+      max-width: 640px;
+      padding: 75px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+      font-size: large;
+      height: 100%;
+      width: 40%;
+      padding: 1.5rem 1rem;
+    }
+
+.upper-div{
+    display: flex;
     
 }
+.image{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 23rem;
+    
+}
+.img1{
+
+    height: 30%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: -4rem;
+    
+}
+.img2{
+    height: 70%;
+     
+}
+
 .form{
-    border: 1px solid lightgray;
-    padding: 1rem;
-    width: 25vw;
+    background-color: transparent;
+    width: 50%;
+    padding: .5rem;
+    border-radius: .3rem;
+    margin-left: 150px;
+
+  }
+
+.form h1{
+    text-align: center;
+    margin-bottom: 1rem;
 }
 .emailplace{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
 }
 .emailplace input{
-    width: 100%;
-    height: 2rem;
-    padding: .5rem;
-    border: none;
     outline: none;
-    font-size: 1.2rem;
-    background-color: lightgray;
+    border: none;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    background-color: rgb(190, 187, 187);
+    padding: .5rem;
     border-radius: .2rem;
+    margin-bottom: 2rem;
+
 }
 .passplace{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.5rem;
 }
 .passplace input{
-    width: 100%;
-    height: 2rem;
-    padding: .5rem;
-    border: none;
     outline: none;
-    font-size: 1.2rem;
-    background-color: lightgray;
+    border: none;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    background-color: rgb(190, 187, 187);
+    padding: .5rem;
     border-radius: .2rem;
+    
+    margin-bottom: 1rem;
 }
-.forgot p{
-    cursor: pointer;
 
+.forgot p{
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
 }
+
 .loginBtn{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+    font-size: large;
 }
 .loginBtn input{
-    padding: 0.5rem;
-    width: 6rem;
-    border: none;
-    outline: none;
     cursor: pointer;
+    outline: none;
+    border: none;
     font-size: 1.3rem;
+    background-color: rgb(190, 187, 187);
+    padding: .5rem;
     border-radius: .2rem;
-   
+    width: 10rem;
+    margin-bottom: 1rem;
+    transition: .5s;
 }
+
+.loginBtn input:hover{
+    color: #000;
+    background: #d1d1d1;
+    letter-spacing: .2rem;
+    border-radius: .5rem;
+    transition: .5s;
+}
+
 .notregisterd{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 .notregisterd a{
-    color: rgb(20, 31, 234);
+    color: #131213;
 }
 
-.img{
+.lower-div{
+    margin-top: 4.5rem;
+    padding: .5rem;
+}
+.big{
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
 }
-.image{
+.preview{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
-    background-color: red;
+}
+.preview img{
+    height: 12rem;
+   
+}
+.laptop{
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -1rem;
+}
+.tv{
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hd{
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
