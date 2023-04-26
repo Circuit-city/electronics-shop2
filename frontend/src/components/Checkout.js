@@ -25,6 +25,7 @@ function Chekout () {
     const [formData, setFormData] = useState({ Billing_Address: '', Payment_Method: '', Expiry_Date: '' });
 
     const handleSubmit = (event) => {
+        alert (`Your Billing details have been Verified.`);
       event.preventDefault();
       setFormData({ Billing_Address: Billing_Address, Payment_Method: Payment_Method, Expiry_Date: Expiry_Date });
     };
@@ -43,17 +44,12 @@ function Chekout () {
       }
       
 
-      function handlePurchase() {
-
-        alert(`Your Billing details have been Verified.`);
-      }
-    
 
     return(
         <>
             <div className="containerwarpper">
 
-                <form onSubmit={handlePurchase} className="address-details">
+                <form onSubmit={handleSubmit} className="address-details">
 
                     <div className="frm">
                         <h1>Checkout</h1>
