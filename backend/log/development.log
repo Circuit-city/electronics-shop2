@@ -6625,3 +6625,682 @@ Processing by ProductsController#index as */*
 Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 1.5ms | Allocations: 17773)
 
 
+Started GET "/ws" for ::1 at 2023-04-26 10:15:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-26 10:15:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-04-26 10:15:18 +0300
+Processing by UsersController#index as */*
+  Parameters: {"price"=>150000.0, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:89:in `index'
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.9ms | Allocations: 18117)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:16:53 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>false, "user"=>{"name"=>"ash", "email"=>"ash@example.com", "role"=>false}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1983)
+
+
+  
+NameError (undefined local variable or method `admin' for #<UsersController:0x000000000058e8>):
+  
+app/controllers/users_controller.rb:93:in `create'
+Started GET "/ws" for ::1 at 2023-04-26 10:17:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-26 10:17:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-26 10:21:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-26 10:21:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-26 10:30:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-26 10:30:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:31:04 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"users", "user"=>{"name"=>"ash", "email"=>"ash@example.com", "role"=>"users"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 346)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:31:16 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"ash", "email"=>"ash@example.com", "role"=>"user"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:45:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asher", "email"=>"asher@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asher", "email"=>"asher@example.com", "role"=>"user"}}
+Completed 422 Unprocessable Entity in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 21348)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:54:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asher", "email"=>"asherr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>true, "user"=>{"name"=>"asher", "email"=>"asherr@example.com", "role"=>true}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:119:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:119:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:119:in `create'
+Completed 500 Internal Server Error in 1462ms (ActiveRecord: 1.1ms | Allocations: 1067250)
+
+
+  
+NameError (undefined method `record_invalid' for class `UsersController'):
+  
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:106:in `method'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:106:in `handler_for_rescue'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:91:in `rescue_with_handler'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:165:in `rescue_with_handler'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:25:in `rescue in process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:21:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:55:32 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asher", "email"=>"asherr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>true, "user"=>{"name"=>"asher", "email"=>"asherr@example.com", "role"=>true}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:119:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:119:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:119:in `create'
+Completed 201 Created in 15ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 5129)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:56:32 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asher", "email"=>"asherr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asher", "email"=>"asherr@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:119:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:119:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:119:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 2349)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:58:29 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghg", "email"=>"asherr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>true, "user"=>{"name"=>"asherghg", "email"=>"asherr@example.com", "role"=>true}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:120:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:120:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:120:in `create'
+Completed 201 Created in 12ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 4829)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 10:58:46 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghg", "email"=>"asherr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"asherghg", "email"=>"asherr@example.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:120:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:120:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:120:in `create'
+Completed 201 Created in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2319)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:00:58 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghgg", "email"=>"asherrrr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"asherghgg", "email"=>"asherrrr@example.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghgg"], ["email", "asherrrr@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 08:00:58.847453"], ["updated_at", "2023-04-26 08:00:58.847453"], ["role", 0]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (87.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+Completed 200 OK in 391ms (Views: 0.5ms | ActiveRecord: 88.9ms | Allocations: 5941)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:01:22 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghgg", "email"=>"asherrrr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghgg", "email"=>"asherrrr@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+Completed 422 Unprocessable Entity in 249ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3017)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:01:27 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghgg", "email"=>"asherrrrr@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghgg", "email"=>"asherrrrr@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrr@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghgg"], ["email", "asherrrrr@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 08:01:28.169722"], ["updated_at", "2023-04-26 08:01:28.169722"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (124.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+Completed 200 OK in 370ms (Views: 0.5ms | ActiveRecord: 125.2ms | Allocations: 2985)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:06:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggg", "email"=>"asherrrrrg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggg", "email"=>"asherrrrrg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggg"], ["email", "asherrrrrg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 08:06:36.326290"], ["updated_at", "2023-04-26 08:06:36.326290"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `create'
+  [1m[36mTRANSACTION (131.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create'
+Completed 200 OK in 409ms (Views: 0.9ms | ActiveRecord: 132.5ms | Allocations: 42548)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:16:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggg", "email"=>"asherrrrrgg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggg", "email"=>"asherrrrrgg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrgg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggg"], ["email", "asherrrrrgg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 08:16:35.383494"], ["updated_at", "2023-04-26 08:16:35.383494"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `create'
+  [1m[36mTRANSACTION (158.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:56:in `create'
+Completed 200 OK in 443ms (Views: 0.4ms | ActiveRecord: 159.9ms | Allocations: 42539)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:21:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>true, "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>true}}
+Completed 422 Unprocessable Entity in 18ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 21355)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:21:41 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>"user"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:21:50 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>false, "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>false}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 166)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:22:01 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"admin", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>"admin"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:24:31 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>false, "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>false}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:24:52 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>"user"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 11:26:20 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrygg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherrrrrygg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 08:26:20.667470"], ["updated_at", "2023-04-26 08:26:20.667470"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (160.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Completed 200 OK in 430ms (Views: 0.5ms | ActiveRecord: 163.0ms | Allocations: 21447)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:17:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrygg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Completed 422 Unprocessable Entity in 2407ms (Views: 1.8ms | ActiveRecord: 2.1ms | Allocations: 1065534)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:17:27 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygsg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrygsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherrrrrygsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:17:28.381589"], ["updated_at", "2023-04-26 09:17:28.381589"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (212.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Completed 200 OK in 660ms (Views: 0.7ms | ActiveRecord: 214.1ms | Allocations: 3758)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:17:41 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygrsg@example.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherrrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:17:41.527816"], ["updated_at", "2023-04-26 09:17:41.527816"], ["role", 0]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (98.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Completed 200 OK in 567ms (Views: 1.1ms | ActiveRecord: 98.8ms | Allocations: 2997)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:18:29 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherrrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"", "user"=>{"name"=>"asherghggyg", "email"=>"asherrrrrygrsg@example.com", "role"=>""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherrrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Completed 422 Unprocessable Entity in 444ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2892)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:18:35 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"ashersrrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"", "user"=>{"name"=>"asherghggyg", "email"=>"ashersrrrrygrsg@example.com", "role"=>""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ashersrrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "ashersrrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:18:35.481653"], ["updated_at", "2023-04-26 09:18:35.481653"], ["role", nil]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (140.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Completed 200 OK in 586ms (Views: 1.3ms | ActiveRecord: 141.5ms | Allocations: 2954)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:20:41 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrrrrygrsg@example.com", "role"=>"user"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 303)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:23:29 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrrrrygrsg@example.com", "role"=>"user"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 302)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:23:41 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrrrrygrsg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:34:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherbrrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:23:42.313709"], ["updated_at", "2023-04-26 09:23:42.313709"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `create'
+  [1m[36mTRANSACTION (146.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:34:in `create'
+Completed 200 OK in 509ms (Views: 0.7ms | ActiveRecord: 148.9ms | Allocations: 5629)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:28:49 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdrrrygrsg@example.com", "role"=>"user"}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms | Allocations: 2049)
+
+
+  
+NameError (undefined local variable or method `role' for #<UsersController:0x0000000000de80>
+Did you mean?  @role):
+  
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:29:15 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdrrrygrsg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherbrdrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:29:15.514479"], ["updated_at", "2023-04-26 09:29:15.514479"], ["role", 0]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (131.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+Completed 200 OK in 551ms (Views: 1.6ms | ActiveRecord: 135.4ms | Allocations: 5535)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:29:31 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"admin", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdrrrygrsg@example.com", "role"=>"admin"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+Completed 422 Unprocessable Entity in 360ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 2896)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:29:39 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdgrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"admin", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdgrrrygrsg@example.com", "role"=>"admin"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdgrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherbrdgrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:29:39.760776"], ["updated_at", "2023-04-26 09:29:39.760776"], ["role", 0]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (66.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+Completed 200 OK in 465ms (Views: 0.9ms | ActiveRecord: 68.8ms | Allocations: 2915)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:34:42 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdgrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"adm", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdgrrrygrsg@example.com", "role"=>"adm"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdgrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+Completed 500 Internal Server Error in 428ms (Views: 1.5ms | ActiveRecord: 3.2ms | Allocations: 7337)
+
+
+  
+NameError (undefined method `record_invalid' for class `UsersController'):
+  
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:106:in `method'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:106:in `handler_for_rescue'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:91:in `rescue_with_handler'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:98:in `rescue_with_handler'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:165:in `rescue_with_handler'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:25:in `rescue in process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:21:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:35:33 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdfrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"admin", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdfrrrygrsg@example.com", "role"=>"admin"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdfrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherbrdfrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:35:33.775595"], ["updated_at", "2023-04-26 09:35:33.775595"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (160.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+Completed 200 OK in 590ms (Views: 1.2ms | ActiveRecord: 164.9ms | Allocations: 5606)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:35:46 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrddfrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrddfrrrygrsg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrddfrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherbrddfrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:35:46.624018"], ["updated_at", "2023-04-26 09:35:46.624018"], ["role", 0]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (123.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+Completed 200 OK in 533ms (Views: 1.0ms | ActiveRecord: 124.1ms | Allocations: 3059)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:36:13 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdrdfrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"users", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdrdfrrrygrsg@example.com", "role"=>"users"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdrdfrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asherghggyg"], ["email", "asherbrdrdfrrrygrsg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 09:36:13.424601"], ["updated_at", "2023-04-26 09:36:13.424601"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (135.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+Completed 200 OK in 561ms (Views: 1.4ms | ActiveRecord: 136.6ms | Allocations: 2960)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:37:08 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdrdfrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"users", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdrdfrrrygrsg@example.com", "role"=>"users"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asherbrdrdfrrrygrsg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+Completed 500 Internal Server Error in 452ms (Views: 1.1ms | ActiveRecord: 3.6ms | Allocations: 7323)
+
+
+  
+NameError (undefined method `record_invalid' for class `UsersController'):
+  
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:106:in `method'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:106:in `handler_for_rescue'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:91:in `rescue_with_handler'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:98:in `rescue_with_handler'
+activesupport (7.0.4.3) lib/active_support/rescuable.rb:165:in `rescue_with_handler'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:25:in `rescue in process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:21:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/register" for 127.0.0.1 at 2023-04-26 12:37:39 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"asherghggyg", "email"=>"asherbrdrdfrrrygrsg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"users", "user"=>{"name"=>"asherghggyg", "email"=>"asherbrdrdfrrrygrsg@example.com", "role"=>"users"}}
+Completed 422 Unprocessable Entity in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 303)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 14:03:57 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"gres", "email"=>"gresg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"users", "user"=>{"name"=>"gres", "email"=>"gresg@example.com", "role"=>"users"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | Allocations: 159)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-04-26 14:04:03 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"gres", "email"=>"gresg@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"user", "user"=>{"name"=>"gres", "email"=>"gresg@example.com", "role"=>"user"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gresg@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "gres"], ["email", "gresg@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-26 11:04:04.077248"], ["updated_at", "2023-04-26 11:04:04.077248"], ["role", 0]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (203.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+Completed 200 OK in 453ms (Views: 0.4ms | ActiveRecord: 204.8ms | Allocations: 5667)
+
+
