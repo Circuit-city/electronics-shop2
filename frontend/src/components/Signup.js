@@ -4,6 +4,7 @@ import '../components/Signup.css'
 function Signup(){
     const [name, setname] = useState('');
     const [email,setemail] = useState('');
+    const [role, setRole] = useState(null);
     const [password,setpassword] = useState('');
     const navigate = useNavigate()
 
@@ -15,13 +16,13 @@ function Signup(){
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({name ,email , password})
+            body: JSON.stringify({name ,email , password, role})
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
             localStorage.setItem('user', JSON.stringify(data.user));
-            navigate('/login')
+            navigate('/')
         })
     }
 
@@ -51,6 +52,15 @@ function Signup(){
                     <label>
                         Password: <input type="password" name="password" placeholder="Enter Password" value={password} onChange={(e) => setpassword(e.target.value)} required/>
                     </label>
+                    <label>
+                    Role: 
+                    <select value={role} onChange={(e) => setRole(e.target.value)}>
+                        <option value="">Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </label>
+
                     <button type="submit" value='Signup' className="sign-btn">Sign up</button>
                     
                 </form>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
+
 import './Cart.css'
 
 function Cart() {
@@ -33,7 +33,7 @@ function Cart() {
 
   return (
     <div className="cart-container">
-      <Navbar/>
+     
       
       <div className="cart-items">
         {cartItems.map(item => (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
+
 import './Checkout.css'
 
 function Checkout() {
@@ -14,7 +14,7 @@ function Checkout() {
 
   return (
     <div>
-      <Navbar/>
+     
       <div className="checkout-items">
         {checkoutItems.map(item => (
           <div key={item.id} className="checkout-item">
