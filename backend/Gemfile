@@ -36,3 +36,5 @@ gem "faker", "~> 3.1"
 gem "mail", "~> 2.8"
 
 gem 'cancancan'
+
+gem 'jwt'
