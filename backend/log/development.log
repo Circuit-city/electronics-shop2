@@ -7464,3 +7464,99 @@ Processing by SessionsController#create as */*
 Completed 201 Created in 303ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 43254)
 
 
+Started POST "/login" for 127.0.0.1 at 2023-04-28 00:57:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"bjohnson@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"bjohnson@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bjohnson@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 201 Created in 490ms (Views: 0.6ms | ActiveRecord: 2.3ms | Allocations: 43247)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:14:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"bjohnson@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"bjohnson@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bjohnson@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 201 Created in 287ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 43247)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:15:15 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Completed 201 Created in 252ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 810)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-28 09:21:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 626ms (Views: 150.1ms | ActiveRecord: 2.8ms | Allocations: 44712)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:23:53 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22:in `create'
+Completed 201 Created in 310ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2276)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:24:14 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"bjohnson@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"bjohnson@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bjohnson@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22:in `create'
+Completed 201 Created in 249ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 747)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-28 09:24:34 +0300
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.5ms | Allocations: 3461)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:24:59 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"janesmith@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"janesmith@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "janesmith@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22:in `create'
+Completed 201 Created in 241ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 713)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:25:49 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22:in `create'
+Completed 201 Created in 243ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 727)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:27:06 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"bjohnson@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"bjohnson@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bjohnson@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22:in `create'
+Completed 201 Created in 242ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 712)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-28 09:27:46 +0300
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 3443)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-28 09:28:45 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"alee@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"alee@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alee@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22:in `create'
+Completed 201 Created in 241ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 713)
+
+

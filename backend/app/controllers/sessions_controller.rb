@@ -1,11 +1,11 @@
-
-    require 'jwt'
+require 'jwt'
 
 class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-      token = JWT.encode({ user_id: user.id }, 'your_secret_key')
+      secret_key = user.role ? 'admin_secret_key' : 'user_secret_key'
+      token = JWT.encode({ user_id: user.id }, secret_key)
       render json: { user: user, token: token }, status: :created
     else
       render json: { error: "Invalid email or password" }, status: 401
