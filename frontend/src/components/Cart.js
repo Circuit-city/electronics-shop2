@@ -4,7 +4,7 @@ import './Cart.css'
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState();
 
   useEffect(() => {
     const cartItemsFromLocalStorage = localStorage.getItem('cartItems');

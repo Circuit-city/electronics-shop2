@@ -3,7 +3,7 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Admin.css';
-import Navbar from './Navbar';
+
 
 const Admin = () => {
 const [products, setProducts] = useState(false)
@@ -42,7 +42,7 @@ const deleteProduct = async (productId) =>{
 return (
 <>
 
-<Navbar />
+
 <div className="hero">
 
 {products && products.map((item)=>(
