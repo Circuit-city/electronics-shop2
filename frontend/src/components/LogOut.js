@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const LogOut = ({user}) => {
   const navigate = useNavigate();
-  const storedUser = localStorage.getItem('user');
+  const storedUser = JSON.parse(localStorage.getItem('name'));
   const loggedInUser = storedUser ? storedUser : null;
   const handleLogout = async () => {
     if (!loggedInUser && !user) {
@@ -17,7 +17,7 @@ const LogOut = ({user}) => {
 
     if (response.ok) {
       // Clear user data from local storage 
-      localStorage.removeItem('user');
+      localStorage.clear();
       navigate("/login");
     } else {
       console.error(response);
@@ -28,7 +28,7 @@ const LogOut = ({user}) => {
     <div>
       {loggedInUser && (
         <h1>
-          welcome <span>{loggedInUser.name}</span>
+          Goodbye <span>{storedUser}</span>
         </h1>
       )}
       <button onClick={(e) => handleLogout(e)}>logout</button>

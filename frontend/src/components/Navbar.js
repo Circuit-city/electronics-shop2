@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Navbar(props) {
   const { isLoggedIn, user } = props;
   const role  = localStorage.getItem("role")
- 
+  console.log(typeof role)
   
   return (
     <>
@@ -20,7 +20,7 @@ function Navbar(props) {
           <Link to="/" className="nav-link">Home</Link>
           <Link to='/cart' className="nav-link">Cart</Link>
           <Link to='/checkout' className="nav-link">Checkout</Link>  
-          {role === 'true' && (
+          {role === "true" && (
             
             <>
             
@@ -28,8 +28,7 @@ function Navbar(props) {
               <Link to='/addproduct' className='nav-link'>Add Products</Link>
               <Link to='/adminusers' className='nav-link'>Add Users</Link>
             </>
-          )}
-          
+          )} 
           {isLoggedIn ? (
             <Link to="/logout" className="nav-link">Logout</Link>
           ) : (

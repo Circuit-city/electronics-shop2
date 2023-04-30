@@ -27,8 +27,9 @@ const Login = () => {
         // If login is successful, set the user data in state
         const data = await response.json();
         setUser(data);
-        localStorage.setItem('user', JSON.stringify(data.name));
+        localStorage.setItem('name', JSON.stringify(data.name));
         localStorage.setItem('role', JSON.stringify(data.role));
+        
         navigate('/')
         console.log(data)
        

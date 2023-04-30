@@ -63,17 +63,10 @@ return (
               
               <button onClick={()=>deleteProduct(item.id)} className='deletebtn'>Delete</button>
             </div>
-        </div>
-
-
-   
+        </div>   
   ))}
 </div>
 </div>
-
-  
-
-
 </>
 )
 }
