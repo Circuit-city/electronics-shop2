@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import './homepageAndNavbar.css'
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
@@ -6,6 +7,7 @@ function Homepage() {
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(localStorage.getItem('user'));
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderPosition, setSliderPosition] = useState(0);
   
 useEffect(() => {
    
@@ -30,6 +32,9 @@ const userData = localStorage.getItem('user');
     }, 3000); 
 
     return () => clearInterval(interval); 
+
+    setSliderPosition(-currentSlide * 100);
+, [currentSlide]);
   
     
 }, []);
@@ -112,9 +117,9 @@ return (
       <div>
         <div>
         
-        <div id="slider" className="slider-container">
+        <div id="slider" className="slider-container" style={{ overflow: 'hidden', transition: 'transform 0.5s ease-in-out' , transform: `translateX(${sliderPosition}%)` }}>
           <div className="slider-image">
-            <img src={slides[currentSlide].imageSrc} alt="" />
+            <img src={slides[currentSlide].imageSrc} alt="" /> 
           </div>
           <div className="slider-promotion">
             <h3>{slides[currentSlide].promotionTitle}</h3>

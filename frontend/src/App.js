@@ -11,6 +11,7 @@ import ProductsAdd from './components/ProductsAdd';
 import AdminUsers from './components/AdminUsers';
 import Navbar from './components/Navbar';
 import Checkout from './components/Checkout';
+import './App.css' 
 
 
 

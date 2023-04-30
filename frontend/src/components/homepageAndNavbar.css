@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white; 
+  background-color: #f1f1f2; 
   padding: 10px 20px;
   margin-top: -40px;
   height: 140px;
@@ -48,6 +50,7 @@
   background-color: #595350; 
   height: 450px; 
   margin-top: -2rem; 
+  
 }
 
 #slider img {
@@ -154,10 +157,10 @@
 }
 
 .product-card {
-  width: calc(33% - 20px);;
-  margin: 5px;
+  width: calc(30% - 50px);;
+  margin: 3px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px;
   padding-bottom: 20px;
   
 }
@@ -195,14 +198,16 @@
 }
 
 .product-cards-container button:disabled {
-  background-color: #ccc;
+  background-color: orange;
   cursor: not-allowed;
   
 }
 
 .slider-container.slider-promotion {
   transform: translateY(-100%);
+  overflow: hidden;
 }
+
 
 
 
