@@ -27,7 +27,7 @@ const userData = localStorage.getItem('user');
 
     const interval = setInterval(() => {
       setCurrentSlide(currentSlide => (currentSlide + 1) % slides.length);
-    }, 2000); 
+    }, 3000); 
 
     return () => clearInterval(interval); 
   
@@ -75,7 +75,7 @@ const userData = localStorage.getItem('user');
 
   const slides = [
     {
-      imageSrc: 'https://53525363.000webhostapp.com/Images/Product_Renders_Projects-removebg-preview.png',
+      imageSrc: 'https://53525363.000webhostapp.com/Images/___7_-removebg-preview.png',
       promotionTitle: 'Special Discount',
       promotionSubtitle: '40% off Sale on Headphones!',
       promotionText: [
@@ -85,7 +85,7 @@ const userData = localStorage.getItem('user');
       ]
     },
     {
-      imageSrc: 'https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png',
+      imageSrc: 'https://53525363.000webhostapp.com/Images/___6_-removebg-preview.png',
       promotionTitle: 'New Arrival',
       promotionSubtitle: 'Discover the Latest Smart Home Devices',
       promotionText: [
@@ -95,13 +95,13 @@ const userData = localStorage.getItem('user');
       ]
     },
     {
-      imageSrc: '',
-      promotionTitle: 'New Arrival',
-      promotionSubtitle: 'Discover the Latest Smart Home Devices',
+      imageSrc: 'https://53525363.000webhostapp.com/Images/___3_-removebg-preview.png',
+      promotionTitle: 'Upgrade Your Tech Today',
+      promotionSubtitle: 'Save Big on Our Latest Electronics',
       promotionText: [
-        'Transform your home with our latest smart home devices.',
-        'Control your lights, thermostat, and more from your smartphone.',
-        'Easy to install and use, get started today.'
+        'Upgrade your technology with our latest electronics, including laptops and more.',
+        'Get up to 50% off on selected items for a limited time only.',
+        'Experience lightning-fast performance and stunning graphics with our top-of-the-line products.'
       ]
     }
   ];

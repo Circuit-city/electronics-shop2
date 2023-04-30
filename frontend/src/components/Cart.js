@@ -11,18 +11,18 @@ function Cart() {
     if (cartItemsFromLocalStorage) {
       const items = Object.values(JSON.parse(cartItemsFromLocalStorage));
       setCartItems(items);
-      const price = items.length > 0 ? items.reduce((total, item) => total + item.price, 0) : 0;
+      const price = items.reduce((total, item) => total + item.price, 0);
       setTotalPrice(price);
     }
   }, []);
 
-  function deleteItem(itemId) { 
-    const updatedItems = cartItems.filter((item) => item.id !== itemId);
-    localStorage.setItem('cartItems', JSON.stringify(updatedItems));
-    setCartItems(updatedItems);
-    const price = updatedItems.reduce((total, item) => total + item.price, 0);
-    setTotalPrice(price);
-  }
+  // function deleteItem(itemId) {
+  //   const updatedItems = cartItems.filter((item) => item.id !== itemId);
+  //   localStorage.setItem('cartItems', JSON.stringify(updatedItems));
+  //   setCartItems(updatedItems);
+  //   const price = updatedItems.reduce((total, item) => total + item.price, 0);
+  //   setTotalPrice(price);
+  // }
 
   function checkout() {
     const itemsToCheckout = cartItems;
@@ -66,12 +66,12 @@ function Cart() {
                         {/* <p>{item.description}</p> */}
                         <p className="card-text">Price: {item.price}</p>
                         <p className="card-text">In stock</p>
-                        <span
+                        {/* <span
                             className="delete-text"
                             onClick={() => deleteItem(item.id)}
                           >
                             Delete
-                          </span>
+                          </span> */}
                       </div>
                     </div>
                   </div>

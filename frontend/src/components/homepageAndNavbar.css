@@ -154,7 +154,7 @@
 }
 
 .product-card {
-  width: calc(30% - 45px);;
+  width: calc(33% - 20px);;
   margin: 5px;
   text-align: center;
   border: 1px solid #ccc;
@@ -184,27 +184,21 @@
 }
 
 .product-cards-container button {
-  background-color: white;
-  color: black;
+  background-color: orange;
+  color: white;
   padding: 10px 20px;
   font-size: 16px;
- 
+  border-radius: 5px;
   cursor: pointer;
-  border: 0.5px solid #ccc
+  border: none;
 
 }
 
 .product-cards-container button:disabled {
-  background-color: orange;
+  background-color: #ccc;
   cursor: not-allowed;
-  border-color: orange;
+  
 }
-
-.product-cards-container button:hover {
-  background-color: orange;
-  border-color: orange;
-}
-
 
 .slider-container.slider-promotion {
   transform: translateY(-100%);
