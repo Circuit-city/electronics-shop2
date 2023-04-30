@@ -1,5 +1,6 @@
+require 'jwt'
+
 class SessionsController < ApplicationController
-  require 'jwt'
   def create
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
@@ -10,15 +11,15 @@ class SessionsController < ApplicationController
       render json: { error: "Invalid email or password" }, status: 401
     end
   end
-end
+
 
     # handle logout
     def destroy
         if session.present?
             session.delete(:user_id)
             head :no_content
-            
-        else
+          else
             render json: { error: "Unauthorized" }, status: :unauthorized
         end
     end
+end
