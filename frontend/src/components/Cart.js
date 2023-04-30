@@ -11,12 +11,12 @@ function Cart() {
     if (cartItemsFromLocalStorage) {
       const items = Object.values(JSON.parse(cartItemsFromLocalStorage));
       setCartItems(items);
-      const price = items.reduce((total, item) => total + item.price, 0);
+      const price = items.length > 0 ? items.reduce((total, item) => total + item.price, 0) : 0;
       setTotalPrice(price);
     }
   }, []);
 
-  function deleteItem(itemId) {
+  function deleteItem(itemId) { 
     const updatedItems = cartItems.filter((item) => item.id !== itemId);
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
     setCartItems(updatedItems);
