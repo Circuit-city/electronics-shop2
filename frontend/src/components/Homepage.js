@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-
 function Homepage() {  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(localStorage.getItem('user'));
- 
+  const [currentSlide, setCurrentSlide] = useState(0);
   
-  useEffect(() => {
+useEffect(() => {
    
     fetch('https://circuit-cityy-po9y.onrender.com/products')
       .then(response => response.json())
@@ -25,10 +24,15 @@ const userData = localStorage.getItem('user');
       setUser(userData);
       
     }
+
+    const interval = setInterval(() => {
+      setCurrentSlide(currentSlide => (currentSlide + 1) % slides.length);
+    }, 2000); 
+
+    return () => clearInterval(interval); 
+  
     
-
-
-  }, []);
+}, []);
 
   const handleAddToCart = (product) => {
     if (!user) {
@@ -69,28 +73,58 @@ const userData = localStorage.getItem('user');
     }
   };
 
-  return (
+  const slides = [
+    {
+      imageSrc: 'https://53525363.000webhostapp.com/Images/Product_Renders_Projects-removebg-preview.png',
+      promotionTitle: 'Special Discount',
+      promotionSubtitle: '40% off Sale on Headphones!',
+      promotionText: [
+        'Get high-quality headphones at discounted prices.',
+        'Unbeatable Sound Quality, elevate Your Audio Experience with Our Headphones.',
+        'Premium Sound Experience, Get the Best Headphones for Your Music.'
+      ]
+    },
+    {
+      imageSrc: 'https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png',
+      promotionTitle: 'New Arrival',
+      promotionSubtitle: 'Discover the Latest Smart Home Devices',
+      promotionText: [
+        'Transform your home with our latest smart home devices.',
+        'Control your lights, thermostat, and more from your smartphone.',
+        'Easy to install and use, get started today.'
+      ]
+    },
+    {
+      imageSrc: '',
+      promotionTitle: 'New Arrival',
+      promotionSubtitle: 'Discover the Latest Smart Home Devices',
+      promotionText: [
+        'Transform your home with our latest smart home devices.',
+        'Control your lights, thermostat, and more from your smartphone.',
+        'Easy to install and use, get started today.'
+      ]
+    }
+  ];
+  
 
+return (
+ 
       <div>
         <div>
         
         <div id="slider" className="slider-container">
           <div className="slider-image">
-            <img
-              src="https://53525363.000webhostapp.com/Images/Product_Renders_Projects-removebg-preview.png"
-              alt=""
-            />
+            <img src={slides[currentSlide].imageSrc} alt="" />
           </div>
           <div className="slider-promotion">
-              <h3>Special Discount</h3>
-            <h2>40% off Sale on Headphones!</h2>
-            <p>Get high-quality headphones at discounted prices.</p>
-            <p>Unbeatable Sound Quality, elevate Your Audio Experience with Our Headphones.</p>
-            <p>Premium Sound Experience, Get the Best Headphones for Your Music.</p>
+            <h3>{slides[currentSlide].promotionTitle}</h3>
+            <h2>{slides[currentSlide].promotionSubtitle}</h2>
+            {slides[currentSlide].promotionText.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
           </div>
-          
         </div>
-        
+      
         <div id="additional-boxes" className="boxes-container">
         <div
             className="box box4"

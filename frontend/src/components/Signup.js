@@ -28,45 +28,39 @@ function Signup(){
 
     return (
         <>
-        <div className="signupPage">
-            <div className="containerone">
-                    {/* <div className="image">
-                        <img src="https://53525363.000webhostapp.com/Images/CIRCUIT__3_-removebg-preview.png" alt="logo" className="img"/>
-                    </div> */}
-                <div className="form">
-                <form onSubmit={(e)=>{
-                    e.preventDefault()
-                    handlesubmit()
-                    }} className="sign-form">
-                <center>
-                    <h1>SIGN-UP</h1>
-                </center>
-                    <label>
-                        Name: <input id= "name"type="text" name="name" value={name} placeholder="Enter name" onChange={(e) => setname(e.target.value)} required />
-                    </label>
+<div className="signupPage d-flex justify-content-center align-items-center">
+  <div className="containerone">
+    <div className="form">
+      <form onSubmit={(e)=>{
+        e.preventDefault()
+        handlesubmit()
+      }} className="sign-form">
+        <center>
+          <h1>SIGN-UP</h1>
+        </center>
+        <label>
+          Name: <input id= "name"type="text" name="name" value={name} placeholder="Enter name" onChange={(e) => setname(e.target.value)} required />
+        </label>
+        <label>
+          Email: <input type="text" name="email" value={email} placeholder="Enter email" onChange={(e) => setemail(e.target.value)} required/>
+        </label>
+        <label>
+          Password: <input type="password" name="password" placeholder="Enter Password" value={password} onChange={(e) => setpassword(e.target.value)} required/>
+        </label>
+        <label>
+          Role: 
+          <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </label>
+        <button type="submit" value='Signup' className="sign-btn">Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-                    <label>
-                        Email: <input type="text" name="email" value={email} placeholder="Enter email" onChange={(e) => setemail(e.target.value)} required/>
-                    </label>
-
-                    <label>
-                        Password: <input type="password" name="password" placeholder="Enter Password" value={password} onChange={(e) => setpassword(e.target.value)} required/>
-                    </label>
-                    <label>
-                    Role: 
-                    <select value={role} onChange={(e) => setRole(e.target.value)}>
-                        <option value="">Select Role</option>
-                        <option value="admin">Admin</option>
-                        <option value="user">User</option>
-                    </select>
-                </label>
-
-                    <button type="submit" value='Signup' className="sign-btn">Sign up</button>
-                    
-                </form>
-                </div>
-            </div>
-        </div>
    
 </>
       );
