@@ -7,6 +7,8 @@ function Chekout () {
     const [Billing_Address, setBilling_Address] = useState('');
     const [Payment_Method, setPayment_Method] = useState('');
     const [Expiry_Date, setExpiry_Date] = useState('');
+    const [Card_Number, setCard_Number] = useState('');
+    const [CVV, setCVV] = useState('');
 
 
   const handleBilling_AddressChange = (event) => {
@@ -21,13 +23,23 @@ function Chekout () {
     setExpiry_Date(event.target.value);
   };
 
+  const handleCard_NumberChange = (event) => {
+    setCard_Number(event.target.value);
+  };
 
-    const [formData, setFormData] = useState({ Billing_Address: '', Payment_Method: '', Expiry_Date: '' });
+  const handleCVVChange = (event) => {
+    setCVV(event.target.value);
+  };
+
+
+
+
+    const [formData, setFormData] = useState({ Billing_Address: '', Payment_Method: '', Expiry_Date: '', Card_Number: '', CVV: ''});
 
     const handleSubmit = (event) => {
         alert (`Your Billing details have been Verified.`);
       event.preventDefault();
-      setFormData({ Billing_Address: Billing_Address, Payment_Method: Payment_Method, Expiry_Date: Expiry_Date });
+      setFormData({ Billing_Address: Billing_Address, Payment_Method: Payment_Method, Expiry_Date: Expiry_Date, Card_Number: Card_Number, CVV: CVV });
     };
 
 
@@ -39,6 +51,8 @@ function Chekout () {
             <p>Billing Address: {props.Billing_Address}</p>
             <p>Payment Method: {props.Payment_Method}</p>
             <p>Expiry Date: {props.Expiry_Date}</p>
+            <p>Card_Number: {props.Card_Number}</p>
+            <p>CVV: {props.CVV}</p>
           </div>
         );
       }
@@ -76,8 +90,19 @@ function Chekout () {
                     </div>
 
                     <div className="form-group">
+                        <label className="input-label">Card Number:</label>
+                        <input type="text" value={Card_Number} onChange={handleCard_NumberChange} name="card-number" id="card-number" className="form-control" placeholder="Choose card number"/>
+                    </div>
+
+                    <div className="form-group">
+                        <label className="input-label">CVV:</label>
+                        <input type="text" value={CVV} onChange={handleCVVChange} name="CVV" id="CVV" className="CVV" placeholder="Enter CVV number"/>
+                    </div>
+
+
+                    <div className="form-group">
                         <button type="submit"  onClick={handleSubmit} className="btn btn-warning">Purchase</button>
-                        <DisplayData  Billing_Address={formData.Billing_Address} Payment_Method={formData.Payment_Method} Expiry_Date={formData.Expiry_Date} />
+                        <DisplayData  Billing_Address={formData.Billing_Address} Payment_Method={formData.Payment_Method} Expiry_Date={formData.Expiry_Date} Card_Number={formData.Card_Number} CVV={formData.CVV}  />
                     </div>
                     </div>
                 </form>
