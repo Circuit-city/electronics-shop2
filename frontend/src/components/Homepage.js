@@ -7,7 +7,6 @@ function Homepage() {
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(localStorage.getItem('user'));
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [sliderPosition, setSliderPosition] = useState(0);
   
 useEffect(() => {
    
@@ -31,12 +30,7 @@ const userData = localStorage.getItem('user');
       setCurrentSlide(currentSlide => (currentSlide + 1) % slides.length);
     }, 3000); 
 
-    return () => clearInterval(interval); 
-
-    setSliderPosition(-currentSlide * 100);
-, [currentSlide]);
-  
-    
+    return () => clearInterval(interval);   
 }, []);
 
   const handleAddToCart = (product) => {
@@ -117,7 +111,7 @@ return (
       <div>
         <div>
         
-        <div id="slider" className="slider-container" style={{ overflow: 'hidden', transition: 'transform 0.5s ease-in-out' , transform: `translateX(${sliderPosition}%)` }}>
+        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}}>
           <div className="slider-image">
             <img src={slides[currentSlide].imageSrc} alt="" /> 
           </div>

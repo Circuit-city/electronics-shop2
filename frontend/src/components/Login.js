@@ -64,7 +64,7 @@ const Login = () => {
               
             </div>
             <div className="form-group text-center">
-        <button type="submit" className="btn btn-primary w-100">Login</button>
+        <button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: 'orange', border: 'none'}}>Login</button>
     </div>
           </form>
           <div className="notregisterd text-center">
