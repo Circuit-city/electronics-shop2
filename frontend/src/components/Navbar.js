@@ -52,7 +52,7 @@ function Navbar() {
             </>
           )} 
           {user && user ? (
-            <Link to="/logout" className="nav-link" onClick={(e)=>handleLogout(e)}>Logout</Link>
+            <Link className="nav-link" onClick={(e)=>handleLogout(e)}>Logout</Link>
           ) : (
             <Link to="/login" className="nav-link" activeClassName="active-link" >Login</Link>
           )}

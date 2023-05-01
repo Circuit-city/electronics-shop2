@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Layout from './Layout'
 
 import './Cart.css'
 
@@ -13,10 +14,7 @@ function Cart() {
       setCartItems(items);
       const price = items.reduce((total, item) => total + item.price, 0);
       setTotalPrice(price);
-      const items = Object.values(JSON.parse(cartItemsFromLocalStorage));
-      setCartItems(items);
-      const price = items.reduce((total, item) => total + item.price, 0);
-      setTotalPrice(price);
+  
     }
   }, []);
 
@@ -44,6 +42,7 @@ function Cart() {
   }
 
   return (
+    <Layout>
     <div className="container my-4">
       <div className="row">
         <div className="col-md-8">
@@ -84,7 +83,7 @@ function Cart() {
         </div>
       </div>
     </div>
-    
+    </Layout>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Layout from './Layout'
 // import './homepageAndNavbar.css'
 
 function Homepage() {  
@@ -20,11 +21,11 @@ if (cartData) {
   setCart(JSON.parse(cartData));
 }
 
-const userData = localStorage.getItem('user');
-    if (userData) {
-      setUser(userData);
-      setIsLoggedIn(true);
-    }
+// const userData = localStorage.getItem('user');
+//     if (userData) {
+//       setUser(userData);
+//       setIsLoggedIn(true);
+//     }
     
 
 
@@ -68,13 +69,13 @@ const userData = localStorage.getItem('user');
     return cart[productId] ? true : false;
   };
 
-  const truncate = (str, maxLength) => {
-    if (str.length > maxLength) {
-      return str.substr(0, maxLength) + '...';
-    } else {
-      return str;
-    }
-  };
+  // const truncate = (str, maxLength) => {
+  //   if (str.length > maxLength) {
+  //     return str.substr(0, maxLength) + '...';
+  //   } else {
+  //     return str;
+  //   }
+  // };
  
 
   const filteredProducts = () => {
@@ -124,11 +125,11 @@ const userData = localStorage.getItem('user');
   
 
 return (
- 
-      <div>
+ <Layout>
+       <div>
         <div>
         
-        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}}>
+        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}} >
           <div className="slider-image">
             <img src={slides[currentSlide].imageSrc} alt="" /> 
           </div>
@@ -157,10 +158,6 @@ return (
             className="box box5"
             onClick={() => setSelectedBox('box5')}
           >
-          <div
-            className="box box5"
-            onClick={() => setSelectedBox('box5')}
-          >
           <img
               src="https://53525363.000webhostapp.com/Images/HP_Pavilion_15-cs3000_%E8%A3%BD%E5%93%81%E8%A9%B3%E7%B4%B0_-_%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3___%E6%97%A5%E6%9C%ACHP-removebg-preview.png"
               alt=""
@@ -181,7 +178,7 @@ return (
           </div>
           </div>
         </div>
-        <input type="search" placeholder="search" onChange={(e) => setSearch(e.target.value)} />
+      
         <div className="product-cards-container">
         {filteredProducts().map(product => (
           <div key={product.id} className="product-card">
@@ -195,12 +192,10 @@ return (
 )}
           </div>
         ))}
-      </div>
-      
-    </div>
 
-   </div>
-    
+      </div>
+    </div>
+    </Layout>
     
   
 )}

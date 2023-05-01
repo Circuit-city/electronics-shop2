@@ -8,10 +8,8 @@ import AdminId from "./components/AdminId"
 import Cart from './components/Cart';
 import ProductsAdd from './components/ProductsAdd';
 import AdminUsers from './components/AdminUsers';
-import Navbar from './components/Navbar';
 import Checkout from './components/Checkout';
 import './App.css' 
-import AdminUsers from './components/AdminUsers';
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";

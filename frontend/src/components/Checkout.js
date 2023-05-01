@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Checkout.css';
+import Layout from './Layout';
+
 
 
 function Checkout() {
@@ -49,9 +51,7 @@ function Checkout() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // handle payment submission logic here
 
-    // validate form fields based on selected payment method
     if (paymentMethod === 'credit card') {
       if (!cardNumber || !cardName || !cardExpiry) {
         alert('Please fill out all credit card fields');
@@ -70,22 +70,23 @@ function Checkout() {
     }
 
 
-  // clear the form fields
+ 
   setPaymentMethod('credit card');
   setCardNumber('');
   setCardName('');
   setCardExpiry('');
   setMpesaNumber('');
   setPaypalEmail('');
-  setPurchaseComplete(true); // set purchaseComplete to true
-  localStorage.removeItem('checkoutItems'); // clear checkoutItems in local storage
+  setPurchaseComplete(true); 
+  localStorage.removeItem('checkoutItems');
 };
   
 
-  if (purchaseComplete) { // if purchase is complete, show a message
+  if (purchaseComplete) { 
     return <h1>Purchase complete. Thank you for shopping with us!</h1>;
   }
 return(
+  <Layout>
   <div className="container">
   <div className="row">
     <div className="col-lg-6">
@@ -214,7 +215,7 @@ Submit Payment
 </div>
 </div>
   </div>
-
+  </Layout>
   
 );
                    

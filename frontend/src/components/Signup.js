@@ -4,7 +4,6 @@ import '../components/Signup.css'
 function Signup(){
     const [name, setname] = useState('');
     const [email,setemail] = useState('');
-    const [role, setRole] = useState(null);
     const [password,setpassword] = useState('');
     const [role, setRole] = useState('');
     const navigate = useNavigate()
