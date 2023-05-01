@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Checkout.css'
+import Layout from './Layout';
 
 function Checkout() {
   const [checkoutItems, setCheckoutItems] = useState([]);
@@ -12,7 +13,8 @@ function Checkout() {
   }, []);
 
   return (
-    <div>
+    // <Layout>
+    
       <div className="checkout-items">
         {checkoutItems.map(item => (
           <div key={item.id} className="checkout-item">
@@ -22,7 +24,9 @@ function Checkout() {
           </div>
         ))}
       </div>
-    </div>
+    
+    // </Layout>
+   
   );
 }
 

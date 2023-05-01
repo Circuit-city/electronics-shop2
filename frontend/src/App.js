@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
-import LogOut from "./components/LogOut"
 import Homepage from "./components/Homepage"
 import Admin from "./components/Admin"
 import AdminId from "./components/AdminId"
 import Cart from './components/Cart';
 import ProductsAdd from './components/ProductsAdd';
 import AdminUsers from './components/AdminUsers';
-import Navbar from './components/Navbar';
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -32,11 +30,10 @@ import AddProduct from './scenes/admin/ProductsManagement';
 
 
 function App() {
-  const [user, setUser] = useState(localStorage.getItem('name'));
-  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
-  const role  = localStorage.getItem("role")
+  const role = localStorage.getItem("role")
+
   
   return (
     <>
@@ -61,7 +58,7 @@ function App() {
                <Route path="/calendar" element={<Calendar />} />
                <Route path="/geography" element={<Geography />} />
                <Route path="/management" element={<Products />} />
-               <Route path="/Admin" element={<AddProduct />} />?
+               <Route path="/Admin" element={<AddProduct />} />
              </Routes>
            </main>
          </div>
@@ -69,12 +66,10 @@ function App() {
     </ColorModeContext.Provider>
     ): (
       <div className='app1'>
-      <Navbar isLoggedIn={isLoggedIn} />
       
         <Routes> 
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />}/>
-          <Route path="/logout" element={<LogOut />}/>
           <Route path="/signup" element={<Signup />}/>
           <Route path="/cart" element={<Cart/>} />
           <Route path="/admin" element={<Admin />}/>

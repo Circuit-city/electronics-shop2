@@ -15,6 +15,7 @@ const AddProduct = () => {
     description: "",
     price: "",
     category_id: "",
+    image: "",
   };
 
   const validationSchema = yup.object().shape({
@@ -22,6 +23,7 @@ const AddProduct = () => {
     description: yup.string().required("Description is required"),
     price: yup.number().required("Price is required"),
     category_id: yup.number().required("Category ID is required"),
+    image: yup.string().required("image url is required"),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
@@ -30,12 +32,14 @@ const AddProduct = () => {
       description: values.description,
       price: parseInt(values.price),
       category_id: parseInt(values.category_id),
+      image: values.image,
     };
     try {
       const response = await fetch("https://circuit-cityy-po9y.onrender.com/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization" : "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJpc19hZG1pbiI6dHJ1ZX0.GbZmiHhQi7r04MtdH7d4fPAylWQjcV25YmRDjdJzgi0"
         },
         body: JSON.stringify(productData),
       });
@@ -126,6 +130,19 @@ const AddProduct = () => {
                   name="category_id"
                   error={!!touched.category_id && !!errors.category_id}
                   helperText={touched.category_id && errors.category_id}
+                  sx={{ gridColumn: "span 4" }}
+                />
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  type="url"
+                  label="Image url"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.image}
+                  name="image"
+                  error={!!touched.image && !!errors.image}
+                  helperText={touched.image && errors.image}
                   sx={{ gridColumn: "span 4" }}
                 />
               </Box>

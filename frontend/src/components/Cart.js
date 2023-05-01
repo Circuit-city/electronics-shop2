@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Layout from './Layout';
 import './Cart.css'
 
 function Cart() {
@@ -32,7 +32,8 @@ function Cart() {
   }
 
   return (
-    <div className="cart-container">
+    <Layout>
+        <div className="cart-container">
       
       
       <div className="cart-items">
@@ -53,6 +54,8 @@ function Cart() {
         </div>
       )}
     </div>
+    </Layout>
+    
   );
 }
 

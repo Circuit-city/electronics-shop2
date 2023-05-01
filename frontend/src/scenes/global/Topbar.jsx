@@ -8,11 +8,27 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import { useNavigate } from "react-router-dom";
 
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const navigate = useNavigate()
+  const handleLogout = async () => {
+    const response = await fetch(`https://circuit-cityy-po9y.onrender.com/logout`, {
+      method: 'DELETE'
+    });
+
+    if (response.ok) {
+      // Clear user data from local storage 
+      localStorage.clear();
+      navigate("/login");
+    } else {
+      console.error(response);
+    }
+  }
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -37,7 +53,7 @@ const Topbar = () => {
             <LightModeOutlinedIcon />
           )}
         </IconButton>
-        <IconButton>
+        {/* <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>
         <IconButton>
@@ -45,6 +61,9 @@ const Topbar = () => {
         </IconButton>
         <IconButton>
           <PersonOutlinedIcon />
+        </IconButton> */}
+        <IconButton onClick={handleLogout}>
+          <LogoutOutlinedIcon />
         </IconButton>
       </Box>
     </Box>

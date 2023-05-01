@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "./Navbar";
+import Layout from './Layout';
 
 
 
@@ -89,10 +90,12 @@ const userData = localStorage.getItem('user');
       return str;
     }
   };
+ 
 
   return (
 <>
-      <div>
+<Layout>
+     <div>
         <div>
         
         <div id="slider" className="slider-container">
@@ -170,6 +173,8 @@ const userData = localStorage.getItem('user');
       </div>
       
     </div>
+</Layout>
+   
     
     
    </> 

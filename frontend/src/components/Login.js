@@ -1,6 +1,5 @@
 import React, {  useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LogOut from "./LogOut";
 import './Login.css'
 
 const Login = () => {
@@ -27,13 +26,9 @@ const Login = () => {
         // If login is successful, set the user data in state
         const data = await response.json();
         setUser(data);
-        localStorage.setItem('name', JSON.stringify(data.name));
-        localStorage.setItem('role', JSON.stringify(data.role));
-        
-        navigate('/')
-        console.log(data)
-       
-       
+        localStorage.setItem('role', JSON.stringify(data.user.role));
+        localStorage.setItem("user",data.user) 
+        navigate('/') 
       } else {
         // If login is unsuccessful, display an error message
         alert('Invalid email or password');
@@ -72,9 +67,6 @@ const Login = () => {
             </div>
           </div>
          </div>
-      
-      {user && <LogOut user={user} />}
-    
     </>
   );
 };

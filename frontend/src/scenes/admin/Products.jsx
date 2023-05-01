@@ -85,6 +85,9 @@ const Products = () => {
     try {
       const response = await fetch(`https://circuit-cityy-po9y.onrender.com/products/${id}`, {
         method: "DELETE",
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJpc19hZG1pbiI6dHJ1ZX0.GbZmiHhQi7r04MtdH7d4fPAylWQjcV25YmRDjdJzgi0',
+        }
       });
       if (response.ok) {
         console.log("Product deleted successfully");
@@ -103,12 +106,14 @@ const Products = () => {
     const updatedDescription = prompt("Enter the updated description:", productToUpdate.description);
     const updatedPrice = prompt("Enter the updated price:", productToUpdate.price);
     const updatedCategoryId = prompt("Enter the updated category ID:", productToUpdate.category_id);
+    const updatedimageurl = prompt("Enter the updated image url:", productToUpdate.image);
 
     const updatedProduct = {
       name: updatedName || productToUpdate.name,
       description: updatedDescription || productToUpdate.description,
       price: updatedPrice || productToUpdate.price,
       category_id: updatedCategoryId || productToUpdate.category_id,
+      image: updatedimageurl || productToUpdate.image,
     };
 
     try {
@@ -116,6 +121,7 @@ const Products = () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJpc19hZG1pbiI6dHJ1ZX0.GbZmiHhQi7r04MtdH7d4fPAylWQjcV25YmRDjdJzgi0',
         },
         body: JSON.stringify(updatedProduct),
       });
