@@ -47,7 +47,7 @@
 #slider {
   display: flex;
   align-items: center;
-  background-color: #595350; 
+  background-color: #2b2b2b; 
   height: 450px; 
   margin-top: -2rem; 
   
@@ -104,7 +104,7 @@
   flex-basis: 30%; 
   text-align: center;
   padding: 1rem;
-  background-color: #595350; 
+  background-color: #2b2b2b; 
  
 }
 
@@ -160,7 +160,7 @@
   width: calc(30% - 50px);;
   margin: 3px;
   text-align: center;
-  border: 1px;
+  border: 1px solid #ccc;
   padding-bottom: 20px;
   
 }
