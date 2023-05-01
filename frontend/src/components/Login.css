@@ -1,10 +1,9 @@
-/* .loginPage {
+.loginPage {
     min-height: 100vh;
-    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-  } */
+  }
   
   .card {
     max-width: 400px;
