@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './homepageAndNavbar.css'
+import Layout from './Layout'
+// import './homepageAndNavbar.css'
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
@@ -19,6 +20,14 @@ useEffect(() => {
 if (cartData) {
   setCart(JSON.parse(cartData));
 }
+
+// const userData = localStorage.getItem('user');
+//     if (userData) {
+//       setUser(userData);
+//       setIsLoggedIn(true);
+//     }
+    
+
 
 const userData = localStorage.getItem('user');
     if (userData) {
@@ -59,6 +68,15 @@ const userData = localStorage.getItem('user');
   const isAddedToCart = (productId) => {
     return cart[productId] ? true : false;
   };
+
+  // const truncate = (str, maxLength) => {
+  //   if (str.length > maxLength) {
+  //     return str.substr(0, maxLength) + '...';
+  //   } else {
+  //     return str;
+  //   }
+  // };
+ 
 
   const filteredProducts = () => {
     if (!selectedBox) {
@@ -107,11 +125,11 @@ const userData = localStorage.getItem('user');
   
 
 return (
- 
-      <div>
+ <Layout>
+       <div>
         <div>
         
-        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}}>
+        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}} >
           <div className="slider-image">
             <img src={slides[currentSlide].imageSrc} alt="" /> 
           </div>
@@ -177,6 +195,9 @@ return (
 
       </div>
     </div>
+    </Layout>
+    
+  
 )}
 
 export default Homepage;

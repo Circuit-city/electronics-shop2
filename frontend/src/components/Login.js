@@ -1,6 +1,5 @@
 import React, {  useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LogOut from "./LogOut";
 import './Login.css'
 
 const Login = () => {
@@ -8,6 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
+  
   
   const userLogin = async () => {
     const response = await fetch('https://circuit-cityy-po9y.onrender.com/login', {
@@ -22,17 +22,13 @@ const Login = () => {
     });
 
     
-    const data = await response.json();
-    console.log("data:", data);
-
-      if (response.ok ) {
+      if (response.ok) {
         // If login is successful, set the user data in state
+        const data = await response.json();
         setUser(data);
-        localStorage.setItem('user', JSON.stringify(data));
-        localStorage.setItem('role', JSON.stringify(data.role));
-        navigate('/')
-        console.log(data)
-       
+        localStorage.setItem('role', JSON.stringify(data.user.role));
+        localStorage.setItem("user",data.user) 
+        navigate('/') 
       } else {
         // If login is unsuccessful, display an error message
         alert('Invalid email or password');
@@ -40,6 +36,7 @@ const Login = () => {
     
   }
   console.log("user in Login:", user);
+  
  
    
   return (
