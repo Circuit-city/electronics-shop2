@@ -86,3 +86,7 @@ body{
     border-radius: 50px ;
     background-color: rgba(86, 71, 71, 0.133);
 }
+
+.address-details{
+    align-self: center;
+}

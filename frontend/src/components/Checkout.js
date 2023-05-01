@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { useEffect } from "react";
 import './Checkout.css'
 
 
@@ -9,6 +10,7 @@ function Chekout () {
     const [Expiry_Date, setExpiry_Date] = useState('');
     const [Card_Number, setCard_Number] = useState('');
     const [CVV, setCVV] = useState('');
+    const [showData, setShowData] = useState(false);
 
 
   const handleBilling_AddressChange = (event) => {
@@ -31,15 +33,15 @@ function Chekout () {
     setCVV(event.target.value);
   };
 
+ 
 
-
-
-    const [formData, setFormData] = useState({ Billing_Address: '', Payment_Method: '', Expiry_Date: '', Card_Number: '', CVV: ''});
+  const [formData, setFormData] = useState({ Billing_Address: '', Payment_Method: '', Expiry_Date: '', Card_Number: '', CVV: ''});
 
     const handleSubmit = (event) => {
-        alert (`Your Billing details have been Verified.`);
+       alert (`Your Billing details have been Verified.`); 
       event.preventDefault();
       setFormData({ Billing_Address: Billing_Address, Payment_Method: Payment_Method, Expiry_Date: Expiry_Date, Card_Number: Card_Number, CVV: CVV });
+   
     };
 
 
@@ -57,6 +59,19 @@ function Chekout () {
         );
       }
       
+
+      useEffect(() => {
+        if (
+          formData.Billing_Address !== "" &&
+          formData.Payment_Method !== "" &&
+          formData.Expiry_Date !== "" &&
+          formData.Card_Number !== "" &&
+          formData.CVV !== ""
+        ) {
+          setShowData(true);
+        }
+      }, [formData]);
+
 
 
     return(
@@ -102,10 +117,13 @@ function Chekout () {
 
                     <div className="form-group">
                         <button type="submit"  onClick={handleSubmit} className="btn btn-warning">Purchase</button>
-                        <DisplayData  Billing_Address={formData.Billing_Address} Payment_Method={formData.Payment_Method} Expiry_Date={formData.Expiry_Date} Card_Number={formData.Card_Number} CVV={formData.CVV}  />
+                       
                     </div>
+
                     </div>
                 </form>
+
+                {showData && <DisplayData  Billing_Address={formData.Billing_Address} Payment_Method={formData.Payment_Method} Expiry_Date={formData.Expiry_Date} Card_Number={formData.Card_Number} CVV={formData.CVV}  />}
             </div>
         </>
     );
