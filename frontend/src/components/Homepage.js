@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from "./Navbar";
-
-
+// import './homepageAndNavbar.css'
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [selectedBox, setSelectedBox] = useState(null);
   const [user, setUser] = useState(localStorage.getItem('user'));
-  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
+  const [currentSlide, setCurrentSlide] = useState(0);
   
-  useEffect(() => {
+useEffect(() => {
    
     fetch('https://circuit-cityy-po9y.onrender.com/products')
       .then(response => response.json())
@@ -25,12 +23,15 @@ if (cartData) {
 const userData = localStorage.getItem('user');
     if (userData) {
       setUser(userData);
-      setIsLoggedIn(true);
+      
     }
-    
 
+    const interval = setInterval(() => {
+      setCurrentSlide(currentSlide => (currentSlide + 1) % slides.length);
+    }, 3000); 
 
-  }, []);
+    return () => clearInterval(interval);   
+}, []);
 
   const handleAddToCart = (product) => {
     if (!user) {
@@ -71,28 +72,58 @@ const userData = localStorage.getItem('user');
     }
   };
 
-  return (
+  const slides = [
+    {
+      imageSrc: 'https://53525363.000webhostapp.com/Images/___7_-removebg-preview.png',
+      promotionTitle: 'Special Discount',
+      promotionSubtitle: '40% off Sale on Headphones!',
+      promotionText: [
+        'Get high-quality headphones at discounted prices.',
+        'Unbeatable Sound Quality, elevate Your Audio Experience with Our Headphones.',
+        'Premium Sound Experience, Get the Best Headphones for Your Music.'
+      ]
+    },
+    {
+      imageSrc: 'https://53525363.000webhostapp.com/Images/___6_-removebg-preview.png',
+      promotionTitle: 'New Arrival',
+      promotionSubtitle: 'Discover the Latest Smart Home Devices',
+      promotionText: [
+        'Transform your home with our latest smart home devices.',
+        'Control your lights, thermostat, and more from your smartphone.',
+        'Easy to install and use, get started today.'
+      ]
+    },
+    {
+      imageSrc: 'https://53525363.000webhostapp.com/Images/___3_-removebg-preview.png',
+      promotionTitle: 'Upgrade Your Tech Today',
+      promotionSubtitle: 'Save Big on Our Latest Electronics',
+      promotionText: [
+        'Upgrade your technology with our latest electronics, including laptops and more.',
+        'Get up to 50% off on selected items for a limited time only.',
+        'Experience lightning-fast performance and stunning graphics with our top-of-the-line products.'
+      ]
+    }
+  ];
+  
 
+return (
+ 
       <div>
         <div>
-        <Navbar isLoggedIn={isLoggedIn} />
-        <div id="slider" className="slider-container">
+        
+        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}}>
           <div className="slider-image">
-            <img
-              src="https://53525363.000webhostapp.com/Images/Product_Renders_Projects-removebg-preview.png"
-              alt=""
-            />
+            <img src={slides[currentSlide].imageSrc} alt="" /> 
           </div>
           <div className="slider-promotion">
-              <h3>Special Discount</h3>
-            <h2>40% off Sale on Headphones!</h2>
-            <p>Get high-quality headphones at discounted prices.</p>
-            <p>Unbeatable Sound Quality, elevate Your Audio Experience with Our Headphones.</p>
-            <p>Premium Sound Experience, Get the Best Headphones for Your Music.</p>
+            <h3>{slides[currentSlide].promotionTitle}</h3>
+            <h2>{slides[currentSlide].promotionSubtitle}</h2>
+            {slides[currentSlide].promotionText.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
           </div>
-          
         </div>
-        
+      
         <div id="additional-boxes" className="boxes-container">
         <div
             className="box box4"

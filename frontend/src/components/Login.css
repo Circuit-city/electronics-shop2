@@ -1,197 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.loginPage{
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(58, 56, 56);
-    color: rgb(255, 255, 255);
+/* .loginPage {
+    min-height: 100vh;
+    background-color: #ffffff;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: hidden;
-    
-}
-
-.containerone{
-      background-color: rgb(10, 10, 10);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin: 0 auto;
-      max-width: 640px;
-      padding: 75px;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
-      font-size: large;
-      height: 100%;
-      width: 40%;
-      padding: 1.5rem 1rem;
-    }
-
-.upper-div{
-    display: flex;
-    
-}
-.image{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    height: 23rem;
-    
-}
-.img1{
-    background-image: url('../assets/circuitcity2.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 30%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-top: -4rem;
-    
-}
-.img2{
-    height: 70%;
-     
-}
-
-.form{
-    background-color: rgb(89, 123, 123);
-    width: 50%;
-    padding: .5rem;
-    border-radius: .3rem;
+  } */
+  
+  .card {
+    max-width: 400px;
+    width: 100%;
+    background-color: transparent; 
+    box-shadow: 0 0 20px rgba(0.1, 0.1, 0.1, 0.1);
+    border: none;
   }
-
-.form h1{
-    text-align: center;
-    margin-bottom: 1rem;
-}
-.emailplace{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.emailplace input{
-    outline: none;
-    border: none;
-    height: 2.5rem;
-    font-size: 1.1rem;
-    color: black;
-    padding: .5rem;
-    border-radius: .2rem;
-    margin-bottom: 2rem;
-
-}
-.passplace{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.passplace input{
-    outline: none;
-    border: none;
-    height: 2.5rem;
-    font-size: 1.1rem;
-    color: black;
-    padding: .5rem;
-    border-radius: .2rem;
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     
-    margin-bottom: 1rem;
-}
-
-.forgot p{
-    margin-left: 2rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-.loginBtn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
-    font-size: large;
-}
-.loginBtn input{
-    cursor: pointer;
-    outline: none;
+  }
+  
+  .form-control {
     border: none;
-    font-size: 1.3rem;
-    color: black;
-    padding: .5rem;
-    border-radius: .2rem;
-    width: 10rem;
-    margin-bottom: 1rem;
-    transition: .5s;
-}
-
-.loginBtn input:hover{
-    color: #000;
-    background: #d1d1d1;
-    letter-spacing: .2rem;
-    border-radius: .5rem;
-    transition: .5s;
-}
-
-.notregisterd{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-}
-.notregisterd a{
-    color: #ccc8e2;
-}
-
-.lower-div{
-    margin-top: 4.5rem;
-    padding: .5rem;
-}
-.big{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.preview{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-.preview img{
-    height: 12rem;
-   
-}
-.laptop{
-    width: 15rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: -1rem;
-}
-.tv{
-    width: 14rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.hd{
-    width: 12rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+  }
+  
+  .form-control:focus {
+    border-color: #ffffff; 
+    box-shadow: none;
+  }
+  
+  .btn-primary {
+    background-color: orange;
+    border-color: orange;
+    border-radius: 0;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(207, 136, 2);
+    border-color:  rgb(221, 145, 5);
+  }
+  
+  .notregisterd {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .notregisterd a {
+    color: #007bff;
+  }
+  

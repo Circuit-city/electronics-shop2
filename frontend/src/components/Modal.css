@@ -1,0 +1,82 @@
+.modalbg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    /* bottom: -6.5rem; */
+  
+}
+.modalContainer{
+    display: flex; 
+    flex-direction: column;
+    padding: 1rem;
+    background-color: lightgray;
+    width: 500px;
+    border-radius: 12px;
+    position: absolute;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+   
+}
+.form-update{
+    display: flex;
+    flex-direction: column;
+
+}
+.labels{
+    
+        margin-bottom: .2rem;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    
+}
+.form-update input{
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+.text-area{
+    height: 10rem;
+    outline: none;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.update{
+    margin-top: 2rem;
+    height: 3rem;
+    width: 8rem;
+    background-color: orange;
+    border-radius: 0.2rem;
+    border: none;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+}
+.update:hover{
+    background-color: rgb(212, 140, 5);
+}
+.cancel{
+    margin-top: 2rem;
+    height: 3rem;
+    width: 8rem;
+    background-color: crimson;
+    border-radius: 0.2rem;
+    border: none;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+.cancel:hover{
+    background-color: rgb(192, 18, 53);
+}

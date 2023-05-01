@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_173811) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "image"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
