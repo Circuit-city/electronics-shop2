@@ -9785,3 +9785,187 @@ Processing by ProductsController#create as */*
 Completed 201 Created in 264ms (Views: 0.8ms | ActiveRecord: 143.8ms | Allocations: 50349)
 
 
+Started GET "/products" for 127.0.0.1 at 2023-05-01 11:52:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"name"=>"Canon EOS SWR6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOS SWR6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:10:in `index'
+Completed 200 OK in 47ms (Views: 23.7ms | ActiveRecord: 1.2ms | Allocations: 41151)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 11:53:06 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 201 Created in 276ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 19643)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 11:53:55 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Cannon EOS SWR6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Cannon EOS SWR6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cannon EOS SWR6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-05-01 08:53:55.687568"], ["updated_at", "2023-05-01 08:53:55.687568"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (222.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+Completed 201 Created in 266ms (Views: 1.8ms | ActiveRecord: 223.6ms | Allocations: 10853)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:31:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Completed 201 Created in 289ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 43254)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-05-01 12:31:20 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:10:in `index'
+Completed 200 OK in 38ms (Views: 30.9ms | ActiveRecord: 1.3ms | Allocations: 18474)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 12:31:44 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOSY R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOSY R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOSY R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-05-01 09:31:45.024939"], ["updated_at", "2023-05-01 09:31:45.024939"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (119.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+Completed 201 Created in 150ms (Views: 0.6ms | ActiveRecord: 120.5ms | Allocations: 10864)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:44:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 201 Created in 293ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 43254)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-05-01 12:44:34 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:10:in `index'
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 1.0ms | Allocations: 18601)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 12:45:06 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOS R6344", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOS R6344", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+Filter chain halted as :require_admin rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:50:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 201 Created in 281ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 43258)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-05-01 12:50:59 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:10:in `index'
+Completed 200 OK in 39ms (Views: 31.9ms | ActiveRecord: 0.9ms | Allocations: 18609)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 12:51:58 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOGS R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOGS R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+Filter chain halted as :require_admin rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 12:52:05 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOGS R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOGS R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOGS R6"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-05-01 09:52:05.842995"], ["updated_at", "2023-05-01 09:52:05.842995"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (189.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+Completed 201 Created in 217ms (Views: 0.4ms | ActiveRecord: 191.0ms | Allocations: 10865)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 12:57:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"johndoe@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "johndoe@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 201 Created in 330ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 43256)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-05-01 12:58:42 +0300
+Processing by ProductsController#index as */*
+  Parameters: {"email"=>"johndoe@example.com", "password"=>"[FILTERED]", "product"=>{}}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:10:in `index'
+Completed 200 OK in 55ms (Views: 45.9ms | ActiveRecord: 2.6ms | Allocations: 18748)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 12:59:16 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOS R76", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOS R76", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+Filter chain halted as :require_admin rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 12:59:34 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon EOS R76", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon EOS R76", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category_id", "price", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R76"], ["description", "The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities."], ["category_id", 4], ["price", 140000.0], ["created_at", "2023-05-01 09:59:34.841006"], ["updated_at", "2023-05-01 09:59:34.841006"], ["image", "https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"]]
+  ↳ app/controllers/products_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (192.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `create'
+Completed 201 Created in 235ms (Views: 0.6ms | ActiveRecord: 195.2ms | Allocations: 12966)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-05-01 13:00:55 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"bjohnson@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"bjohnson@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bjohnson@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:29:in `create'
+Completed 201 Created in 287ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 5233)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-05-01 13:01:30 +0300
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 3581)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-05-01 13:01:52 +0300
+Processing by ProductsController#create as */*
+  Parameters: {"name"=>"Canon DEOS R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png", "product"=>{"name"=>"Canon DEOS R6", "description"=>"The Canon EOS R6 is a full-frame mirrorless camera that boasts a 20.1MP CMOS sensor, 4K video recording, and advanced autofocus capabilities.", "category_id"=>4, "price"=>140000.0, "image"=>"https://53525363.000webhostapp.com/Images/10_ways_to_supercharge_your_Canon_DSLR_camera-removebg-preview.png"}}
+Filter chain halted as :require_admin rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 466)
+
+

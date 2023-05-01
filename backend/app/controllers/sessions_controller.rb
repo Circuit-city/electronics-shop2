@@ -13,6 +13,18 @@ class SessionsController < ApplicationController
   # end
 
 
+  # def create
+  #   user = User.find_by(email: params[:email])
+  #   if user&.authenticate(params[:password])
+  #     secret_key = 'my_secret_key'
+  #     payload = { user_id: user.id, is_admin: user.role }
+  #     token = JWT.encode(payload, secret_key)
+  #     render json: { user: user, token: token }, status: :created
+  #   else
+  #     render json: { error: "Invalid email or password" }, status: 401
+  #   end
+  # end
+
   def create
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
@@ -24,6 +36,7 @@ class SessionsController < ApplicationController
       render json: { error: "Invalid email or password" }, status: 401
     end
   end
+  
   
 
 
