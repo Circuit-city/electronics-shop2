@@ -70,7 +70,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      {user && <LogOut user={user} />}
     </div>
   );
 }
