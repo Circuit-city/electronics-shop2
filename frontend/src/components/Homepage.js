@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './homepageAndNavbar.css'
+import './homepageAndNavbar.css'
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
