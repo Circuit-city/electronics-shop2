@@ -24,6 +24,7 @@ const ProductsAdd = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          
         },
         body: JSON.stringify(newProduct),
       });
@@ -39,6 +40,7 @@ const ProductsAdd = () => {
         });
       } else {
         alert('Error adding product');
+        console.log(response)
       }
     };
   

@@ -13,6 +13,10 @@ function Cart() {
       setCartItems(items);
       const price = items.reduce((total, item) => total + item.price, 0);
       setTotalPrice(price);
+      const items = Object.values(JSON.parse(cartItemsFromLocalStorage));
+      setCartItems(items);
+      const price = items.reduce((total, item) => total + item.price, 0);
+      setTotalPrice(price);
     }
   }, []);
 

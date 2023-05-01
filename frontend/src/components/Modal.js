@@ -23,7 +23,8 @@ const Modal = ({editing,setEditing,content,setContent,currentProduct,setCurrentP
           const updatedProducts = () =>{
             if(content.id === currentProduct.id){
               return currentProduct
-            }else{
+            }
+            else{
               return content
             }
         }
