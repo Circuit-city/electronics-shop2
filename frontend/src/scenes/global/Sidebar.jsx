@@ -71,7 +71,7 @@ const Sidebar = () => {
      <div className="div" style={{
       margin:"0",
       padding:"0",
-      height:"105vh",
+      height:"137vh",
       width:"18vw",
       // display:"flex",
      }} >
