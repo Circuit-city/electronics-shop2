@@ -206,7 +206,7 @@ return(
              />
 </div>
 )}
-<button type="submit" className="btn btn-primary">
+<button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: 'orange', border: 'none'}}>
 Submit Payment
 </button>
 </form>
