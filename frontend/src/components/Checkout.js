@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Checkout.css';
 import Layout from './Layout';
-
+import { useNavigate } from "react-router-dom";
 
 
 function Checkout() {
@@ -13,6 +13,13 @@ function Checkout() {
   const [mpesaNumber, setMpesaNumber] = useState('');
   const [paypalEmail, setPaypalEmail] = useState('');
   const [purchaseComplete, setPurchaseComplete] = useState(false); 
+  const [showInvoice, setShowInvoice] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
+  const [showProcessingPayment, setShowProcessingPayment] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [processingPayment, setProcessingPayment] = useState(false);
+
+  
 
   useEffect(() => {
     const checkoutItemsFromLocalStorage = localStorage.getItem('checkoutItems');
@@ -20,6 +27,8 @@ function Checkout() {
       setCheckoutItems(Object.values(JSON.parse(checkoutItemsFromLocalStorage)));
     }
   }, []);
+
+ 
 
   const totalCost = checkoutItems.reduce((acc, item) => acc + item.price, 0);
   const tax = totalCost * 0.1;
@@ -52,6 +61,8 @@ function Checkout() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    setShowInvoice(true);
+
     if (paymentMethod === 'credit card') {
       if (!cardNumber || !cardName || !cardExpiry) {
         alert('Please fill out all credit card fields');
@@ -69,22 +80,50 @@ function Checkout() {
       }
     }
 
+    setShowInvoice(true);
+    setShowLoading(true);
+    setShowProcessingPayment(true);
+  
+    setTimeout(() => {
+      setIsLoading(false);
+      setProcessingPayment(false);
+      setPaymentMethod('credit card');
+      setCardNumber('');
+      setCardName('');
+      setCardExpiry('');
+      setMpesaNumber('');
+      setPaypalEmail('');
+      setPurchaseComplete(true); 
+      localStorage.removeItem('checkoutItems');
+      setShowLoading(false);
+      setShowProcessingPayment(false);
+    }, 3000);
+     }
 
- 
-  setPaymentMethod('credit card');
-  setCardNumber('');
-  setCardName('');
-  setCardExpiry('');
-  setMpesaNumber('');
-  setPaypalEmail('');
-  setPurchaseComplete(true); 
-  localStorage.removeItem('checkoutItems');
-};
+
+  const history = useNavigate();
+
+  function handleButtonClick() {
+    history("/");
+  }
   
 
-  if (purchaseComplete) { 
-    return <h1>Purchase complete. Thank you for shopping with us!</h1>;
-  }
+if (purchaseComplete) {
+  return (
+    <div className="purchase-complete-wrapper">
+      <h1 style={{textAlign: "center", padding: "20px", backgroundColor: "orange", color: "white"}}>
+        Purchase complete. Thank you for shopping with us!
+      </h1>
+      <button style={{backgroundColor: "white", color: "orange", padding: "10px 20px", border: "none", borderRadius: "4px", fontWeight: "bold", cursor: "pointer"}} onClick={handleButtonClick}>
+          Back to Homepage
+        </button>
+    </div>
+  );
+}
+
+
+
+ 
 return(
   <Layout>
   <div className="container">
@@ -203,6 +242,8 @@ return(
                 <input type="email" className="form-control" id="paypal-email" value={paypalEmail} onChange={handlePaypalEmailChange}/>
           </div>
           )}
+          {showLoading && <p>Loading...</p>}
+                {showProcessingPayment && <p>Processing payment...</p>}
           <button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: 'orange', border: 'none'}}>
           Submit Payment
           </button>
