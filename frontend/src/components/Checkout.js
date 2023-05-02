@@ -97,7 +97,7 @@ function Checkout() {
       localStorage.removeItem('checkoutItems');
       setShowLoading(false);
       setShowProcessingPayment(false);
-    }, 3000);
+    }, 5000);
      }
 
 
