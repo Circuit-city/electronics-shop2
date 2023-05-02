@@ -12,7 +12,7 @@ function Checkout() {
   const [cardExpiry, setCardExpiry] = useState('');
   const [mpesaNumber, setMpesaNumber] = useState('');
   const [paypalEmail, setPaypalEmail] = useState('');
-  const [purchaseComplete, setPurchaseComplete] = useState(false); // new state variable
+  const [purchaseComplete, setPurchaseComplete] = useState(false); 
 
   useEffect(() => {
     const checkoutItemsFromLocalStorage = localStorage.getItem('checkoutItems');
@@ -151,6 +151,17 @@ return(
               </div>
               {paymentMethod === 'credit card' && (
                 <div>
+
+                 <div className="form-group">
+                    <label htmlFor="card-name">Card Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="card-name"
+                      value={cardName}
+                      onChange={handleCardNameChange}
+                    />
+                  </div>
                   <div className="form-group">
                     <label htmlFor="card-number">Card Number</label>
                     <input
@@ -161,16 +172,7 @@ return(
                       onChange={handleCardNumberChange}
                     />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="card-name">Card Name</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="card-name"
-                      value={cardName}
-                      onChange={handleCardNameChange}
-                    />
-                  </div>
+               
                   <div className="form-group">
                     <label htmlFor="card-expiry">Card Expiry</label>
                     <input
