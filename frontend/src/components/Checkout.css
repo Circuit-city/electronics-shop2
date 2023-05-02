@@ -31,3 +31,16 @@
     color: orange;
     font-weight: 900;
   }
+
+  .purchase-complete-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .purchase-complete-wrapper button {
+    margin-top: 20px;
+  }
+  
