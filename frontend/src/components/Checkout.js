@@ -191,35 +191,33 @@ return(
                     className="form-control"
                     id="mpesa-number"
                     value={mpesaNumber}onChange={handleMpesaNumberChange}
-/>
-</div>
-)}
-{paymentMethod === 'paypal' && (
-<div className="form-group">
-<label htmlFor="paypal-email">Paypal Email</label>
-<input
-               type="email"
-               className="form-control"
-               id="paypal-email"
-               value={paypalEmail}
-               onChange={handlePaypalEmailChange}
-             />
-</div>
-)}
-<button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: 'orange', border: 'none'}}>
-Submit Payment
-</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-  </div>
-  </Layout>
-  
-);
-                   
-  
-}
+          />
+          </div>
+          )}
+                {paymentMethod === 'paypal' && (
+                
+            <div className="form-group">
+              <label htmlFor="paypal-email">Paypal Email</label>
+                <input type="email" className="form-control" id="paypal-email" value={paypalEmail} onChange={handlePaypalEmailChange}/>
+          </div>
+          )}
+          <button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: 'orange', border: 'none'}}>
+          Submit Payment
+          </button>
 
-export default Checkout;
+          </form>
+
+          </div>
+               </div>
+                       </div>
+                              </div>
+            </div>
+</Layout>
+            
+          );
+                            
+            
+          }
+
+
+          export default Checkout;
