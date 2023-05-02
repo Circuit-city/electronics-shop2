@@ -1,58 +1,56 @@
-/* .loginPage {
-    min-height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 400px;
+  width: 100%;
+  background-color: transparent; 
+  box-shadow: 0 0 20px rgba(0.1, 0.1, 0.1, 0.1);
+  border: none;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   
-  .card {
-    max-width: 400px;
-    width: 100%;
-    background-color: transparent; 
-    box-shadow: 0 0 20px rgba(0.1, 0.1, 0.1, 0.1);
-    border: none;
-  }
-  
-  .card-body {
-    padding: 2rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    
-  }
-  
-  .form-control {
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #ccc;
-    box-shadow: none;
-  }
-  
-  .form-control:focus {
-    border-color: #ffffff; 
-    box-shadow: none;
-  }
-  
-  .btn-primary {
-    background-color: orange;
-    border-color: orange;
-    border-radius: 0;
-  }
-  
-  .btn-primary:hover {
-    background-color: rgb(207, 136, 2);
-    border-color:  rgb(221, 145, 5);
-  }
-  
-  .notregisterd {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .notregisterd a {
-    color: #007bff;
-  }
-  
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #ffffff; 
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: orange;
+  border-color: orange;
+  border-radius: 0;
+}
+
+.btn-primary:hover {
+  background-color: rgb(207, 136, 2);
+  border-color:  rgb(221, 145, 5);
+}
+
+.notregisterd {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.notregisterd a {
+  color: #007bff;
+}

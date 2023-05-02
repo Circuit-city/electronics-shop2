@@ -3,11 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Homepage from "./components/Homepage"
-import Admin from "./components/Admin"
-import AdminId from "./components/AdminId"
 import Cart from './components/Cart';
-import ProductsAdd from './components/ProductsAdd';
-import AdminUsers from './components/AdminUsers';
 import Checkout from './components/Checkout';
 import './App.css' 
 import Topbar from "./scenes/global/Topbar";
@@ -27,6 +23,7 @@ import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
 import Products from './scenes/admin/Products';
 import AddProduct from './scenes/admin/ProductsManagement';
+
 
 
 
@@ -75,11 +72,7 @@ function App() {
           <Route path="/signup" element={<Signup />}/>
           <Route path="/cart" element={<Cart/>} />
           <Route path="/checkout" element={<Checkout/>} />
-          <Route path="/admin" element={<Admin />}/>
-          <Route path="/admin/:id" element={<AdminId />}/>
-          <Route path='/addproduct' element={<ProductsAdd />} />
-          <Route path="/admin/products/:id" element={<AdminId />}/>
-          <Route path='/adminusers' element={<AdminUsers />} />
+
         </Routes>
 
       
