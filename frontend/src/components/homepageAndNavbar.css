@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 
-
+:root{
+  --border-bottom:3px solid orange;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -13,6 +15,7 @@
   height: 140px;
   border: none;
   cursor: pointer;
+  
 }
 
 .navbar-left {
@@ -36,8 +39,55 @@
   margin-right: 45px; 
   text-decoration: none;
   color: black; 
+  position: relative;
 }
-
+.nav-link::before{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  border-radius: 20%;
+}
+.nav-link:hover::before{
+  animation: animateIn 400ms ease-in-out forwards;
+}
+.nav-link::before{
+  animation: animateOut 400ms ease-in-out forwards;
+}
+@keyframes animateIn {
+  0%{
+    border-right: var( --border-bottom);
+    border-left: var( --border-bottom);
+   
+    width: 0%;
+    left: 50%;
+  }
+  100%{
+    border-right: var( --border-bottom);
+    border-left: var( --border-bottom);
+    
+    width: 130%;
+    left: -20%;
+  }
+}
+@keyframes animateOut {
+  0%{
+    border-right: var( --border-bottom);
+    border-left: var( --border-bottom);
+    width: 130%;
+    left: -20%;
+  }
+  60%{
+    border-right: var( --border-bottom);
+    border-left: var( --border-bottom);
+    width: 0%;
+    left: 50%;
+  }
+  100%{
+    width: 0%;
+    left: 50%;
+  }
+}
 
 .navbar-right .nav-link {
   margin-left: 0; 
