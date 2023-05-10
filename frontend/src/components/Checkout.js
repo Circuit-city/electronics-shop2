@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Checkout.css';
 import Layout from './Layout';
 import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 
 function Checkout() {
@@ -110,14 +111,18 @@ function Checkout() {
 
 if (purchaseComplete) {
   return (
-    <div className="purchase-complete-wrapper">
+    <motion.div className="purchase-complete-wrapper"
+    initial={{width:0}}
+    animate={{width:"100vw"}}
+    exit={{x:window.innerWidth,transition:{duration:0.7}}}
+    >
       <h1 style={{textAlign: "center", padding: "20px", backgroundColor: "orange", color: "white"}}>
         Purchase complete. Thank you for shopping with us!
       </h1>
       <button style={{backgroundColor: "white", color: "orange", padding: "10px 20px", border: "none", borderRadius: "4px", fontWeight: "bold", cursor: "pointer"}} onClick={handleButtonClick}>
           Back to Homepage
         </button>
-    </div>
+    </motion.div>
   );
 }
 
@@ -126,7 +131,11 @@ if (purchaseComplete) {
  
 return(
   <Layout>
-  <div className="container">
+  <motion.div className="container"
+      initial={{width:0}}
+      animate={{width:"100vw"}}
+      exit={{x:window.innerWidth,transition:{duration:0.7}}}
+  >
   <div className="row">
     <div className="col-lg-6">
       <div className="card order-summary">
@@ -254,7 +263,7 @@ return(
                </div>
                        </div>
                               </div>
-            </div>
+            </motion.div>
 </Layout>
             
           );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout';
 import './Cart.css'
+import { motion } from 'framer-motion';
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -35,7 +36,11 @@ function Cart() {
 
   return (
     <Layout>
-      <div className="container my-4">
+      <motion.div className="container my-4"
+          initial={{width:0}}
+          animate={{width:"100vw"}}
+          exit={{x:window.innerWidth,transition:{duration:0.7}}}
+      >
         <div className="row">
           <div className="col-md-8">
             <div className="cart-items">
@@ -73,7 +78,7 @@ function Cart() {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </Layout>
   );
 };

@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import '../components/Signup.css'
+import { motion } from "framer-motion";
 function Signup(){
     const [name, setname] = useState('');
     const [email,setemail] = useState('');
@@ -28,7 +29,11 @@ function Signup(){
 
     return (
         <>
-<div className="signupPage d-flex justify-content-center align-items-center">
+<motion.div className="signupPage d-flex justify-content-center align-items-center" 
+   initial={{width:0}}
+   animate={{width:"100vw"}}
+   exit={{x:window.innerWidth,transition:{duration:0.7}}}
+>
   <div className="containerone">
     <div className="form">
       <form onSubmit={(e)=>{
@@ -59,7 +64,7 @@ function Signup(){
       </form>
     </div>
   </div>
-</div>   
+</motion.div>   
 </>
       );
 }

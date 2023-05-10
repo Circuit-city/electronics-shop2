@@ -162,7 +162,7 @@
   text-align: center;
   border: 1px solid #ccc;
   padding-bottom: 20px;
-  
+  animation: slide-in 1s ease-out;
 }
 
 .product-card img {
@@ -173,7 +173,22 @@
   object-fit: contain; 
   transition: transform 0.3s ease-in-out;
   
+  
 }
+
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 .product-card img:hover {
   transform: scale(1.1);

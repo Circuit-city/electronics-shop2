@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout'
 // import './homepageAndNavbar.css'
+import {motion} from "framer-motion"
 
 function Homepage() {  
   const [products, setProducts] = useState([]);
@@ -125,12 +126,19 @@ const userData = localStorage.getItem('user');
   
 
 return (
- <Layout>
+ 
   
-       <div>
+      <motion.div 
+        initial={{width:0}}
+        animate={{width:"100vw"}}
+        exit={{x:window.innerWidth,transition:{duration:0.7}}}
+      >
+        <Layout>
         <div>
         
-        <div id="slider" className="slider-container" style={{ overflow: 'hidden'}} >
+        <div id="slider" className="slider-container" style={{ overflow: 'hidden',}}
+        
+        >
           <div className="slider-image">
             <img src={slides[currentSlide].imageSrc} alt="" /> 
           </div>
@@ -187,7 +195,7 @@ return (
             <h3>{product.name}</h3> 
             <p>Price: {product.price}</p>
             {isAddedToCart(product.id) ? (
-  <button disabled>Added to Cart</button>
+            <button disabled>Added to Cart</button>
 ) : (
   <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
 )}
@@ -195,8 +203,10 @@ return (
         ))}
 
       </div>
-    </div>
-    </Layout>
+      </Layout>
+      </motion.div>
+    
+   
     
   
 )}
