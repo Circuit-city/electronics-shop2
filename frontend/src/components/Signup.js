@@ -23,7 +23,7 @@ function Signup(){
         .then(data => {
             console.log(data);
             localStorage.setItem('name', JSON.stringify(data.user.name));
-            navigate('/')
+            navigate('/login')
         })
     }
 
