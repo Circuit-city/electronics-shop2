@@ -12,7 +12,7 @@
     "@fullcalendar/react": "^6.1.6",
     "@fullcalendar/timegrid": "^6.1.6",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.2",
+    "@mui/material": "^5.14.11",
     "@mui/x-data-grid": "^6.3.0",
     "@nivo/bar": "^0.81.0",
     "@nivo/core": "^0.81.0",
